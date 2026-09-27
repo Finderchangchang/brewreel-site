@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title data-i18n="meta.title">精酿 · BrewReel — 便宜模型，也能酿出好片</title>
-<meta name="description" content="精酿 · BrewReel 是一个开源的竖版宣传片工具：写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包，内置《广告法》极限词和行业合规校验，Apache-2.0 开源。" data-i18n-attr="content:meta.desc">
+<meta name="description" content="精酿 · BrewReel 是一个开源的竖版宣传片工具：写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包、可选配音，内置《广告法》极限词和行业合规校验，Apache-2.0 开源。" data-i18n-attr="content:meta.desc">
 <link rel="canonical" href="https://brewreel.com/">
 <link rel="alternate" hreflang="zh-CN" href="https://brewreel.com/">
 <link rel="alternate" hreflang="en" href="https://brewreel.com/?lang=en">
@@ -55,9 +55,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"></noscript>
-<link rel="stylesheet" href="style.css?v=20260927b">
-<script defer src="i18n.js?v=20260927b"></script>
-<script defer src="main.js?v=20260927b"></script>
+<link rel="stylesheet" href="style.css?v=20260927c">
+<script defer src="i18n.js?v=20260927c"></script>
+<script defer src="main.js?v=20260927c"></script>
 <script defer src="https://umami.jisikeji.cn/script.js" data-website-id="c80c17ab-9413-4d0b-a359-171bc2a23bc9"></script>
 </head>
 <body>
@@ -79,6 +79,7 @@
   <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.6" cy="17.6" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.6" cy="15.6" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
   <symbol id="i-lang" viewBox="0 0 24 24"><path d="M4 5.5h8M8 4v1.5M5.5 5.5c.6 3 2.6 5.3 5.5 6.5M10.5 5.5c-.6 3-2.6 5.3-5.8 6.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12.5 20l3.5-8.5 3.5 8.5M13.7 17.2h4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7L4 12l4.5 5M15.5 7L20 12l-4.5 5M13.5 5l-3 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
   <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3.5h5M10.3 3.5v5.3L5.2 17.4A2.2 2.2 0 0 0 7.1 20.5h9.8a2.2 2.2 0 0 0 1.9-3.1l-5.1-8.6V3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.4 14.5h9.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
 </svg>
 
@@ -105,7 +106,7 @@
         <svg class="ico ico-sun" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
         <svg class="ico ico-moon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
       </button>
-      <a class="nav-star" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="nav" aria-label="在 GitHub 上给精酿点 Star" title="在 GitHub 上给精酿点 Star" data-i18n-attr="aria-label:a.star;title:a.star"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span class="nav-star-text">Star</span><b data-brew-stars>54</b></a>
+      <a class="nav-star" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="nav" aria-label="在 GitHub 上给精酿点 Star" title="在 GitHub 上给精酿点 Star" data-i18n-attr="aria-label:a.star;title:a.star"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span class="nav-star-text">Star</span><b data-brew-stars>55</b></a>
       <button class="icon-btn burger" id="burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navMenu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -123,7 +124,7 @@
 
       <div class="cta-row">
         <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="hero">
-          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>54</b></span>
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>55</b></span>
         </a>
         <a class="btn btn-ghost" href="assets/demo.mp4" data-demo-open data-demo-at="0"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"/></svg><span data-i18n="hero.demo">看完整演示（有声）</span></a>
       </div>
@@ -292,17 +293,16 @@ python scripts/llm_make.py path/to/brief.md</code></pre>
             </div>
 
             <div class="panel" role="tabpanel" id="use-dsh" aria-labelledby="tab-dsh" tabindex="0">
-              <p class="panel-head"><b class="panel-name">DeepSeek Harness</b><span class="status"><i class="dot dot-wip"></i><span data-i18n="st.repo">可从仓库目录安装</span></span></p>
-              <p class="panel-flag" data-i18n="u3.flag">可从仓库目录安装；npm 包即将上线；还没接真实 DeepSeek 模型实测。</p>
-              <p class="panel-body" data-i18n="u3.body">装上后，模型照着 skill 写分镜，校验、出片、核对都调插件的 7 个工具完成：查环境、装依赖、列配方与行业、读说明、校验分镜、后台出片带进度、核对成片。需要 dsh 0.1.7-rc.2 或更高的 0.1.x、Node.js 22.19+ 的 22.x 或 24+，以及 pnpm。</p>
+              <p class="panel-head"><b class="panel-name">DeepSeek Harness</b><span class="status"><i class="dot dot-wip"></i><span data-i18n="st.npm">已发布到 npm</span></span></p>
+              <p class="panel-flag" data-i18n="u3.flag">已发布到 npm。插件还没接真实 DeepSeek 模型实测，遇到问题请开 issue。</p>
+              <p class="panel-body" data-i18n="u3.body">装上后，模型照着 skill 写分镜，校验、出片、核对都调插件的 7 个工具完成：查环境、装依赖、列配方与行业、读说明、校验分镜、后台出片带进度、核对成片。需要 dsh 0.1.7-rc.2 或更高的 0.1.x（npm 上 dsh 的 <code>latest</code> 标签目前还指向更早的 0.1.5-rc.3，所以安装时要写明版本号）、Node.js 22.19+ 的 22.x 或 24+，以及 pnpm。</p>
               <div class="code">
                 <pre><code>npm install -g @deepseek-ai/dsh@0.1.7-rc.2 pnpm    <span class="c" data-i18n="code.dshComment"># 还没装 dsh 时</span>
-git clone https://github.com/Finderchangchang/brewreel.git
-dsh plugin --profile web add ./brewreel/integrations/deepseek-harness
+dsh plugin --profile web add dsh-brewreel
 dsh web</code></pre>
                 <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="dsh" aria-label="复制命令" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">复制</span></button>
               </div>
-              <p class="panel-note" data-i18n="u3.note">第三条命令在 clone 的上一级目录执行，<code>web</code> 可以换成你自己的 profile 名。初次使用时对模型说「检查一下视频插件环境」，它会调 doctor，经你同意后再调 setup 装渲染依赖。</p>
+              <p class="panel-note" data-i18n="u3.note"><code>web</code> 可以换成你自己的 profile 名，profile 已经在运行的要重启才生效。初次使用时对模型说「检查一下视频插件环境」，它会调 doctor，经你同意后再调 setup 装渲染依赖。想用仓库里还没发版的代码，可以 clone 后在上一级目录执行 <code>dsh plugin --profile web add ./brewreel/integrations/deepseek-harness</code>。</p>
               <p class="panel-link"><a class="link-arrow" href="https://github.com/Finderchangchang/brewreel/tree/main/integrations/deepseek-harness" target="_blank" rel="noopener" data-umami-event="click-dsh" data-umami-event-pos="start"><span data-i18n="u3.link">插件说明</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
             </div>
           </div>
@@ -320,12 +320,15 @@ dsh web</code></pre>
             <div><dt data-i18n="env.out">成片</dt><dd data-i18n="env.outv">1080×1920（journey 默认 1080×1350），30 fps，带配乐和音效</dd></div>
           </dl>
         </div>
-        <div class="card soon rv">
-          <h3 class="card-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-flask"/></svg><span data-i18n="soon.title">即将上线</span></h3>
-          <ul class="soon-list">
-            <li data-i18n="soon.npm">npm 包 <code>dsh-brewreel</code></li>
-            <li data-i18n="soon.voice">配音：MiniMax 语音 + 逐字字幕</li>
-          </ul>
+        <div class="card voice rv">
+          <h3 class="card-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg><span data-i18n="voice.title">可选：加配音</span></h3>
+          <p class="voice-d" data-i18n="voice.d">分镜里写 <code>meta.voice</code> 和每镜的 <code>vo</code>，再设好所选服务商的环境变量：</p>
+          <dl class="voice-keys">
+            <div><dt>MiniMax</dt><dd><code>MINIMAX_API_KEY</code></dd></div>
+            <div><dt data-i18n="voice.p2">阿里云</dt><dd><code>DASHSCOPE_API_KEY</code></dd></div>
+            <div><dt data-i18n="voice.p3">火山引擎</dt><dd><code>VOLCENGINE_TTS_API_KEY</code></dd></div>
+          </dl>
+          <p class="voice-d" data-i18n="voice.mock">没有 key 时出片加 <code class='nw'>--voice-provider mock</code> 用占位音看节奏（不能当成片交付），加 <code class='nw'>--no-voice</code> 出无配音版。</p>
         </div>
       </aside>
     </div>
@@ -396,6 +399,7 @@ dsh web</code></pre>
       <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-gate"/></svg><div><h4 data-i18n="how.f2">有 ✗ 就不交付</h4><p data-i18n="how.f2d">版式、空帧、英文片混进汉字，任何一项自查不过就不交付；每支片带 <code>manifest.json</code>，绑定分镜。</p></div></li>
       <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-music"/></svg><div><h4 data-i18n="how.f3">配乐现场合成</h4><p data-i18n="how.f3d">代码现场合成原创配乐，按镜头切点卡拍，响度统一到 -16 LUFS，没有版权问题。</p></div></li>
       <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lang"/></svg><div><h4 data-i18n="how.f4">中英双语</h4><p data-i18n="how.f4d">文档双语；字幕可选中文或英文，英文片每半拍扫一次画面，混进汉字就不交付。</p></div></li>
+      <li class="feat-wide"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg><div><h4 data-i18n="how.fv">配音：三家任选</h4><p data-i18n="how.fvd">分镜里写 <code>meta.voice</code>、每镜写一句 <code>vo</code> 就带配音，MiniMax / 阿里云 / 火山引擎三家可选。镜头时长跟着旁白走，字幕逐字点亮，配乐在人声处自动压低约 10 dB；同一句只合成一次，改画面、重渲染不再计费。</p></div></li>
     </ul>
 
     <p class="sec-next"><a class="link-arrow" href="#industries"><span data-i18n="how.next">看六个行业包</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
@@ -495,6 +499,8 @@ dsh web</code></pre>
 
     <ul class="lim-list rv">
       <li data-i18n="lim.1"><strong>quiz / journey 修复后还没重测：</strong>两个配方各测了 3 支，修了评审列出的问题，样例分镜都重新通过了校验和出片检查；但便宜模型还没重新写一轮打分，公开的分数仍是修复前的。journey 的配乐和音效还没有人工试听。</li>
+      <li data-i18n="lim.v1"><strong>阿里云、火山引擎配音还没用真实 key 实测：</strong>两家按官方文档接入，用照文档造的假响应做了单测；时间戳字段的嵌套位置、默认音色能不能用，要等初次真实调用确认。MiniMax 已用真实 key 出过三种配方的样片。</li>
+      <li data-i18n="lim.v2"><strong>真人念得比估算慢：</strong>校验按中文每秒 5 字估算，MiniMax 真人实测约每秒 4 字，校验通过的长句出片时可能被拦下（会告诉你第几镜要删几个字）。写旁白按每秒 4 字留余量。</li>
       <li data-i18n="lim.2"><strong>没有实拍就只能插画：</strong>全程没有商家实拍照片时，画面靠组件和插画兜底，行业片会明显吃亏。</li>
       <li data-i18n="lim.3"><strong>DeepSeek Harness 插件还没接真实 DeepSeek 模型实测。</strong></li>
       <li data-i18n="lim.4"><strong>不做的品类：</strong>医疗美容、处方药 / 药品、K12 学科培训、保健品功效宣称、烟草。</li>
@@ -573,7 +579,7 @@ dsh web</code></pre>
       <details><summary><span data-i18n="faq.qLic">可以商用吗？要注明出处吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a"><div data-i18n="faq.aLic"><p>可以商用。项目以 Apache-2.0 开源，个人和公司都可以使用、修改、再分发，或集成进自己的产品，不需要付费或事先授权。再分发或二次开发请保留 LICENSE、NOTICE，并注明出处，推荐写法：</p></div><div class="attr"><code id="attrText" data-i18n="lic.attr">基于 精酿 BrewReel（https://github.com/Finderchangchang/brewreel）二次开发</code><button class="copy copy-inline" type="button" data-copy-from="#attrText" aria-label="复制推荐写法" data-i18n-attr="aria-label:a.copyAttr"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">复制</span></button></div><div data-i18n="faq.aLic2"><p><strong>用它做出的视频不要求署名。</strong>别用「精酿」「BrewReel」名称或 brewreel.com 暗示由原作者出品或背书。渲染依赖的 Remotion 另有许可，见下一条。</p></div></div></details>
       <details><summary><span data-i18n="faq.q6">Remotion 要授权吗？升级到 5.0 要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a6"><p>Remotion 是源码可见、非开源的软件：个人、3 人及以下的营利公司、非营利组织可免费使用（含商用）；<strong>4 人及以上的营利组织需要购买 Remotion 的 Company License</strong>，详见 <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>。本仓库的 Apache-2.0 不改变 Remotion 自己的许可条件。</p><p>本仓库把 <code>remotion</code> / <code>@remotion/cli</code> 钉在 <code>4.0.529</code>。升级到 5.0 后，Remotion 免费层需要在配置里传 <code>licenseKey</code>（个人 / 3 人以下公司 / 非营利填 <code>free-license</code>），升级前请先看 <code>THIRD_PARTY_LICENSES.md</code>。</p></div></details>
       <details><summary><span data-i18n="faq.q1">背景音乐是怎么来的？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a1"><p><code>scripts/make_bgm.py</code> 用 numpy / scipy 现场合成：乐器、和声、旋律、混音、母带都在脚本里，不用外部素材库。每个镜头一个段落，音符落在整拍 / 半拍，镜头切换处有镲或加花，所以音乐是卡着镜头走的；响度校到 -16 LUFS。</p><p>因为是现场合成的，没有版权问题。正式发抖音这类平台时，也可以出片时加 <code class='nw'>--no-bgm</code> 出静音版，再在平台里配乐。</p></div></details>
-      <details><summary><span data-i18n="faq.q2">有没有配音？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a2"><p>配音即将上线：MiniMax 语音 + 逐字字幕，进展见<a href='https://github.com/Finderchangchang/brewreel/blob/main/CHANGELOG.md' target='_blank' rel='noopener'>更新日志</a>。用 AI 配音发布时，记得按平台要求勾选 AI 生成内容声明。</p></div></details>
+      <details><summary><span data-i18n="faq.q2">有没有配音？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a2"><p>有。v0.5.0 起接了 MiniMax 语音合成，v0.5.1 起也可以用阿里云（百炼 CosyVoice）和火山引擎（豆包语音）。分镜里写 <code>meta.voice</code> 和每镜的 <code>vo</code>，设好对应的环境变量（<code>MINIMAX_API_KEY</code> / <code>DASHSCOPE_API_KEY</code> / <code>VOLCENGINE_TTS_API_KEY</code>）后出片即可；镜头时长跟着旁白走，字幕逐字点亮，配乐在人声处自动压低。没有 key 时加 <code class='nw'>--voice-provider mock</code> 用占位音预览节奏。不写 <code>meta.voice</code> 就和以前一样没有配音。用 AI 配音发布时，记得按平台要求勾选 AI 生成内容声明。</p></div></details>
       <details><summary><span data-i18n="faq.q3">为什么画面是插画，不是实拍？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a3"><p>项目不生成「看起来像真实拍摄」的拟真图片。没有商家素材时，画面用组件和简笔插画兜底，并明确标注，不冒充实拍。有商家实拍照片（门店、成品、价目表）时，用实拍镜头放进去，可信度会好很多；照片是否授权会列进「需人工复核」。</p></div></details>
       <details><summary><span data-i18n="faq.q7">Chrome Headless Shell 下载失败？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a7"><p>国内网络环境下 <code>npx remotion browser ensure</code> 可能连不上 Google 的下载地址。可以手动下载后用 <code class='nw'>--browser-executable</code> 指定本地 Chrome / Chromium 路径（不同 Chrome 版本渲染结果可能有细微差异）。</p></div></details>
       <details><summary><span data-i18n="faq.q8">Windows 上要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a8"><p>只支持 x64。环境变量用 PowerShell 写法 <code>$env:LLM_API_KEY="..."</code>，不是 <code>export</code>。分镜一律用文件路径传入，不要在命令行拼 JSON（Windows shell 会吃掉引号）。<code>make.mjs</code> 在 Windows 上调 <code>python</code>，装在别处的，设环境变量 <code>PYTHON</code> 指过去。</p></div></details>
@@ -588,7 +594,7 @@ dsh web</code></pre>
     <h2 class="closing-title" id="closing-title" data-i18n="end.title">便宜模型，也能酿出好片。</h2>
     <p class="closing-sub" data-i18n="end.sub">开源、可商用。点个 Star，新配方上线时不错过。</p>
     <div class="cta-row cta-center">
-      <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="closing"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>54</b></span></a>
+      <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="closing"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>55</b></span></a>
       <button class="btn btn-ghost" type="button" data-copy-from="#quickstart pre" data-umami-event="copy-install" data-umami-event-block="closing"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="end.copy">复制快速开始命令</span></button>
     </div>
     <div class="feedback">
@@ -672,7 +678,7 @@ dsh web</code></pre>
     <div class="demo-frame">
       <video id="demoVideo" controls playsinline preload="none" data-poster="assets/poster.webp" width="1080" height="1920" aria-label="完整演示视频：三种配方的实际渲染效果" data-i18n-attr="aria-label:a.video"><source src="assets/demo.mp4" type="video/mp4"></video>
     </div>
-    <p class="demo-cap" data-i18n="dlg.cap">三种配方的实际渲染效果，约 50 秒，有声。产品和数据都是虚构的。</p>
+    <p class="demo-cap" data-i18n="dlg.cap">三种配方的实际渲染效果，约 50 秒，有配乐和音效（这支演示没有配音）。产品和数据都是虚构的。</p>
   </div>
 </dialog>
 

@@ -48,15 +48,30 @@ grep -rnFf <仓库外的禁词清单.txt> --include=*.html --include=*.js --incl
 grep -n 'src="/\|href="/' index.html   # 本地资源必须是相对路径，应当没有输出
 ```
 
-## 上线状态变化时要改的地方
+## 功能状态（以 GitHub 上已提交的 README 为准）
 
-npm 包 `dsh-brewreel` 和配音现在按「即将上线」写。确认它们正式对外可用后，改这些键（中英都改）：
+页面上每个功能的「可用 / 已发布 / 开发中」照仓库 README 写，读 **已提交** 的版本，不要读工作区里别人没提交的改动：
 
-| 位置 | 键 |
-|---|---|
-| 「上手」右栏「即将上线」卡 | `soon.title`、`soon.npm`、`soon.voice`（上线的那项删掉；两项都上线就把整张卡和键一起删） |
-| DeepSeek Harness 标签页 | `st.repo`、`u3.flag`、`u3.note`，以及 `index.html` 里那段 dsh 安装命令（改成 `dsh plugin --profile web add dsh-brewreel`） |
-| 常见问题「有没有配音」 | `faq.a2` |
+```bash
+git -C <brewreel 仓库> show HEAD:README.md
+git -C <brewreel 仓库> show HEAD:README.en.md
+```
+
+当前状态（v0.5.1）和它们在页面上的位置：
+
+| 功能 | README 里的状态 | 页面位置 / 键 |
+|---|---|---|
+| 装成 skill、无头脚本 | ✅ 可用 | 「上手」标签页，`st.ready`、`u1.*`、`u2.*` |
+| DeepSeek Harness 插件 `dsh-brewreel` | ⚠️ 已发布到 npm，还没接真实 DeepSeek 模型实测 | 「上手」第三个标签：`st.npm`、`u3.flag`、`u3.body`、`u3.note`，安装命令在 `index.html` 的 `#use-dsh` 里 |
+| 配音（MiniMax / 阿里云 / 火山引擎） | 已发布；阿里云、火山引擎还没用真实 key 实测 | 「怎么酿」功能格 `how.fv*`；「上手」右栏 `voice.*`；常见问题 `faq.a2`；诚实区 `lim.v1`、`lim.v2` |
+| `blueprint` 配方 | 开发中 | **不上页面**，正式可用后按下面「加一个配方」加 |
+
+状态变化时：
+
+- **新功能正式可用**：写进功能介绍（「怎么酿」功能格或对应章节）和常见问题；README「已知限制」里和它相关的条目同步进诚实区（`lim.*`，HTML 里 `.lim-list` 加 `<li>`）。
+- **还没发布但要预告**：只能写「即将上线」。上一版页面有过「即将上线」卡片，现在两项都已上线，卡片已删掉；需要时参考「上手」右栏卡片的写法加回去。
+- **限制解除**（比如阿里云配音用真实 key 测过了）：从诚实区删掉对应的 `lim.*` 键和 `<li>`，同时改功能介绍里「还没实测」的说法。
+- 改完跑 `node tools/check-i18n.mjs`。
 
 ## 加一个配方
 
@@ -94,7 +109,7 @@ ffmpeg -i reel-<id>.mp4 -frames:v 1 poster.png   # 取首帧当海报，再转 w
 - Star 数同理：`<b data-brew-stars>`（导航、首屏、收尾三处）实时拉，兜底值是写页面时的真实数字，隔段时间更新一次。
 - 两个请求结果在访客浏览器里缓存 30 分钟（`localStorage` 的 `brewreel-gh`）。
 
-**缓存版本号**：改了 `style.css`、`main.js`、`i18n.js` 任意一个，把 `index.html` 里三处 `?v=20260927b` 一起改成新的（日期 + 字母），否则回访用户会拿到旧文件。
+**缓存版本号**：改了 `style.css`、`main.js`、`i18n.js` 任意一个，把 `index.html` 里三处 `?v=20260927c` 一起改成新的（日期 + 字母），否则回访用户会拿到旧文件。
 
 ## Umami 事件
 
