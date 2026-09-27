@@ -105,7 +105,7 @@
         <svg class="ico ico-sun" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
         <svg class="ico ico-moon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
       </button>
-      <a class="nav-star" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="nav" aria-label="在 GitHub 上给精酿点 Star" title="在 GitHub 上给精酿点 Star" data-i18n-attr="aria-label:a.star;title:a.star"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span class="nav-star-text">Star</span><b data-brew-stars>50</b></a>
+      <a class="nav-star" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="nav" aria-label="在 GitHub 上给精酿点 Star" title="在 GitHub 上给精酿点 Star" data-i18n-attr="aria-label:a.star;title:a.star"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span class="nav-star-text">Star</span><b data-brew-stars>54</b></a>
       <button class="icon-btn burger" id="burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navMenu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
     </div>
   </div>
@@ -123,7 +123,7 @@
 
       <div class="cta-row">
         <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="hero">
-          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>50</b></span>
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>54</b></span>
         </a>
         <a class="btn btn-ghost" href="assets/demo.mp4" data-demo-open data-demo-at="0"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"/></svg><span data-i18n="hero.demo">看完整演示（有声）</span></a>
       </div>
@@ -247,7 +247,7 @@ node scripts/validate.mjs examples/ledger.json
 node scripts/make.mjs examples/ledger.json --out ../brewreel-out/ledger</code></pre>
             <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="quickstart" aria-label="复制命令" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">复制</span></button>
           </div>
-          <p class="step-note" data-i18n="start.qd"><code>npm install</code> 装渲染引擎，<code>npx remotion browser ensure</code> 下载一次 Chrome Headless Shell。校验那条通过就说明装好了；出片那条要几分钟，终端末行出现「交付：&lt;mp4 路径&gt;」才算出片。<code>--out</code> 不能指向仓库里面。</p>
+          <p class="step-note" data-i18n="start.qd"><code>npm install</code> 装渲染引擎，<code>npx remotion browser ensure</code> 下载一次 Chrome Headless Shell。校验那条通过就说明装好了；出片那条要几分钟，终端末行出现「交付：&lt;mp4 路径&gt;」才算出片。<code class='nw'>--out</code> 不能指向仓库里面。</p>
         </div>
 
         <div class="step rv">
@@ -288,7 +288,7 @@ export LLM_MODEL=deepseek-chat
 python scripts/llm_make.py path/to/brief.md</code></pre>
                 <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="script" aria-label="复制命令" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">复制</span></button>
               </div>
-              <p class="panel-note" data-i18n="u2.note">Windows PowerShell 用 <code>$env:LLM_API_KEY="..."</code> 代替 <code>export</code>。以上都是占位符，换成你自己的 key；不要把 key 提交进仓库或写进 issue。加 <code>--dry-run</code> 不调接口、不读密钥，只把拼好的提示写出来并估算 token 数。</p>
+              <p class="panel-note" data-i18n="u2.note">Windows PowerShell 用 <code>$env:LLM_API_KEY="..."</code> 代替 <code>export</code>。以上都是占位符，换成你自己的 key；不要把 key 提交进仓库或写进 issue。加 <code class='nw'>--dry-run</code> 不调接口、不读密钥，只把拼好的提示写出来并估算 token 数。</p>
             </div>
 
             <div class="panel" role="tabpanel" id="use-dsh" aria-labelledby="tab-dsh" tabindex="0">
@@ -465,7 +465,7 @@ dsh web</code></pre>
         <p class="stamp" data-i18n="lim.tag">预览版</p>
         <p class="verdict-text" data-i18n="lim.verdict">目前还不建议把成片不经人工修改直接对外发布。</p>
         <p class="verdict-sub" data-i18n="lim.verdictSub">测试和修复仍在进行中。把成片当初稿：看完整片再改再发，不要只看校验通过就发。</p>
-        <p class="advice" data-i18n="lim.advice"><strong>建议用法：</strong>行业片尽量配商家实拍照片，出片时传 <code>--brief &lt;简报&gt;</code>，交付前把画面上每个价格、条件、日期、营业时间、距离逐条和简报对一遍。</p>
+        <p class="advice" data-i18n="lim.advice"><strong>建议用法：</strong>行业片尽量配商家实拍照片，出片时传 <code class='nw'>--brief &lt;简报&gt;</code>，交付前把画面上每个价格、条件、日期、营业时间、距离逐条和简报对一遍。</p>
       </div>
 
       <figure class="score rv">
@@ -572,10 +572,10 @@ dsh web</code></pre>
       <details><summary><span data-i18n="faq.q5">要花钱吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a5"><p>本项目免费开源。模型调用用你自己的 API Key，按用量在服务商那边结算，项目不经手任何费用；渲染在你自己的电脑上跑。渲染引擎 Remotion 对 4 人及以上的营利组织收费，见下面 Remotion 那一条。</p></div></details>
       <details><summary><span data-i18n="faq.qLic">可以商用吗？要注明出处吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a"><div data-i18n="faq.aLic"><p>可以商用。项目以 Apache-2.0 开源，个人和公司都可以使用、修改、再分发，或集成进自己的产品，不需要付费或事先授权。再分发或二次开发请保留 LICENSE、NOTICE，并注明出处，推荐写法：</p></div><div class="attr"><code id="attrText" data-i18n="lic.attr">基于 精酿 BrewReel（https://github.com/Finderchangchang/brewreel）二次开发</code><button class="copy copy-inline" type="button" data-copy-from="#attrText" aria-label="复制推荐写法" data-i18n-attr="aria-label:a.copyAttr"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">复制</span></button></div><div data-i18n="faq.aLic2"><p><strong>用它做出的视频不要求署名。</strong>别用「精酿」「BrewReel」名称或 brewreel.com 暗示由原作者出品或背书。渲染依赖的 Remotion 另有许可，见下一条。</p></div></div></details>
       <details><summary><span data-i18n="faq.q6">Remotion 要授权吗？升级到 5.0 要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a6"><p>Remotion 是源码可见、非开源的软件：个人、3 人及以下的营利公司、非营利组织可免费使用（含商用）；<strong>4 人及以上的营利组织需要购买 Remotion 的 Company License</strong>，详见 <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>。本仓库的 Apache-2.0 不改变 Remotion 自己的许可条件。</p><p>本仓库把 <code>remotion</code> / <code>@remotion/cli</code> 钉在 <code>4.0.529</code>。升级到 5.0 后，Remotion 免费层需要在配置里传 <code>licenseKey</code>（个人 / 3 人以下公司 / 非营利填 <code>free-license</code>），升级前请先看 <code>THIRD_PARTY_LICENSES.md</code>。</p></div></details>
-      <details><summary><span data-i18n="faq.q1">背景音乐是怎么来的？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a1"><p><code>scripts/make_bgm.py</code> 用 numpy / scipy 现场合成：乐器、和声、旋律、混音、母带都在脚本里，不用外部素材库。每个镜头一个段落，音符落在整拍 / 半拍，镜头切换处有镲或加花，所以音乐是卡着镜头走的；响度校到 -16 LUFS。</p><p>因为是现场合成的，没有版权问题。正式发抖音这类平台时，也可以出片时加 <code>--no-bgm</code> 出静音版，再在平台里配乐。</p></div></details>
+      <details><summary><span data-i18n="faq.q1">背景音乐是怎么来的？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a1"><p><code>scripts/make_bgm.py</code> 用 numpy / scipy 现场合成：乐器、和声、旋律、混音、母带都在脚本里，不用外部素材库。每个镜头一个段落，音符落在整拍 / 半拍，镜头切换处有镲或加花，所以音乐是卡着镜头走的；响度校到 -16 LUFS。</p><p>因为是现场合成的，没有版权问题。正式发抖音这类平台时，也可以出片时加 <code class='nw'>--no-bgm</code> 出静音版，再在平台里配乐。</p></div></details>
       <details><summary><span data-i18n="faq.q2">有没有配音？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a2"><p>配音即将上线：MiniMax 语音 + 逐字字幕，进展见<a href='https://github.com/Finderchangchang/brewreel/blob/main/CHANGELOG.md' target='_blank' rel='noopener'>更新日志</a>。用 AI 配音发布时，记得按平台要求勾选 AI 生成内容声明。</p></div></details>
       <details><summary><span data-i18n="faq.q3">为什么画面是插画，不是实拍？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a3"><p>项目不生成「看起来像真实拍摄」的拟真图片。没有商家素材时，画面用组件和简笔插画兜底，并明确标注，不冒充实拍。有商家实拍照片（门店、成品、价目表）时，用实拍镜头放进去，可信度会好很多；照片是否授权会列进「需人工复核」。</p></div></details>
-      <details><summary><span data-i18n="faq.q7">Chrome Headless Shell 下载失败？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a7"><p>国内网络环境下 <code>npx remotion browser ensure</code> 可能连不上 Google 的下载地址。可以手动下载后用 <code>--browser-executable</code> 指定本地 Chrome / Chromium 路径（不同 Chrome 版本渲染结果可能有细微差异）。</p></div></details>
+      <details><summary><span data-i18n="faq.q7">Chrome Headless Shell 下载失败？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a7"><p>国内网络环境下 <code>npx remotion browser ensure</code> 可能连不上 Google 的下载地址。可以手动下载后用 <code class='nw'>--browser-executable</code> 指定本地 Chrome / Chromium 路径（不同 Chrome 版本渲染结果可能有细微差异）。</p></div></details>
       <details><summary><span data-i18n="faq.q8">Windows 上要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a8"><p>只支持 x64。环境变量用 PowerShell 写法 <code>$env:LLM_API_KEY="..."</code>，不是 <code>export</code>。分镜一律用文件路径传入，不要在命令行拼 JSON（Windows shell 会吃掉引号）。<code>make.mjs</code> 在 Windows 上调 <code>python</code>，装在别处的，设环境变量 <code>PYTHON</code> 指过去。</p></div></details>
     </div>
   </div>
@@ -588,12 +588,12 @@ dsh web</code></pre>
     <h2 class="closing-title" id="closing-title" data-i18n="end.title">便宜模型，也能酿出好片。</h2>
     <p class="closing-sub" data-i18n="end.sub">开源、可商用。点个 Star，新配方上线时不错过。</p>
     <div class="cta-row cta-center">
-      <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="closing"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>50</b></span></a>
+      <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="closing"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">在 GitHub 上 Star</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>54</b></span></a>
       <button class="btn btn-ghost" type="button" data-copy-from="#quickstart pre" data-umami-event="copy-install" data-umami-event-block="closing"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="end.copy">复制快速开始命令</span></button>
     </div>
-    <div class="ask">
-      <p class="ask-lead" data-i18n="ct.lead">想听真实需求：你想给什么产品做片？缺哪种配方、哪个行业？哪条合规规则误伤了你？公众号私信或开 issue 都行。</p>
-      <p class="ask-issues"><span data-i18n="ct.issues">误伤或漏拦的校验规则、渲染出错、看着别扭的画面，附上分镜 JSON 和报错最好。<strong>别贴 API Key。</strong></span></p>
+    <div class="feedback">
+      <p class="fb-lead" data-i18n="ct.lead">想听真实需求：你想给什么产品做片？缺哪种配方、哪个行业？哪条合规规则误伤了你？公众号私信或开 issue 都行。</p>
+      <p class="fb-issues"><span data-i18n="ct.issues">误伤或漏拦的校验规则、渲染出错、看着别扭的画面，能附上分镜 JSON 和报错就更好。<strong>别贴 API Key。</strong></span></p>
       <p><a class="link-arrow" href="https://github.com/Finderchangchang/brewreel/issues" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="issues"><span data-i18n="ct.issuesLink">提一个 Issue</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
     </div>
   </div>

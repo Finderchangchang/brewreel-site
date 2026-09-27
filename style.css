@@ -310,7 +310,19 @@ html:not([lang="en"]) .lang-btn [data-l="zh"], html[lang="en"] .lang-btn [data-l
 .nav-star:hover { background: var(--btn-bg-hover); }
 .nav-star .ico { width: 16px; height: 16px; }
 .nav-star b { padding-left: 7px; border-left: 1px solid var(--btn-chip); }
-@media (max-width: 419px) { .nav-star-text { display: none; } .nav-star b { padding-left: 0; border-left: 0; } .lang-btn { padding: 0 10px; } }
+@media (max-width: 419px) {
+  .nav-inner { gap: 8px; }
+  .nav-actions { gap: 6px; }
+  .brand { gap: 8px; font-size: 16px; }
+  .brand-mark { width: 30px; height: 30px; }
+  .icon-btn { width: 34px; height: 34px; }
+  .lang-btn, .nav-star { height: 34px; }
+  .lang-btn { padding: 0 8px; font-size: 12.5px; gap: 3px; }
+  .nav-star { padding: 0 10px; }
+  .nav-star-text { display: none; }
+  .nav-star b { padding-left: 0; border-left: 0; }
+  html[lang="en"] .eyebrow-ver { display: none; }
+}
 .burger { display: inline-grid; }
 
 @media (min-width: 960px) {
@@ -375,7 +387,7 @@ html[lang="en"] .lead { max-width: 62ch; }
 
 .eyebrow {
   display: inline-flex; align-items: center; flex-wrap: wrap; gap: 10px;
-  padding: 5px 14px; border-radius: 999px;
+  padding: 5px 14px; border-radius: 16px;
   border: 1px solid var(--line-2); background: var(--card);
   color: var(--ink-2); font-size: 13.5px; line-height: 1.6;
 }
@@ -842,10 +854,10 @@ html[lang="en"] .tiers li { grid-template-columns: 9.6em minmax(0, 1fr); }
 .closing-sub { margin: 12px 0 28px; color: var(--ink-2); font-size: 17px; max-width: 34em; }
 .closing .btn-ghost .ico { width: 17px; height: 17px; }
 .closing .btn-ghost.done { border-color: var(--code-ok); color: var(--code-ok); }
-.ask { max-width: 40em; margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
-.ask-lead { color: var(--ink); font-weight: 600; }
-.ask-issues { margin: 6px 0 10px; }
-.ask-issues strong { color: var(--ink); }
+.feedback { max-width: 40em; margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
+.fb-lead { color: var(--ink); font-weight: 600; }
+.fb-issues { margin: 6px 0 10px; }
+.fb-issues strong { color: var(--ink); }
 
 /* ---------- 15. 页脚（含公众号、赞赏码） ---------- */
 .foot { padding: 56px 0 32px; font-size: 14.5px; }
@@ -896,3 +908,6 @@ html[lang="en"] .foot-h { text-transform: uppercase; font-size: 12px; }
   .nav, .hero-flight, .closing, .copy, .demo { display: none !important; }
   .rv { opacity: 1 !important; transform: none !important; }
 }
+
+/* 行内的短命令参数（--out、--brief 等）不在连字符处断行 */
+code.nw { white-space: nowrap; }

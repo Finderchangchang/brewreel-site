@@ -1,4 +1,4 @@
-/* 精酿 · BrewReel 官网文案：中英两套字典，全站唯一来源。
+/* 精酿 · BrewReel 官网文案：中英两套字典，全站单一来源。
  * - data-i18n="key"        → 元素 innerHTML（可以含 <code> <strong> <a> 等标签）
  * - data-i18n-attr="a:key" → 元素属性（纯文本）
  * - main.js 里 t("key") 用到的键（按钮状态等）也在这里
@@ -141,7 +141,7 @@ window.BREW_I18N = {
     "start.lead": "先把渲染环境装好、跑通仓库自带的样例，再挑一种方式让模型写分镜。",
     "start.q": "装依赖，跑个样例",
     "code.quick": "git clone https://github.com/Finderchangchang/brewreel.git\ncd brewreel/template &amp;&amp; npm install &amp;&amp; npx remotion browser ensure\ncd .. &amp;&amp; pip install numpy scipy\nnode scripts/validate.mjs examples/ledger.json\nnode scripts/make.mjs examples/ledger.json --out ../brewreel-out/ledger",
-    "start.qd": "<code>npm install</code> 装渲染引擎，<code>npx remotion browser ensure</code> 下载一次 Chrome Headless Shell。校验那条通过就说明装好了；出片那条要几分钟，终端末行出现「交付：&lt;mp4 路径&gt;」才算出片。<code>--out</code> 不能指向仓库里面。",
+    "start.qd": "<code>npm install</code> 装渲染引擎，<code>npx remotion browser ensure</code> 下载一次 Chrome Headless Shell。校验那条通过就说明装好了；出片那条要几分钟，终端末行出现「交付：&lt;mp4 路径&gt;」才算出片。<code class='nw'>--out</code> 不能指向仓库里面。",
     "start.s3": "让 AI 写分镜，三选一",
     "a.tabs": "三种用法",
     "tab.skill": "装成 skill",
@@ -156,7 +156,7 @@ window.BREW_I18N = {
     "code.claudeDs": "export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nexport ANTHROPIC_AUTH_TOKEN=&lt;你的 DeepSeek API Key&gt;\nexport ANTHROPIC_MODEL=deepseek-flash[1m]",
     "u2.body": "脚本直接调 OpenAI 兼容接口（默认 DeepSeek）：简报进、视频出，校验报错会原样回喂给模型重试，至多 3 次。",
     "code.script": "export LLM_API_KEY=&lt;你的 DeepSeek API Key&gt;\nexport LLM_BASE_URL=https://api.deepseek.com\nexport LLM_MODEL=deepseek-chat\npython scripts/llm_make.py path/to/brief.md",
-    "u2.note": "Windows PowerShell 用 <code>$env:LLM_API_KEY=\"...\"</code> 代替 <code>export</code>。以上都是占位符，换成你自己的 key；不要把 key 提交进仓库或写进 issue。加 <code>--dry-run</code> 不调接口、不读密钥，只把拼好的提示写出来并估算 token 数。",
+    "u2.note": "Windows PowerShell 用 <code>$env:LLM_API_KEY=\"...\"</code> 代替 <code>export</code>。以上都是占位符，换成你自己的 key；不要把 key 提交进仓库或写进 issue。加 <code class='nw'>--dry-run</code> 不调接口、不读密钥，只把拼好的提示写出来并估算 token 数。",
     "u3.flag": "可从仓库目录安装；npm 包即将上线；还没接真实 DeepSeek 模型实测。",
     "u3.body": "装上后，模型照着 skill 写分镜，校验、出片、核对都调插件的 7 个工具完成：查环境、装依赖、列配方与行业、读说明、校验分镜、后台出片带进度、核对成片。需要 dsh 0.1.7-rc.2 或更高的 0.1.x、Node.js 22.19+ 的 22.x 或 24+，以及 pnpm。",
     "code.dshComment": "# 还没装 dsh 时",
@@ -209,7 +209,7 @@ window.BREW_I18N = {
     "lim.p6": "<strong>核心动作不强制演示：</strong>工具类产品「点开始」这样的核心动作，可能被演成一个不相关的界面。",
     "lim.p7": "<strong>版式：</strong>深色主题上品牌色数字的对比度可能不够；内容少时部分面板下半截留白。",
     "lim.p8": "<strong>英文和素材检查的覆盖面：</strong>行业合规词表按中文写，英文查得没有中文全；素材只能在文件层面查。",
-    "lim.advice": "<strong>建议用法：</strong>行业片尽量配商家实拍照片，出片时传 <code>--brief &lt;简报&gt;</code>，交付前把画面上每个价格、条件、日期、营业时间、距离逐条和简报对一遍。",
+    "lim.advice": "<strong>建议用法：</strong>行业片尽量配商家实拍照片，出片时传 <code class='nw'>--brief &lt;简报&gt;</code>，交付前把画面上每个价格、条件、日期、营业时间、距离逐条和简报对一遍。",
     "lim.readme": "各轮测试方法和结果，见 README 的<a href='https://github.com/Finderchangchang/brewreel#已知限制' target='_blank' rel='noopener'>「已知限制」</a>。",
     "lim.next": "发现误伤或漏拦的规则？提一个 issue",
 
@@ -241,7 +241,7 @@ window.BREW_I18N = {
     "faq.title": "开酿之前，<br>常被问到的",
     "faq.more": "没找到答案？<a href='https://github.com/Finderchangchang/brewreel/issues' target='_blank' rel='noopener'>提一个 issue</a>，或公众号私信。",
     "faq.q1": "背景音乐是怎么来的？",
-    "faq.a1": "<p><code>scripts/make_bgm.py</code> 用 numpy / scipy 现场合成：乐器、和声、旋律、混音、母带都在脚本里，不用外部素材库。每个镜头一个段落，音符落在整拍 / 半拍，镜头切换处有镲或加花，所以音乐是卡着镜头走的；响度校到 -16 LUFS。</p><p>因为是现场合成的，没有版权问题。正式发抖音这类平台时，也可以出片时加 <code>--no-bgm</code> 出静音版，再在平台里配乐。</p>",
+    "faq.a1": "<p><code>scripts/make_bgm.py</code> 用 numpy / scipy 现场合成：乐器、和声、旋律、混音、母带都在脚本里，不用外部素材库。每个镜头一个段落，音符落在整拍 / 半拍，镜头切换处有镲或加花，所以音乐是卡着镜头走的；响度校到 -16 LUFS。</p><p>因为是现场合成的，没有版权问题。正式发抖音这类平台时，也可以出片时加 <code class='nw'>--no-bgm</code> 出静音版，再在平台里配乐。</p>",
     "faq.q2": "有没有配音？",
     "faq.a2": "<p>配音即将上线：MiniMax 语音 + 逐字字幕，进展见<a href='https://github.com/Finderchangchang/brewreel/blob/main/CHANGELOG.md' target='_blank' rel='noopener'>更新日志</a>。用 AI 配音发布时，记得按平台要求勾选 AI 生成内容声明。</p>",
     "faq.q3": "为什么画面是插画，不是实拍？",
@@ -256,12 +256,12 @@ window.BREW_I18N = {
     "faq.q6": "Remotion 要授权吗？升级到 5.0 要注意什么？",
     "faq.a6": "<p>Remotion 是源码可见、非开源的软件：个人、3 人及以下的营利公司、非营利组织可免费使用（含商用）；<strong>4 人及以上的营利组织需要购买 Remotion 的 Company License</strong>，详见 <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>。本仓库的 Apache-2.0 不改变 Remotion 自己的许可条件。</p><p>本仓库把 <code>remotion</code> / <code>@remotion/cli</code> 钉在 <code>4.0.529</code>。升级到 5.0 后，Remotion 免费层需要在配置里传 <code>licenseKey</code>（个人 / 3 人以下公司 / 非营利填 <code>free-license</code>），升级前请先看 <code>THIRD_PARTY_LICENSES.md</code>。</p>",
     "faq.q7": "Chrome Headless Shell 下载失败？",
-    "faq.a7": "<p>国内网络环境下 <code>npx remotion browser ensure</code> 可能连不上 Google 的下载地址。可以手动下载后用 <code>--browser-executable</code> 指定本地 Chrome / Chromium 路径（不同 Chrome 版本渲染结果可能有细微差异）。</p>",
+    "faq.a7": "<p>国内网络环境下 <code>npx remotion browser ensure</code> 可能连不上 Google 的下载地址。可以手动下载后用 <code class='nw'>--browser-executable</code> 指定本地 Chrome / Chromium 路径（不同 Chrome 版本渲染结果可能有细微差异）。</p>",
     "faq.q8": "Windows 上要注意什么？",
     "faq.a8": "<p>只支持 x64。环境变量用 PowerShell 写法 <code>$env:LLM_API_KEY=\"...\"</code>，不是 <code>export</code>。分镜一律用文件路径传入，不要在命令行拼 JSON（Windows shell 会吃掉引号）。<code>make.mjs</code> 在 Windows 上调 <code>python</code>，装在别处的，设环境变量 <code>PYTHON</code> 指过去。</p>",
 
     "ct.lead": "想听真实需求：你想给什么产品做片？缺哪种配方、哪个行业？哪条合规规则误伤了你？公众号私信或开 issue 都行。",
-    "ct.issues": "误伤或漏拦的校验规则、渲染出错、看着别扭的画面，附上分镜 JSON 和报错最好。<strong>别贴 API Key。</strong>",
+    "ct.issues": "误伤或漏拦的校验规则、渲染出错、看着别扭的画面，能附上分镜 JSON 和报错就更好。<strong>别贴 API Key。</strong>",
     "ct.issuesLink": "提一个 Issue",
     "ct.mpTitle": "公众号私信",
     "ct.mp": "如需联系，请公众号私信。合作、赞助、需求都走这里，扫码关注后在后台留言。",
@@ -318,7 +318,7 @@ window.BREW_I18N = {
     "a.menuOpen": "Open menu",
     "a.menuClose": "Close menu",
 
-    "hero.eyebrow": "Open source · Apache-2.0 · Commercial use OK · Preview",
+    "hero.eyebrow": "Apache-2.0 · Commercial use OK · Preview",
     "hero.title": "Brew great promo reels<br><span class='hl'>with low-cost models</span>",
     "hero.sub": "Write a product brief; the AI picks the shots and writes the copy, and one command renders a vertical promo video (1080×1920, the format Douyin and WeChat Channels use).",
     "hero.star": "Star on GitHub",
@@ -432,7 +432,7 @@ window.BREW_I18N = {
     "start.lead": "Set up the render environment and run one of the bundled samples first, then pick how the model writes your storyboard.",
     "start.q": "Install and run a sample",
     "code.quick": "git clone https://github.com/Finderchangchang/brewreel.git\ncd brewreel/template &amp;&amp; npm install &amp;&amp; npx remotion browser ensure\ncd .. &amp;&amp; pip install numpy scipy\nnode scripts/validate.mjs examples/en-focus.json\nnode scripts/make.mjs examples/en-focus.json --out ../brewreel-out/en-focus",
-    "start.qd": "<code>npm install</code> installs the rendering engine and <code>npx remotion browser ensure</code> downloads Chrome Headless Shell once. If the validate command passes, your setup is good; the render takes a few minutes and is done when the last line reads <code>交付：&lt;mp4 path&gt;</code> (\"delivered\"). <code>--out</code> must not point inside the repo.",
+    "start.qd": "<code>npm install</code> installs the rendering engine and <code>npx remotion browser ensure</code> downloads Chrome Headless Shell once. If the validate command passes, your setup is good; the render takes a few minutes and is done when the last line reads <code>交付：&lt;mp4 path&gt;</code> (\"delivered\"). <code class='nw'>--out</code> must not point inside the repo.",
     "start.s3": "Let the AI write the storyboard. Pick one.",
     "a.tabs": "Three ways to use it",
     "tab.skill": "As a skill",
@@ -447,7 +447,7 @@ window.BREW_I18N = {
     "code.claudeDs": "export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nexport ANTHROPIC_AUTH_TOKEN=&lt;your DeepSeek API key&gt;\nexport ANTHROPIC_MODEL=deepseek-flash[1m]",
     "u2.body": "The script calls an OpenAI-compatible endpoint directly (DeepSeek by default): brief in, video out. Validator errors go back to the model verbatim for a retry, up to 3 times.",
     "code.script": "export LLM_API_KEY=&lt;your DeepSeek API key&gt;\nexport LLM_BASE_URL=https://api.deepseek.com\nexport LLM_MODEL=deepseek-chat\npython scripts/llm_make.py path/to/brief.md",
-    "u2.note": "On Windows PowerShell use <code>$env:LLM_API_KEY=\"...\"</code> instead of <code>export</code>. These are placeholders: use your own key, and never commit a key or paste one into an issue. With <code>--dry-run</code> it calls no API and reads no key; it only writes out the assembled prompt and estimates its token count.",
+    "u2.note": "On Windows PowerShell use <code>$env:LLM_API_KEY=\"...\"</code> instead of <code>export</code>. These are placeholders: use your own key, and never commit a key or paste one into an issue. With <code class='nw'>--dry-run</code> it calls no API and reads no key; it only writes out the assembled prompt and estimates its token count.",
     "u3.flag": "Installs from the repo; the npm package is coming soon; not yet tested against a real DeepSeek model.",
     "u3.body": "With the plugin installed, the model writes the storyboard by following the skill and uses the plugin's 7 tools to validate, render and verify: check the environment, install dependencies, list recipes and industries, read the docs, validate the storyboard, render in the background with progress, and check the video. Needs dsh 0.1.7-rc.2 or later within 0.1.x, Node.js 22.x from 22.19 or 24+, and pnpm.",
     "code.dshComment": "# if dsh is not installed yet",
@@ -500,7 +500,7 @@ window.BREW_I18N = {
     "lim.p6": "<strong>The core action isn't required on screen:</strong> for a tool, an action like \"tap Start\" may end up shown as an unrelated screen.",
     "lim.p7": "<strong>Layout:</strong> brand-color numbers on dark themes can have too little contrast, and some panels leave their lower half empty when there is little content.",
     "lim.p8": "<strong>Coverage of English and asset checks:</strong> the compliance word lists are written for Chinese, so English copy is checked less thoroughly; assets are only checked at the file level.",
-    "lim.advice": "<strong>Recommended use:</strong> for industry videos, use the merchant's real photos where you can and pass <code>--brief &lt;brief&gt;</code> when rendering; before delivery, check every price, condition, date, opening hour and distance on screen against the brief.",
+    "lim.advice": "<strong>Recommended use:</strong> for industry videos, use the merchant's real photos where you can and pass <code class='nw'>--brief &lt;brief&gt;</code> when rendering; before delivery, check every price, condition, date, opening hour and distance on screen against the brief.",
     "lim.readme": "Test methods and results for every round are in the README's <a href='https://github.com/Finderchangchang/brewreel/blob/main/README.en.md#known-limitations' target='_blank' rel='noopener'>\"Known limitations\"</a>.",
     "lim.next": "Found a rule that blocks too much or too little? Open an issue",
 
@@ -532,7 +532,7 @@ window.BREW_I18N = {
     "faq.title": "Asked before<br>the first brew",
     "faq.more": "Didn't find your answer? <a href='https://github.com/Finderchangchang/brewreel/issues' target='_blank' rel='noopener'>Open an issue</a>, or message the WeChat Official Account.",
     "faq.q1": "Where does the background music come from?",
-    "faq.a1": "<p><code>scripts/make_bgm.py</code> synthesizes it on the spot with numpy / scipy: instruments, harmony, melody, mixing and mastering all live in the script, with no external sample library. Each shot is one section, notes land on whole or half beats, and every shot change gets a cymbal or a fill, so the music follows the cuts. Loudness is normalized to -16 LUFS.</p><p>Because it's synthesized on the spot, there are no copyright issues. When you publish on a platform such as Douyin, you can also render a silent version with <code>--no-bgm</code> and add music on the platform.</p>",
+    "faq.a1": "<p><code>scripts/make_bgm.py</code> synthesizes it on the spot with numpy / scipy: instruments, harmony, melody, mixing and mastering all live in the script, with no external sample library. Each shot is one section, notes land on whole or half beats, and every shot change gets a cymbal or a fill, so the music follows the cuts. Loudness is normalized to -16 LUFS.</p><p>Because it's synthesized on the spot, there are no copyright issues. When you publish on a platform such as Douyin, you can also render a silent version with <code class='nw'>--no-bgm</code> and add music on the platform.</p>",
     "faq.q2": "Is there a voice-over?",
     "faq.a2": "<p>Voice-over is coming soon: MiniMax speech with word-by-word subtitles; follow the <a href='https://github.com/Finderchangchang/brewreel/blob/main/CHANGELOG.md' target='_blank' rel='noopener'>changelog</a> for progress. When you publish with an AI voice, tick the platform's AI-generated content declaration as it requires.</p>",
     "faq.q3": "Why illustrations instead of real footage?",
@@ -547,7 +547,7 @@ window.BREW_I18N = {
     "faq.q6": "Does Remotion need a license? What about upgrading to 5.0?",
     "faq.a6": "<p>Remotion is source-available, not open source: free for individuals, for-profit companies with 3 or fewer people, and non-profits (including commercial use); <strong>for-profit organizations with 4 or more people must purchase Remotion's Company License</strong>, see <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>. This repo's Apache-2.0 license doesn't change Remotion's own terms.</p><p>This repo pins <code>remotion</code> / <code>@remotion/cli</code> to <code>4.0.529</code>. After upgrading to 5.0, Remotion's free tier requires a <code>licenseKey</code> in config (individuals / companies with 3 or fewer people / non-profits use <code>free-license</code>); read <code>THIRD_PARTY_LICENSES.md</code> before upgrading.</p>",
     "faq.q7": "Chrome Headless Shell fails to download?",
-    "faq.a7": "<p><code>npx remotion browser ensure</code> may not reach Google's download endpoint from some networks. Download it manually and point to a local Chrome / Chromium with <code>--browser-executable</code> (results may differ slightly between Chrome versions).</p>",
+    "faq.a7": "<p><code>npx remotion browser ensure</code> may not reach Google's download endpoint from some networks. Download it manually and point to a local Chrome / Chromium with <code class='nw'>--browser-executable</code> (results may differ slightly between Chrome versions).</p>",
     "faq.q8": "Anything to watch for on Windows?",
     "faq.a8": "<p>x64 only. Set environment variables the PowerShell way, <code>$env:LLM_API_KEY=\"...\"</code>, not <code>export</code>. Always pass storyboards as a file path, never as inline JSON on the command line (the Windows shell mangles the quotes). <code>make.mjs</code> calls <code>python</code> on Windows; if yours lives elsewhere, point the <code>PYTHON</code> environment variable at it.</p>",
 
