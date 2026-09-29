@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title data-i18n="meta.title">BrewReel — Open-source AI-assisted promo video tool</title>
+<meta name="description" content="BrewReel is an open-source tool for vertical promo videos: write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, optional voice-over, built-in ad-law and industry compliance checks. Apache-2.0." data-i18n-attr="content:meta.desc">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://brewreel.com/en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://brewreel.com/">
+<link rel="alternate" hreflang="en" href="https://brewreel.com/en.html">
+<link rel="alternate" hreflang="x-default" href="https://brewreel.com/">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#faf6ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15100c" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brewreel.com/en.html">
+<meta property="og:site_name" content="精酿 · BrewReel">
+<meta property="og:title" content="BrewReel — Open-source AI-assisted promo video tool" data-i18n-attr="content:meta.title">
+<meta property="og:description" content="Write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, Apache-2.0." data-i18n-attr="content:meta.ogDesc">
+<meta property="og:image" content="https://brewreel.com/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BrewReel — Open-source AI-assisted promo video tool" data-i18n-attr="content:meta.title">
+<meta property="og:locale" content="en_US" data-i18n-attr="content:meta.locale">
+<meta property="og:locale:alternate" content="zh_CN" data-i18n-attr="content:meta.localeAlt">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BrewReel — Open-source AI-assisted promo video tool" data-i18n-attr="content:meta.title">
+<meta name="twitter:description" content="Write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, Apache-2.0." data-i18n-attr="content:meta.ogDesc">
+<meta name="twitter:image" content="https://brewreel.com/assets/og.jpg">
+<script type="application/ld+json" id="site-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://brewreel.com/#author",
+      "name": "Finderchangchang",
+      "url": "https://github.com/Finderchangchang"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://brewreel.com/#website",
+      "url": "https://brewreel.com/",
+      "name": "BrewReel · 精酿",
+      "inLanguage": [
+        "zh-CN",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://brewreel.com/#author"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://brewreel.com/#software",
+      "name": "BrewReel · 精酿",
+      "alternateName": [
+        "BrewReel",
+        "精酿"
+      ],
+      "url": "https://brewreel.com/",
+      "description": "BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.",
+      "sameAs": [
+        "https://github.com/Finderchangchang/brewreel"
+      ],
+      "author": {
+        "@id": "https://brewreel.com/#author"
+      },
+      "codeRepository": "https://github.com/Finderchangchang/brewreel",
+      "license": "https://github.com/Finderchangchang/brewreel/blob/main/LICENSE",
+      "programmingLanguage": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://brewreel.com/en.html#webpage",
+      "url": "https://brewreel.com/en.html",
+      "name": "BrewReel — Open-source AI-assisted promo video tool",
+      "description": "BrewReel is an open-source tool for vertical promo videos: write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, optional voice-over, built-in ad-law and industry compliance checks. Apache-2.0.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://brewreel.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://brewreel.com/#software"
+      }
+    }
+  ]
+}
+</script>
+<script>
+  // Theme first; each language also has a complete, crawlable static HTML page.
+  (function () {
+    var d = document.documentElement;
+    try {
+      var theme = localStorage.getItem("brewreel-theme");
+      if (theme === "dark" || theme === "light") d.setAttribute("data-theme", theme);
+    } catch (e) {}
+    var q = new URLSearchParams(location.search).get("lang");
+    var saved = null;
+    try { saved = localStorage.getItem("brewreel-lang"); } catch (e) {}
+    var isEnglishPage = /\/en\.html$/.test(location.pathname);
+    var next = q === "en" || q === "zh" ? q : (isEnglishPage ? "en" :
+      (saved === "en" || saved === "zh" ? saved : "zh"));
+    if ((next === "en") !== isEnglishPage) {
+      var url = new URL(next === "en" ? "en.html" : "./", location.href);
+      url.search = location.search;
+      url.hash = location.hash;
+      location.replace(url.href);
+    }
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"></noscript>
+<link rel="stylesheet" href="style.css?v=20260930a">
+<script defer src="i18n.js?v=20260930a"></script>
+<script defer src="main.js?v=20260930a"></script>
+<script defer src="https://umami.jisikeji.cn/script.js" data-website-id="c80c17ab-9413-4d0b-a359-171bc2a23bc9"></script>
+</head>
+<body>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.9l2.75 5.8 6.35.8-4.65 4.4 1.2 6.3L12 17.1l-5.65 3.1 1.2-6.3L2.9 9.5l6.35-.8z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.2v13.6L18.8 12z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h3.4v14H7zM13.6 5H17v14h-3.4z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 8.5V6.7a2.2 2.2 0 0 0-2.2-2.2H6.7a2.2 2.2 0 0 0-2.2 2.2v6.6a2.2 2.2 0 0 0 2.2 2.2h1.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.3 4.3L19 7.2" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.3 5.3l1.7 1.7M17 17l1.7 1.7M18.7 5.3L17 7M7 17l-1.7 1.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20 14.4A8.6 8.6 0 1 1 9.6 4a7 7 0 0 0 10.4 10.4z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.6c0 4.3-3 8-7.5 9.4-4.5-1.4-7.5-5.1-7.5-9.4V6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.8 12l2.3 2.3 4.1-4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gate" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 9h17M9.5 12.5l5 4M14.5 12.5l-5 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 17.5V6l10-2v11.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.6" cy="17.6" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.6" cy="15.6" r="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-lang" viewBox="0 0 24 24"><path d="M4 5.5h8M8 4v1.5M5.5 5.5c.6 3 2.6 5.3 5.5 6.5M10.5 5.5c-.6 3-2.6 5.3-5.8 6.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12.5 20l3.5-8.5 3.5 8.5M13.7 17.2h4.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.5 7L4 12l4.5 5M15.5 7L20 12l-4.5 5M13.5 5l-3 14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9.5 3.5h5M10.3 3.5v5.3L5.2 17.4A2.2 2.2 0 0 0 7.1 20.5h9.8a2.2 2.2 0 0 0 1.9-3.1l-5.1-8.6V3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.4 14.5h9.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="BrewReel home" data-i18n-attr="aria-label:a.brand">
+      <img src="assets/favicon.png" alt="" width="32" height="32" class="brand-mark">
+      <span class="brand-name" data-i18n="brand.name">BrewReel<span class='brand-alt'> · 精酿</span></span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation" data-i18n-attr="aria-label:a.nav">
+      <a href="#recipes" data-i18n="nav.recipes">Recipes</a>
+      <a href="#start" data-i18n="nav.start">Get started</a>
+      <a href="#industries" data-i18n="nav.industries">Industries</a>
+      <a href="#limits" data-i18n="nav.limits">Limitations</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="lang-btn" id="langBtn" type="button" data-umami-event="toggle-lang" aria-label="切换到中文" title="切换到中文" data-i18n-attr="aria-label:a.lang;title:a.lang"><span data-l="zh">中</span><span class="lang-sep" aria-hidden="true">/</span><span data-l="en">EN</span></button>
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle light and dark theme" title="Toggle light and dark theme" data-i18n-attr="aria-label:a.theme;title:a.theme">
+        <svg class="ico ico-sun" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
+        <svg class="ico ico-moon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
+      </button>
+      <a class="nav-star" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="nav" aria-label="Star BrewReel on GitHub" title="Star BrewReel on GitHub" data-i18n-attr="aria-label:a.star;title:a.star"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span class="nav-star-text">Star</span><b data-brew-stars>55</b></a>
+      <button class="icon-btn burger" id="burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navMenu"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ 首屏：它是什么 + 片子长什么样 ============ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span data-i18n="hero.eyebrow">Apache-2.0 · Commercial use OK · Preview</span><span class="eyebrow-ver" data-brew-version>v0.5.1</span></p>
+      <h1 class="hero-title" data-i18n="hero.title">Brew great promo reels<br><span class='hl'>with low-cost models</span></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Write a product brief; the AI picks the shots and writes the copy, and one command renders a vertical promo video (1080×1920, the format Douyin and WeChat Channels use).</p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="hero">
+          <svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">Star on GitHub</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>55</b></span>
+        </a>
+        <a class="btn btn-ghost" href="assets/demo.mp4" data-demo-open data-demo-at="0"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-play"/></svg><span data-i18n="hero.demo">Watch the full demo (sound on)</span></a>
+      </div>
+      <p class="hero-dsh"><a class="link-arrow" href="#use-dsh" data-umami-event="click-dsh" data-umami-event-pos="hero"><span data-i18n="hero.dsh">Use it in DeepSeek Harness</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+
+      <p class="hero-works" data-i18n="hero.works">Install it as a skill for Claude Code, Codex or opencode, use the DeepSeek Harness plugin, or run the plain script with no agent.</p>
+      <p class="hero-note" data-i18n="hero.note"><strong>Still a preview:</strong> treat each video as a first draft; watch it all and edit before you publish. <a href='#limits'>How far along it is</a></p>
+    </div>
+
+    <div class="hero-flight">
+      <ul class="flight" aria-label="Actual renders of the three recipes" data-i18n-attr="aria-label:a.flight">
+        <li class="tap tap-cards">
+          <a class="tap-screen" href="assets/demo.mp4#t=2.4" data-demo-open data-demo-at="2.4" data-recipe="cards" aria-label="Play the full demo with sound, starting at the cards recipe" data-i18n-attr="aria-label:a.tap1">
+            <video class="loop" muted loop playsinline preload="none" poster="assets/reel-cards.webp" width="432" height="768" aria-hidden="true" tabindex="-1"><source src="assets/reel-cards.mp4" type="video/mp4"></video>
+            <span class="tap-play" aria-hidden="true"><svg class="ico" focusable="false"><use href="#i-play"/></svg></span>
+          </a>
+          <p class="tap-label"><span class="tap-no">No.01</span><span class="tap-name" data-i18n="r.cards.name">Cards</span><span class="tap-meta">cards<span class="tap-ratio"> · 9:16</span></span></p>
+        </li>
+        <li class="tap tap-quiz">
+          <a class="tap-screen" href="assets/demo.mp4#t=11.9" data-demo-open data-demo-at="11.9" data-recipe="quiz" aria-label="Play the full demo with sound, starting at the quiz recipe" data-i18n-attr="aria-label:a.tap2">
+            <video class="loop" muted loop playsinline preload="none" poster="assets/reel-quiz.webp" width="432" height="768" aria-hidden="true" tabindex="-1"><source src="assets/reel-quiz.mp4" type="video/mp4"></video>
+            <span class="tap-play" aria-hidden="true"><svg class="ico" focusable="false"><use href="#i-play"/></svg></span>
+          </a>
+          <p class="tap-label"><span class="tap-no">No.02</span><span class="tap-name" data-i18n="r.quiz.name">Quiz</span><span class="tap-meta">quiz<span class="tap-ratio"> · 9:16</span></span></p>
+        </li>
+        <li class="tap tap-journey">
+          <a class="tap-screen" href="assets/demo.mp4#t=27.4" data-demo-open data-demo-at="27.4" data-recipe="journey" aria-label="Play the full demo with sound, starting at the journey recipe" data-i18n-attr="aria-label:a.tap3">
+            <video class="loop" muted loop playsinline preload="none" poster="assets/reel-journey.webp" width="432" height="768" aria-hidden="true" tabindex="-1"><source src="assets/reel-journey.mp4" type="video/mp4"></video>
+            <span class="tap-play" aria-hidden="true"><svg class="ico" focusable="false"><use href="#i-play"/></svg></span>
+          </a>
+          <p class="tap-label"><span class="tap-no">No.03</span><span class="tap-name" data-i18n="r.journey.name">Journey</span><span class="tap-meta">journey<span class="tap-ratio"> · 4:5 / 9:16</span></span></p>
+        </li>
+      </ul>
+      <div class="flight-foot">
+        <p class="flight-cap" data-i18n="flight.cap">Actual renders of the three recipes; the products and numbers are fictional. Click any one to watch the full demo from there.</p>
+        <button class="chip-btn" id="flightToggle" type="button" aria-pressed="false" hidden><svg class="ico ico-pause" aria-hidden="true" focusable="false"><use href="#i-pause"/></svg><svg class="ico ico-play" aria-hidden="true" focusable="false"><use href="#i-play"/></svg><span id="flightToggleLabel">暂停预览</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-facts" id="about" aria-labelledby="facts-title">
+  <div class="wrap">
+    <h2 id="facts-title" data-i18n="facts.title">What is BrewReel?</h2>
+    <p class="facts-intro" data-i18n="facts.desc">BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.</p>
+    <dl class="facts-grid">
+      <div><dt data-i18n="facts.use.label">Who it is for</dt><dd data-i18n="facts.use">Developers and creators comfortable setting up a local runtime, making product introductions, feature explainers, quiz videos or character-journey promos.</dd></div>
+      <div><dt data-i18n="facts.scope.label">Inputs and outputs</dt><dd data-i18n="facts.scope">Inputs are a product brief, optional real photos and voiceover settings. Outputs include a promo video and its storyboard record. The cards and quiz recipes default to 1080×1920; journey defaults to 1080×1350, all at 30 fps.</dd></div>
+      <div><dt data-i18n="facts.cost.label">Costs and requirements</dt><dd data-i18n="facts.cost">The project uses Apache-2.0. Model and voiceover APIs may charge separately. Remotion has a separate license; for-profit organizations with four or more employees need a Company License.</dd></div>
+    </dl>
+    <p class="facts-source" data-i18n="facts.source">Project author: <a href='https://github.com/Finderchangchang' target='_blank' rel='noopener'>Finderchangchang</a>. See the <a href='https://github.com/Finderchangchang/brewreel' target='_blank' rel='noopener' data-umami-event='click-github' data-umami-event-pos='facts'>GitHub documentation</a> for installation, test records and known limitations.</p>
+  </div>
+</section>
+
+
+<!-- ============ 01 配方单：片子长什么样 ============ -->
+<section class="sec" id="recipes" aria-labelledby="recipes-title">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <div>
+        <p class="kicker"><span class="kicker-no">No.01</span><span data-i18n="rec.kicker">The recipes</span></p>
+        <h2 id="recipes-title" data-i18n="rec.title">Three recipes. Pick one by content.</h2>
+      </div>
+      <p class="lead" data-i18n="rec.lead">Set <code>meta.style</code> in the storyboard to pick a recipe; leave it out and you get the default, <code>cards</code>. Each recipe ships its own design tokens, shot components, validation rules and narrative templates.</p>
+    </header>
+
+    <div class="labels">
+      <article class="label label-cards rv" id="recipe-cards">
+        <header class="label-head"><span class="label-no">No.01</span><span class="label-badge" data-i18n="rec.default">Default</span></header>
+        <h3 class="label-name"><span data-i18n="r.cards.name">Cards</span><code class="label-id">cards</code></h3>
+        <div class="label-strip"><img src="assets/style-cards.webp" width="760" height="440" loading="lazy" decoding="async" alt="The cards recipe: three actual rendered frames" data-i18n-attr="alt:r.cards.alt"></div>
+        <dl class="specs">
+          <div><dt data-i18n="rec.k.ratio">Aspect</dt><dd>9:16</dd></div>
+          <div><dt data-i18n="rec.k.look">Signature</dt><dd data-i18n="r.cards.look">Gradient background, a centered white card and bold outlined captions; one point per shot</dd></div>
+          <div><dt data-i18n="rec.k.fit">Fits</dt><dd data-i18n="r.cards.fit">A single selling point, a how-it-works flow, UI demos, physical products and stores, price lists</dd></div>
+        </dl>
+      </article>
+
+      <article class="label label-quiz rv" id="recipe-quiz">
+        <header class="label-head"><span class="label-no">No.02</span></header>
+        <h3 class="label-name"><span data-i18n="r.quiz.name">Quiz</span><code class="label-id">quiz</code></h3>
+        <div class="label-strip"><img src="assets/style-quiz.webp" width="760" height="440" loading="lazy" decoding="async" alt="The quiz recipe: three actual rendered frames" data-i18n-attr="alt:r.quiz.alt"></div>
+        <dl class="specs">
+          <div><dt data-i18n="rec.k.ratio">Aspect</dt><dd>9:16</dd></div>
+          <div><dt data-i18n="rec.k.look">Signature</dt><dd data-i18n="r.quiz.look">Circle a common misconception in red pen → a countdown question → the reveal → a dictionary card</dd></div>
+          <div><dt data-i18n="rec.k.fit">Fits</dt><dd data-i18n="r.quiz.fit">A common misconception you can frame as one multiple-choice question with exactly one right answer ("What does X actually mean?")</dd></div>
+        </dl>
+      </article>
+
+      <article class="label label-journey rv" id="recipe-journey">
+        <header class="label-head"><span class="label-no">No.03</span></header>
+        <h3 class="label-name"><span data-i18n="r.journey.name">Journey</span><code class="label-id">journey</code></h3>
+        <div class="label-strip"><img src="assets/style-journey.webp" width="760" height="309" loading="lazy" decoding="async" alt="The journey recipe: three actual rendered frames" data-i18n-attr="alt:r.journey.alt"></div>
+        <dl class="specs">
+          <div><dt data-i18n="rec.k.ratio">Aspect</dt><dd data-i18n="r.journey.ratio">4:5 (default) / 9:16</dd></div>
+          <div><dt data-i18n="rec.k.look">Signature</dt><dd data-i18n="r.journey.look">Our own red-panda mascot rides a hover board through a paper-cut city in one take, with a postcard at every stop and a punched ticket at the end</dd></div>
+          <div><dt data-i18n="rec.k.fit">Fits</dt><dd data-i18n="r.journey.fit">4–6 clear categories, features or stops worth touring along one route</dd></div>
+        </dl>
+      </article>
+    </div>
+
+    <div class="pick rv">
+      <p class="pick-title" data-i18n="rec.pick">How to choose</p>
+      <ol class="pick-list">
+        <li><span data-i18n="rec.pick1">One multiple-choice question</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg><code>quiz</code></li>
+        <li><span data-i18n="rec.pick2">4–6 categories to tour</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg><code>journey</code></li>
+        <li><span data-i18n="rec.pick3">Anything else</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg><code>cards</code><small data-i18n="rec.pick3note">the default</small></li>
+      </ol>
+    </div>
+
+    <p class="sec-next"><a class="link-arrow" href="#start"><span data-i18n="rec.next">Get started</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ 02 上手 ============ -->
+<section class="sec" id="start" aria-labelledby="start-title">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <div>
+        <p class="kicker"><span class="kicker-no">No.02</span><span data-i18n="start.kicker">Get started</span></p>
+        <h2 id="start-title" data-i18n="start.title">Install, run a sample,<br>then hand it to the AI</h2>
+      </div>
+      <p class="lead" data-i18n="start.lead">Set up the render environment and run one of the bundled samples first, then pick how the model writes your storyboard.</p>
+    </header>
+
+    <div class="start-grid">
+      <div class="start-main">
+        <div class="step rv">
+          <h3 class="step-title"><span class="step-no">1</span><span data-i18n="start.q">Install and run a sample</span></h3>
+          <div class="code" id="quickstart">
+            <pre><code data-i18n="code.quick">git clone https://github.com/Finderchangchang/brewreel.git
+cd brewreel/template &amp;&amp; npm install &amp;&amp; npx remotion browser ensure
+cd .. &amp;&amp; pip install numpy scipy
+node scripts/validate.mjs examples/en-focus.json
+node scripts/make.mjs examples/en-focus.json --out ../brewreel-out/en-focus</code></pre>
+            <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="quickstart" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+          </div>
+          <p class="step-note" data-i18n="start.qd"><code>npm install</code> installs the rendering engine and <code>npx remotion browser ensure</code> downloads Chrome Headless Shell once. If the validate command passes, your setup is good; the render takes a few minutes and is done when the last line reads <code>交付：&lt;mp4 path&gt;</code> ("delivered"). <code class='nw'>--out</code> must not point inside the repo.</p>
+        </div>
+
+        <div class="step rv">
+          <h3 class="step-title"><span class="step-no">2</span><span data-i18n="start.s3">Let the AI write the storyboard. Pick one.</span></h3>
+          <div class="tabs" data-tabs>
+            <div class="tablist" role="tablist" aria-label="Three ways to use it" data-i18n-attr="aria-label:a.tabs" hidden>
+              <button type="button" role="tab" id="tab-skill" aria-controls="use-skill" aria-selected="true" data-umami-event="pick-usage" data-umami-event-tab="skill"><b data-i18n="tab.skill">As a skill</b><small>Claude Code · Codex · opencode</small></button>
+              <button type="button" role="tab" id="tab-script" aria-controls="use-script" aria-selected="false" data-umami-event="pick-usage" data-umami-event-tab="script"><b data-i18n="tab.script">Headless script</b><small data-i18n="tab.scriptSub">No agent needed</small></button>
+              <button type="button" role="tab" id="tab-dsh" aria-controls="use-dsh" aria-selected="false" data-umami-event="pick-usage" data-umami-event-tab="dsh"><b>DeepSeek Harness</b><small data-i18n="tab.dshSub">Plugin dsh-brewreel</small></button>
+            </div>
+
+            <div class="panel" role="tabpanel" id="use-skill" aria-labelledby="tab-skill" tabindex="0">
+              <p class="panel-head"><b class="panel-name" data-i18n="tab.skill">As a skill</b><span class="status"><i class="dot dot-ok"></i><span data-i18n="st.ready">Ready</span></span></p>
+              <p class="panel-body" data-i18n="u1.body">For AI coding assistants that read <code>SKILL.md</code>. Clone the whole repo into <code>~/.claude/skills/brewreel/</code> (Claude Code) or <code>~/.agents/skills/brewreel/</code> (a common convention), hand the assistant a brief (template: <code>brief-template.md</code>) and let it follow <code>SKILL.md</code>.</p>
+              <p class="code-label" data-i18n="u1.l1">Install as a Claude Code skill</p>
+              <div class="code">
+                <pre><code>git clone https://github.com/Finderchangchang/brewreel.git ~/.claude/skills/brewreel</code></pre>
+                <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="skill" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+              </div>
+              <details class="opt">
+                <summary><span data-i18n="u1.l2">Optional: route Claude Code to DeepSeek (swap in your own key)</span><i class="acc" aria-hidden="true"></i></summary>
+                <div class="code">
+                  <pre><code data-i18n="code.claudeDs">export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+export ANTHROPIC_AUTH_TOKEN=&lt;your DeepSeek API key&gt;
+export ANTHROPIC_MODEL=deepseek-flash[1m]</code></pre>
+                  <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="claude-deepseek" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+                </div>
+              </details>
+            </div>
+
+            <div class="panel" role="tabpanel" id="use-script" aria-labelledby="tab-script" tabindex="0">
+              <p class="panel-head"><b class="panel-name" data-i18n="tab.script">Headless script</b><span class="status"><i class="dot dot-ok"></i><span data-i18n="st.ready">Ready</span></span></p>
+              <p class="panel-body" data-i18n="u2.body">The script calls an OpenAI-compatible endpoint directly (DeepSeek by default): brief in, video out. Validator errors go back to the model verbatim for a retry, up to 3 times.</p>
+              <div class="code">
+                <pre><code data-i18n="code.script">export LLM_API_KEY=&lt;your DeepSeek API key&gt;
+export LLM_BASE_URL=https://api.deepseek.com
+export LLM_MODEL=deepseek-chat
+python scripts/llm_make.py path/to/brief.md</code></pre>
+                <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="script" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+              </div>
+              <p class="panel-note" data-i18n="u2.note">On Windows PowerShell use <code>$env:LLM_API_KEY="..."</code> instead of <code>export</code>. These are placeholders: use your own key, and never commit a key or paste one into an issue. With <code class='nw'>--dry-run</code> it calls no API and reads no key; it only writes out the assembled prompt and estimates its token count.</p>
+            </div>
+
+            <div class="panel" role="tabpanel" id="use-dsh" aria-labelledby="tab-dsh" tabindex="0">
+              <p class="panel-head"><b class="panel-name">DeepSeek Harness</b><span class="status"><i class="dot dot-wip"></i><span data-i18n="st.npm">Published on npm</span></span></p>
+              <p class="panel-flag" data-i18n="u3.flag">Published on npm. The plugin has not yet been tested against a real DeepSeek model; please open an issue if you hit problems.</p>
+              <p class="panel-body" data-i18n="u3.body">With the plugin installed, the model writes the storyboard by following the skill and uses the plugin's 7 tools to validate, render and verify: check the environment, install dependencies, list recipes and industries, read the docs, validate the storyboard, render in the background with progress, and check the video. Needs dsh 0.1.7-rc.2 or later within 0.1.x (dsh's <code>latest</code> tag on npm still points to the older 0.1.5-rc.3, so pin the version when installing), Node.js 22.x from 22.19 or 24+, and pnpm.</p>
+              <div class="code">
+                <pre><code>npm install -g @deepseek-ai/dsh@0.1.7-rc.2 pnpm    <span class="c" data-i18n="code.dshComment"># if dsh is not installed yet</span>
+dsh plugin --profile web add dsh-brewreel
+dsh web</code></pre>
+                <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="dsh" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+              </div>
+              <p class="panel-note" data-i18n="u3.note"><code>web</code> can be any profile name; if the profile is already running, restart it for the change to apply. On first use, ask the model to "check the video plugin environment": it calls doctor, and after you agree, calls setup to install the render dependencies. To use unreleased code, clone the repo and run <code>dsh plugin --profile web add ./brewreel/integrations/deepseek-harness</code> from the folder that contains the clone.</p>
+              <p class="panel-link"><a class="link-arrow" href="https://github.com/Finderchangchang/brewreel/tree/main/integrations/deepseek-harness" target="_blank" rel="noopener" data-umami-event="click-dsh" data-umami-event-pos="start"><span data-i18n="u3.link">Plugin docs</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="start-side">
+        <div class="card env rv">
+          <h3 class="card-title" data-i18n="env.title">Requirements</h3>
+          <dl class="specs specs-env">
+            <div><dt data-i18n="env.os">OS</dt><dd data-i18n="env.osv">Windows (x64 only) / macOS ≥ 15 / Linux (glibc ≥ 2.35, plus shared libs like <code>libnss3</code> / <code>libgbm</code> / <code>libasound2</code>; Alpine and NixOS are not supported)</dd></div>
+            <div><dt>Node.js</dt><dd data-i18n="env.nodev">≥ 18 (20 LTS or newer recommended); the DeepSeek Harness plugin needs 22.x from 22.19, or 24+</dd></div>
+            <div><dt>Python</dt><dd data-i18n="env.pyv">3.10+; the music script needs <code>numpy</code> / <code>scipy</code>, <code>llm_make.py</code> uses only the standard library</dd></div>
+            <div><dt data-i18n="env.dl">First download</dt><dd data-i18n="env.dlv">A few hundred MB of render dependencies, plus about 110 MB for Chrome Headless Shell</dd></div>
+            <div><dt data-i18n="env.out">Output</dt><dd data-i18n="env.outv">1080×1920 (journey defaults to 1080×1350), 30 fps, with music and sound effects</dd></div>
+          </dl>
+        </div>
+        <div class="card voice rv">
+          <h3 class="card-title"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg><span data-i18n="voice.title">Optional: add a voice-over</span></h3>
+          <p class="voice-d" data-i18n="voice.d">Write <code>meta.voice</code> and a <code>vo</code> per shot, then set the environment variable for your provider:</p>
+          <dl class="voice-keys">
+            <div><dt>MiniMax</dt><dd><code>MINIMAX_API_KEY</code></dd></div>
+            <div><dt data-i18n="voice.p2">Alibaba Cloud</dt><dd><code>DASHSCOPE_API_KEY</code></dd></div>
+            <div><dt data-i18n="voice.p3">Volcengine</dt><dd><code>VOLCENGINE_TTS_API_KEY</code></dd></div>
+          </dl>
+          <p class="voice-d" data-i18n="voice.mock">Without a key, add <code class='nw'>--voice-provider mock</code> to check the rhythm with a placeholder voice (not a deliverable), or <code class='nw'>--no-voice</code> for a version without narration.</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="sec-next sec-next-split">
+      <a class="link-arrow" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="start"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><span data-i18n="start.star">All set? Star the repo so you don't miss new recipes.</span></a>
+      <a class="link-quiet" href="https://github.com/Finderchangchang/brewreel/issues" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="start-issue"><span data-i18n="start.issue">Stuck? Open an issue</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 怎么酿 ============ -->
+<section class="sec sec-band" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <div>
+        <p class="kicker"><span class="kicker-no">No.03</span><span data-i18n="how.kicker">How it brews</span></p>
+        <h2 id="how-title" data-i18n="how.title">The model fills in one storyboard.<br>Recipes and scripts do the rest.</h2>
+      </div>
+      <p class="lead" data-i18n="how.lead">Good beer comes from a good recipe. A strong model first turns a style into a recipe: ready-made components plus validation rules. A low-cost model like DeepSeek follows it to fill in the storyboard, and scripts handle validation, music, rendering and QA.</p>
+    </header>
+
+    <div class="line rv">
+      <div class="line-track" aria-hidden="true"><span class="line-bubble"></span></div>
+      <ol class="stations">
+        <li class="station">
+          <p class="station-top"><span class="station-no">01</span><span class="who who-you" data-i18n="how.who.you">You</span></p>
+          <h3 data-i18n="how.s1">Write a brief</h3>
+          <p class="station-d" data-i18n="how.s1d">You or the merchant fill it in, from the generic template or one of the six industry templates.</p>
+          <code class="station-out">brief.md</code>
+        </li>
+        <li class="station">
+          <p class="station-top"><span class="station-no">02</span><span class="who who-you" data-i18n="how.who.either">You or the model</span></p>
+          <h3 data-i18n="how.s2">Pick a recipe</h3>
+          <p class="station-d" data-i18n="how.s2d"><code>meta.style</code> picks the recipe, <code>meta.industry</code> the industry pack.</p>
+          <code class="station-out">meta</code>
+        </li>
+        <li class="station station-model">
+          <p class="station-top"><span class="station-no">03</span><span class="who who-model" data-i18n="how.who.model">Cheap model</span></p>
+          <h3 data-i18n="how.s3">Write the storyboard</h3>
+          <p class="station-d" data-i18n="how.s3d">One JSON file: pick shots, fill in text. No code, no coordinates.</p>
+          <code class="station-out">storyboard.json</code>
+        </li>
+        <li class="station">
+          <p class="station-top"><span class="station-no">04</span><span class="who who-script" data-i18n="how.who.script">Scripts</span></p>
+          <h3 data-i18n="how.s4">Validate</h3>
+          <p class="station-d" data-i18n="how.s4d">Hard rules plus ad-law and industry compliance. The report names the shot and field to fix, and goes back to the model.</p>
+          <code class="station-out">validate.mjs</code>
+        </li>
+        <li class="station">
+          <p class="station-top"><span class="station-no">05</span><span class="who who-script" data-i18n="how.who.script">Scripts</span></p>
+          <h3 data-i18n="how.s5">Brew</h3>
+          <p class="station-d" data-i18n="how.s5d">Music → render → contact sheet → check frames → manifest. Any ✗ means no delivery.</p>
+          <code class="station-out">video.mp4</code>
+        </li>
+        <li class="station">
+          <p class="station-top"><span class="station-no">06</span><span class="who who-you" data-i18n="how.who.you">You</span></p>
+          <h3 data-i18n="how.s6">Human check</h3>
+          <p class="station-d" data-i18n="how.s6d">Photo rights, genuine reviews, price conditions: things a machine can't judge, confirmed by the publisher.</p>
+          <code class="station-out" data-i18n="how.s6out">checklist</code>
+        </li>
+      </ol>
+    </div>
+
+    <h3 class="feats-title rv" data-i18n="how.feat">Also in the recipe</h3>
+    <ul class="feats rv">
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg><div><h4 data-i18n="how.f1">Compliance checked first</h4><p data-i18n="how.f1d">Dozens of checks cover ad-law superlatives, rules for six industries, line wraps and safe areas, and every error says what to fix.</p></div></li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-gate"/></svg><div><h4 data-i18n="how.f2">A ✗ means no delivery</h4><p data-i18n="how.f2d">Layout, blank frames, Chinese characters in an English video: any failed self-check blocks delivery. Every video ships a <code>manifest.json</code> tied to its storyboard.</p></div></li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-music"/></svg><div><h4 data-i18n="how.f3">Music made on the spot</h4><p data-i18n="how.f3d">Original music is synthesized by code, hits the shot cuts and is normalized to -16 LUFS. No copyright issues.</p></div></li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lang"/></svg><div><h4 data-i18n="how.f4">Chinese and English</h4><p data-i18n="how.f4d">Bilingual docs; captions in Chinese or English. English videos are scanned every half beat, and any Chinese character blocks delivery.</p></div></li>
+      <li class="feat-wide"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg><div><h4 data-i18n="how.fv">Voice-over, three providers</h4><p data-i18n="how.fvd">Write <code>meta.voice</code> and one <code>vo</code> line per shot to get a voice-over from MiniMax, Alibaba Cloud or Volcengine. Shot lengths follow the narration, subtitles light up word by word, and the music ducks about 10 dB under speech; each line is synthesized only once, so changing visuals or re-rendering costs nothing more.</p></div></li>
+    </ul>
+
+    <p class="sec-next"><a class="link-arrow" href="#industries"><span data-i18n="how.next">See the six industry packs</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ 04 行业包 ============ -->
+<section class="sec sec-tint" id="industries" aria-labelledby="industries-title">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <div>
+        <p class="kicker"><span class="kicker-no">No.04</span><span data-i18n="ind.kicker">Industry packs</span></p>
+        <h2 id="industries-title" data-i18n="ind.title">Six industry packs, with compliance checked first</h2>
+      </div>
+      <p class="lead" data-i18n="ind.lead">Pick an industry with <code>meta.industry</code>. Each pack comes with compliance rules, a recommended shot structure, a brief template for merchants and a regression-test brief.</p>
+    </header>
+
+    <ul class="shelf rv">
+      <li><figure class="bottle" tabindex="0"><div class="bottle-img"><img src="assets/ledger.webp" width="720" height="628" loading="lazy" decoding="async" alt="Software sample (a budgeting app): cover and a frame from the middle" data-i18n-attr="alt:ind.software.alt"></div><figcaption><b data-i18n="ind.software">Software</b><span data-i18n="ind.software.d">Apps, SaaS, tools</span><code>software</code></figcaption></figure></li>
+      <li><figure class="bottle" tabindex="0"><div class="bottle-img"><img src="assets/food.webp" width="720" height="628" loading="lazy" decoding="async" alt="Food sample (a new menu item): cover and a frame from the middle" data-i18n-attr="alt:ind.food.alt"></div><figcaption><b data-i18n="ind.food">Food</b><span data-i18n="ind.food.d">Restaurants, stores, single-item launches</span><code>food</code></figcaption></figure></li>
+      <li><figure class="bottle" tabindex="0"><div class="bottle-img"><img src="assets/ecommerce.webp" width="720" height="628" loading="lazy" decoding="async" alt="Ecommerce sample (a physical product): cover and a frame from the middle" data-i18n-attr="alt:ind.ecommerce.alt"></div><figcaption><b data-i18n="ind.ecommerce">Ecommerce</b><span data-i18n="ind.ecommerce.d">Physical goods</span><code>ecommerce</code></figcaption></figure></li>
+      <li><figure class="bottle" tabindex="0"><div class="bottle-img"><img src="assets/education.webp" width="720" height="628" loading="lazy" decoding="async" alt="Education sample (an adult vocational course): cover and a frame from the middle" data-i18n-attr="alt:ind.education.alt"></div><figcaption><b data-i18n="ind.education">Education</b><span data-i18n="ind.education.d">Adult vocational training (not K12)</span><code>education</code></figcaption></figure></li>
+      <li><figure class="bottle" tabindex="0"><div class="bottle-img"><img src="assets/beauty.webp" width="720" height="628" loading="lazy" decoding="async" alt="Beauty sample (no real photos): cover and a frame from the middle" data-i18n-attr="alt:ind.beauty.alt"></div><figcaption><b data-i18n="ind.beauty">Beauty</b><span data-i18n="ind.beauty.d">Non-medical beauty services</span><code>beauty</code></figcaption></figure></li>
+      <li><figure class="bottle" tabindex="0"><div class="bottle-img"><img src="assets/travel.webp" width="720" height="628" loading="lazy" decoding="async" alt="Travel sample (lodging): cover and a frame from the middle" data-i18n-attr="alt:ind.travel.alt"></div><figcaption><b data-i18n="ind.travel">Travel</b><span data-i18n="ind.travel.d">Tourism, lodging, homestays</span><code>travel</code></figcaption></figure></li>
+    </ul>
+
+    <div class="guard rv">
+      <div class="checks">
+        <p class="checks-label" data-i18n="ind.checks">Validation blocks</p>
+        <ul class="chip-list">
+          <li class="chip" data-i18n="ind.c1">Ad-law superlatives</li>
+          <li class="chip" data-i18n="ind.c2">Numbers without a source</li>
+          <li class="chip" data-i18n="ind.c3">Dropped price conditions</li>
+          <li class="chip" data-i18n="ind.c4">Illustrations passed off as photos</li>
+        </ul>
+      </div>
+      <div class="nope">
+        <p class="nope-label" data-i18n="ind.nope">Not supported</p>
+        <ul class="chip-list nope-list">
+          <li class="chip" data-i18n="ind.n1">Medical aesthetics</li>
+          <li class="chip" data-i18n="ind.n2">Prescription drugs / medicine</li>
+          <li class="chip" data-i18n="ind.n3">K12 academic tutoring</li>
+          <li class="chip" data-i18n="ind.n4">Supplement efficacy claims</li>
+          <li class="chip" data-i18n="ind.n5">Tobacco</li>
+        </ul>
+        <p class="nope-note" data-i18n="ind.nopeNote">The compliance rules don't cover these, so results aren't guaranteed compliant even if you force them.</p>
+      </div>
+    </div>
+
+    <p class="sec-next"><a class="link-arrow" href="#limits"><span data-i18n="ind.next">Before you brew, see how far along it is</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ 05 已知限制（诚实区） ============ -->
+<section class="sec sec-tint" id="limits" aria-labelledby="limits-title">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <div>
+        <p class="kicker"><span class="kicker-no">No.05</span><span data-i18n="lim.kicker">Known limitations</span></p>
+        <h2 id="limits-title" data-i18n="lim.title">How far along it is</h2>
+      </div>
+      <p class="lead" data-i18n="lim.lead">It's a preview. Here is where things honestly stand; read this before you use it.</p>
+    </header>
+
+    <div class="lim-grid">
+      <div class="verdict rv">
+        <p class="stamp" data-i18n="lim.tag">Preview</p>
+        <p class="verdict-text" data-i18n="lim.verdict">We don't yet recommend publishing a video as rendered, without human edits.</p>
+        <p class="verdict-sub" data-i18n="lim.verdictSub">Testing and fixes are ongoing. Treat each video as a first draft: watch it all, edit, then publish. Passing validation alone is not enough.</p>
+        <p class="advice" data-i18n="lim.advice"><strong>Recommended use:</strong> for industry videos, use the merchant's real photos where you can and pass <code class='nw'>--brief &lt;brief&gt;</code> when rendering; before delivery, check every price, condition, date, opening hour and distance on screen against the brief.</p>
+      </div>
+
+      <figure class="score rv">
+        <h3 class="score-title" data-i18n="lim.score">Cheap-model test: 9 videos, none reached 7</h3>
+        <p class="score-d" data-i18n="lim.scoreD">In the round before v0.2.0, a small model played the cheap model: given only the brief and <code>SKILL.md</code>, it wrote each storyboard from scratch, validated and rendered. 7 is the score we set as "fine to publish as is".</p>
+        <table class="score-table">
+          <thead><tr><th scope="col" data-i18n="lim.th.cat">Category</th><th scope="col" data-i18n="lim.th.overall">Overall</th><th scope="col" data-i18n="lim.th.comp">Compliance</th></tr></thead>
+          <tbody>
+            <tr>
+              <th scope="row" data-i18n="lim.row1">Software / tools</th>
+              <td><span class="meter" style="--lo:5;--hi:6"><b>5–6</b><span class="meter-bar" aria-hidden="true"><i></i></span></span></td>
+              <td><span class="meter" style="--lo:7;--hi:8"><b>7–8</b><span class="meter-bar" aria-hidden="true"><i></i></span></span></td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="lim.row2">Industry videos</th>
+              <td><span class="meter" style="--lo:4;--hi:5"><b>4–5</b><span class="meter-bar" aria-hidden="true"><i></i></span></span></td>
+              <td><span class="meter" style="--lo:4;--hi:5"><b>4–5</b><span class="meter-bar" aria-hidden="true"><i></i></span></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <figcaption class="score-foot">
+          <span class="score-line"><i aria-hidden="true"></i><span data-i18n="lim.line">Fine to publish: 7</span></span>
+          <span class="score-note" data-i18n="lim.scoreNote">Scored out of 10 by a person watching frame by frame. Industry videos lost most points on cross-field factual problems.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <ul class="lim-list rv">
+      <li data-i18n="lim.1"><strong>quiz / journey not re-tested after the fixes:</strong> each recipe was tested with 3 videos and the problems the review listed were fixed, and the sample storyboards passed validation and delivery checks again; but the cheap model hasn't re-run a scored round, so the published scores are still from before the fixes. Nobody has listened to journey's music and sound effects yet.</li>
+      <li data-i18n="lim.v1"><strong>Alibaba Cloud and Volcengine voice-over not yet tested with a real key:</strong> both follow the official docs and are unit-tested against fake responses built from them; where the timestamps sit in the stream and whether the default voices work will be confirmed on the first real call. MiniMax has been rendered with a real key for all three recipes.</li>
+      <li data-i18n="lim.v2"><strong>Real voices read slower than the estimate:</strong> validation assumes 5 Chinese characters per second, while MiniMax's real voices measured about 4 per second, so a long line that passes validation can still be blocked at render time (it tells you how many characters to cut in which shot). Plan narration at about 4 characters per second.</li>
+      <li data-i18n="lim.2"><strong>Illustrations only without real photos:</strong> with no merchant photos, the visuals come from components and illustrations, which hurts industry videos most.</li>
+      <li data-i18n="lim.3"><strong>The DeepSeek Harness plugin has not been tested against a real DeepSeek model yet.</strong></li>
+      <li data-i18n="lim.4"><strong>Not supported:</strong> medical aesthetics, prescription drugs / medicine, K12 academic tutoring, supplement efficacy claims, tobacco.</li>
+    </ul>
+
+    <details class="lim-more rv">
+      <summary><span data-i18n="lim.more">Main remaining problems (8)</span><i class="acc" aria-hidden="true"></i></summary>
+      <ol>
+        <li data-i18n="lim.p1"><strong>Price conditions can be bypassed by deleting facts:</strong> checks on price conditions, date ranges and surcharges only apply to what the model itself put in <code>meta.facts</code>.</li>
+        <li data-i18n="lim.p2"><strong>Components can silently drop data:</strong> e.g. the mockApp dashboard shows only the rows that fit and ignores unsupported fields; validation reports neither.</li>
+        <li data-i18n="lim.p3"><strong>Truthfulness of locations and illustrations:</strong> the model still invents claims like "a 3-minute walk", and validation doesn't yet catch every illustration that doesn't match its label.</li>
+        <li data-i18n="lim.p4"><strong>Template feel:</strong> different videos often share the same cover, default line chart and white end card, with only the text and colors changed.</li>
+        <li data-i18n="lim.p5"><strong>Copy quality isn't checked automatically:</strong> words cut in half, awkward phrasing, a selling point repeated three times, or contradictions all get through.</li>
+        <li data-i18n="lim.p6"><strong>The core action isn't required on screen:</strong> for a tool, an action like "tap Start" may end up shown as an unrelated screen.</li>
+        <li data-i18n="lim.p7"><strong>Layout:</strong> brand-color numbers on dark themes can have too little contrast, and some panels leave their lower half empty when there is little content.</li>
+        <li data-i18n="lim.p8"><strong>Coverage of English and asset checks:</strong> the compliance word lists are written for Chinese, so English copy is checked less thoroughly; assets are only checked at the file level.</li>
+      </ol>
+    </details>
+
+    <div class="sec-next sec-next-split">
+      <a class="link-arrow" href="https://github.com/Finderchangchang/brewreel/issues" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="limits"><span data-i18n="lim.next">Found a rule that blocks too much or too little? Open an issue</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+      <p class="lim-readme" data-i18n="lim.readme">Test methods and results for every round are in the README's <a href='https://github.com/Finderchangchang/brewreel/blob/main/README.en.md#known-limitations' target='_blank' rel='noopener'>"Known limitations"</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 为什么叫精酿 ============ -->
+<section class="sec" id="craft" aria-labelledby="craft-title">
+  <div class="wrap">
+    <div class="craft-grid">
+      <div class="craft-story rv">
+        <header class="sec-head sec-head-stack">
+          <p class="kicker"><span class="kicker-no">No.06</span><span data-i18n="craft.kicker">Why "BrewReel"</span></p>
+          <h2 id="craft-title" data-i18n="craft.title">Good beer comes from a good recipe,<br>even with ordinary ingredients</h2>
+        </header>
+        <p class="prose" data-i18n="craft.body">A strong model first gets a video style right; its layout, motion, pacing and rules are then written down as a "recipe": ready-made components plus a validator. A low-cost model like DeepSeek is the ordinary ingredient: it follows the recipe, fills in a storyboard, and brews a video at the same level.</p>
+        <dl class="gloss">
+          <div><dt data-i18n="craft.g1">Recipe</dt><dd data-i18n="craft.g1d">a style pack</dd></div>
+          <div><dt data-i18n="craft.g2">Crafting a recipe</dt><dd data-i18n="craft.g2d">deriving a style from a reference video</dd></div>
+          <div><dt data-i18n="craft.g3">Brewing</dt><dd data-i18n="craft.g3d">rendering</dd></div>
+        </dl>
+        <p class="gloss-note" data-i18n="craft.gNote">Paths and fields keep their original names: <code>styles/</code>, <code>meta.style</code>, <code>distill/</code>.</p>
+      </div>
+
+      <div class="craft-share rv">
+        <h3 class="share-title" data-i18n="share.title">Brew your own, share the recipe</h3>
+        <p class="share-intro" data-i18n="share.intro">Homebrewers brew their own and share their recipes. Here that means open source, remixes and new creations:</p>
+        <ol class="tiers">
+          <li><b data-i18n="share.1">Use</b><p data-i18n="share.1d">Brew with an existing recipe.</p></li>
+          <li><b data-i18n="share.2">Remix · reskin</b><p data-i18n="share.2d"><code>node scripts/gen-styles.mjs --new &lt;id&gt;</code> scaffolds a new style; change the palette, fonts and characters. For a color-only variant, editing <code>tokens.json</code> is enough.</p></li>
+          <li><b data-i18n="share.3">Create · craft a recipe</b><p data-i18n="share.3d">Follow the six-step process in <code>distill/</code> to break down a reference video: extract frames, break it down, replicate, redesign, componentize, then test with a cheap model and review.</p></li>
+        </ol>
+        <div class="orig">
+          <h4 data-i18n="orig.title">Redesign + originality check is a required step</h4>
+          <p data-i18n="orig.d">The skeleton may stay: narrative structure, rhythm, motion, camera language. The skin must be redone: palette, characters, signature details. <code>check-originality.mjs</code> measures the color difference from the reference (CIEDE2000), and every signature item must say what replaced it or that it was removed.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <p class="sec-next"><a class="link-arrow" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="craft"><span data-i18n="craft.next">Browse the recipes on GitHub</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ 07 常见问题 ============ -->
+<section class="sec sec-tint" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq-grid">
+    <header class="sec-head sec-head-stack faq-head rv">
+      <p class="kicker"><span class="kicker-no">No.07</span><span data-i18n="faq.kicker">FAQ</span></p>
+      <h2 id="faq-title" data-i18n="faq.title">Asked before<br>the first brew</h2>
+      <p class="faq-more" data-i18n="faq.more">Didn't find your answer? <a href='https://github.com/Finderchangchang/brewreel/issues' target='_blank' rel='noopener'>Open an issue</a>, or message the WeChat Official Account.</p>
+    </header>
+    <div class="faq-list rv">
+      <details id="faq-q4"><summary><span data-i18n="faq.q4">Can I publish the video as rendered?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a4"><p>Not yet recommended. Treat the video as a first draft: watch the whole thing, fix awkward copy and repeated selling points, then publish. For industry videos, check every price, condition, date, opening hour and distance on screen against the brief. See <a href='#limits'>"How far along it is"</a> for test results.</p></div></details>
+      <details id="faq-q5"><summary><span data-i18n="faq.q5">Does it cost anything?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a5"><p>The project is free and open source. Model calls use your own API key and are billed by the provider for what you use; the project handles no money. Rendering runs on your own computer. The rendering engine Remotion charges for-profit organizations with 4 or more people; see the Remotion question below.</p></div></details>
+      <details id="faq-qLic"><summary><span data-i18n="faq.qLic">Can I use it commercially? Do I need to credit it?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a"><div data-i18n="faq.aLic"><p>Yes. It's Apache-2.0: individuals and companies may use, modify and redistribute it, or build it into their own products, with no fee and no prior permission. If you redistribute it or build on it, keep LICENSE and NOTICE and credit the source. Suggested wording:</p></div><div class="attr"><code id="attrText" data-i18n="lic.attr">Based on BrewReel (精酿, https://github.com/Finderchangchang/brewreel)</code><button class="copy copy-inline" type="button" data-copy-from="#attrText" aria-label="Copy the suggested wording" data-i18n-attr="aria-label:a.copyAttr"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button></div><div data-i18n="faq.aLic2"><p><strong>Videos you render with it don't require attribution.</strong> Don't use the names "BrewReel" or "精酿" or the brewreel.com domain to imply your work is made or endorsed by the original author. Remotion, which does the rendering, has its own license; see the next question.</p></div></div></details>
+      <details id="faq-q6"><summary><span data-i18n="faq.q6">Does Remotion need a license? What about upgrading to 5.0?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a6"><p>Remotion is source-available, not open source: free for individuals, for-profit companies with 3 or fewer people, and non-profits (including commercial use); <strong>for-profit organizations with 4 or more people must purchase Remotion's Company License</strong>, see <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>. This repo's Apache-2.0 license doesn't change Remotion's own terms.</p><p>This repo pins <code>remotion</code> / <code>@remotion/cli</code> to <code>4.0.529</code>. After upgrading to 5.0, Remotion's free tier requires a <code>licenseKey</code> in config (individuals / companies with 3 or fewer people / non-profits use <code>free-license</code>); read <code>THIRD_PARTY_LICENSES.md</code> before upgrading.</p></div></details>
+      <details id="faq-q1"><summary><span data-i18n="faq.q1">Where does the background music come from?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a1"><p><code>scripts/make_bgm.py</code> synthesizes it on the spot with numpy / scipy: instruments, harmony, melody, mixing and mastering all live in the script, with no external sample library. Each shot is one section, notes land on whole or half beats, and every shot change gets a cymbal or a fill, so the music follows the cuts. Loudness is normalized to -16 LUFS.</p><p>Because it's synthesized on the spot, there are no copyright issues. When you publish on a platform such as Douyin, you can also render a silent version with <code class='nw'>--no-bgm</code> and add music on the platform.</p></div></details>
+      <details id="faq-q2"><summary><span data-i18n="faq.q2">Is there a voice-over?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a2"><p>Yes. v0.5.0 added MiniMax text-to-speech, and from v0.5.1 you can also use Alibaba Cloud (Model Studio CosyVoice) or Volcengine (Doubao speech). Write <code>meta.voice</code> and a <code>vo</code> per shot, set the matching environment variable (<code>MINIMAX_API_KEY</code> / <code>DASHSCOPE_API_KEY</code> / <code>VOLCENGINE_TTS_API_KEY</code>), and render. Shot lengths follow the narration, subtitles light up word by word, and the music ducks under speech. Without a key, add <code class='nw'>--voice-provider mock</code> to preview the rhythm with a placeholder voice. Without <code>meta.voice</code> there is no voice-over, as before. When you publish with an AI voice, tick the platform's AI-generated content declaration as it requires.</p></div></details>
+      <details id="faq-q3"><summary><span data-i18n="faq.q3">Why illustrations instead of real footage?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a3"><p>The project doesn't generate images that look like real photography. Without merchant material, the video falls back to components and simple line illustrations and labels them clearly, rather than passing them off as real photos. With the merchant's real photos (store, finished product, price list), use the real-photo shots; the result is far more convincing. Whether a photo is authorized goes on the human-review list.</p></div></details>
+      <details id="faq-q7"><summary><span data-i18n="faq.q7">Chrome Headless Shell fails to download?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a7"><p><code>npx remotion browser ensure</code> may not reach Google's download endpoint from some networks. Download it manually and point to a local Chrome / Chromium with <code class='nw'>--browser-executable</code> (results may differ slightly between Chrome versions).</p></div></details>
+      <details id="faq-q8"><summary><span data-i18n="faq.q8">Anything to watch for on Windows?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a8"><p>x64 only. Set environment variables the PowerShell way, <code>$env:LLM_API_KEY="..."</code>, not <code>export</code>. Always pass storyboards as a file path, never as inline JSON on the command line (the Windows shell mangles the quotes). <code>make.mjs</code> calls <code>python</code> on Windows; if yours lives elsewhere, point the <code>PYTHON</code> environment variable at it.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 收尾：下一步 + 反馈 ============ -->
+<section class="closing" id="contact" aria-labelledby="closing-title">
+  <div class="wrap closing-inner">
+    <img class="closing-logo" src="assets/logo.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+    <h2 class="closing-title" id="closing-title" data-i18n="end.title">Brew great promo reels with low-cost models.</h2>
+    <p class="closing-sub" data-i18n="end.sub">Open source and free for commercial use. Star it so you don't miss new recipes.</p>
+    <div class="cta-row cta-center">
+      <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="closing"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-github"/></svg><span data-i18n="hero.star">Star on GitHub</span><span class="btn-count"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-star"/></svg><b data-brew-stars>55</b></span></a>
+      <button class="btn btn-ghost" type="button" data-copy-from="#quickstart pre" data-umami-event="copy-install" data-umami-event-block="closing"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="end.copy">Copy the quick-start commands</span></button>
+    </div>
+    <div class="feedback">
+      <p class="fb-lead" data-i18n="ct.lead">We want to hear real needs: what product do you want a video for? Which recipe or industry is missing? Which compliance rule got in your way? Message the Official Account or open an issue.</p>
+      <p class="fb-issues"><span data-i18n="ct.issues">Validation rules that block too much or too little, render errors, frames that look wrong. Attaching the storyboard JSON and the error output helps most. <strong>Never paste an API key.</strong></span></p>
+      <p><a class="link-arrow" href="https://github.com/Finderchangchang/brewreel/issues" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="issues"><span data-i18n="ct.issuesLink">Open an issue</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top">
+          <img src="assets/favicon.png" alt="" width="30" height="30" class="brand-mark" loading="lazy" decoding="async">
+          <span class="brand-name" data-i18n="brand.name">BrewReel<span class='brand-alt'> · 精酿</span></span>
+        </a>
+        <p class="foot-tag" data-i18n="ft.tag">Write a product brief, render a vertical promo video with one command.</p>
+      </div>
+
+      <nav class="foot-col" aria-label="Project" data-i18n-attr="aria-label:ft.project">
+        <h2 class="foot-h" data-i18n="ft.project">Project</h2>
+        <a href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="footer"><span data-i18n="ft.repo">GitHub repo</span></a>
+        <a href="https://github.com/Finderchangchang/brewreel/releases" target="_blank" rel="noopener">Releases</a>
+        <a href="https://github.com/Finderchangchang/brewreel/blob/main/CHANGELOG.md" target="_blank" rel="noopener"><span data-i18n="ft.changelog">Changelog</span></a>
+        <a href="https://github.com/Finderchangchang/brewreel/issues" target="_blank" rel="noopener">Issues</a>
+      </nav>
+
+      <nav class="foot-col" aria-label="Docs" data-i18n-attr="aria-label:ft.docs">
+        <h2 class="foot-h" data-i18n="ft.docs">Docs</h2>
+        <a href="https://github.com/Finderchangchang/brewreel/tree/main/integrations/deepseek-harness" target="_blank" rel="noopener" data-umami-event="click-dsh" data-umami-event-pos="footer"><span data-i18n="ft.plugin">Plugin docs</span></a>
+        <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">DeepSeek Harness</a>
+        <a href="https://www.remotion.dev/license" target="_blank" rel="noopener"><span data-i18n="ft.remotion">Remotion license</span></a>
+      </nav>
+
+      <nav class="foot-col" aria-label="Sister projects" data-i18n-attr="aria-label:ft.sister">
+        <h2 class="foot-h" data-i18n="ft.sister">Sister projects</h2>
+        <a href="https://chatjevs.com" target="_blank" rel="noopener" data-umami-event="click-sister" data-umami-event-project="chatjevs"><span data-i18n="ft.sis1">Jev chat assistant · website</span></a>
+        <a href="https://github.com/jev-chat/jev-chat-jarvis" target="_blank" rel="noopener" data-umami-event="click-sister" data-umami-event-project="jarvis"><span data-i18n="ft.sis2">Jev chat assistant</span></a>
+        <a href="https://github.com/jev-chat/jev-chat-jarvis-mac" target="_blank" rel="noopener" data-umami-event="click-sister" data-umami-event-project="mac"><span data-i18n="ft.sis3">Jev chat assistant for macOS</span></a>
+        <a href="https://github.com/jev-chat/jev-chat-windows" target="_blank" rel="noopener" data-umami-event="click-sister" data-umami-event-project="windows"><span data-i18n="ft.sis4">Jev chat assistant for Windows</span></a>
+      </nav>
+    </div>
+
+    <div class="foot-contact">
+      <div class="qr-card">
+        <img class="qr" src="assets/mp-qr.webp" width="430" height="430" loading="lazy" decoding="async" alt="WeChat Official Account QR code" data-i18n-attr="alt:a.mp">
+        <div>
+          <h2 class="foot-h" data-i18n="ct.mpTitle">WeChat Official Account</h2>
+          <p data-i18n="ct.mp">For contact, please send a private message to the WeChat Official Account. Partnerships, sponsorship and requests all go there: scan, follow, and leave a message.</p>
+          <p class="small-note" data-i18n="ct.mpNote">There's no dedicated chat group yet.</p>
+        </div>
+      </div>
+      <div class="qr-card">
+        <img class="qr" src="assets/donate-qr.webp" width="520" height="520" loading="lazy" decoding="async" alt="WeChat appreciation QR code" data-i18n-attr="alt:a.donate">
+        <div>
+          <h2 class="foot-h" data-i18n="ct.coffeeTitle">Buy me a coffee</h2>
+          <p data-i18n="ct.coffee">If BrewReel helped you out, feel free to buy me a coffee. Every recipe here was brewed on a lot of coffee: keep the cup filled and the next recipe comes sooner.</p>
+          <p class="small-note" data-i18n="ct.coffeeNote">Only if it's easy for you, no pressure. A Star, an issue, or showing me a video you brewed makes me just as happy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+    <p class="language-links"><a href="./?lang=zh" hreflang="zh-CN" lang="zh-CN">简体中文</a> · <a href="en.html" hreflang="en" lang="en">English</a> · <a href="llms.txt" data-i18n="facts.text">Project facts (text)</a></p>
+
+      <p data-i18n="ft.copy">© 2026 Finderchangchang · <a href='https://github.com/Finderchangchang/brewreel/blob/main/LICENSE' target='_blank' rel='noopener'>Apache-2.0</a> open source · commercial use allowed, credit required (<a href='https://github.com/Finderchangchang/brewreel/blob/main/NOTICE' target='_blank' rel='noopener'>NOTICE</a>) · videos need no attribution</p>
+      <p data-i18n="ft.legal">The validation rules are for self-checking only and are not legal advice.</p>
+      <p data-i18n="ft.formerly">Formerly promo-video-skill; old links redirect automatically.</p>
+    </div>
+  </div>
+</footer>
+
+<dialog class="demo" id="demoDialog" aria-labelledby="demoTitle">
+  <div class="demo-inner">
+    <div class="demo-head">
+      <h2 class="demo-title" id="demoTitle" data-i18n="dlg.title">Full demo</h2>
+      <button class="icon-btn demo-close" type="button" data-demo-close aria-label="Close" data-i18n-attr="aria-label:dlg.close"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button>
+    </div>
+    <div class="demo-frame">
+      <video id="demoVideo" controls playsinline preload="none" data-poster="assets/poster.webp" width="1080" height="1920" aria-label="Full demo video: actual renders of the three recipes" data-i18n-attr="aria-label:a.video"><source src="assets/demo.mp4" type="video/mp4"></video>
+    </div>
+    <p class="demo-cap" data-i18n="dlg.cap">Actual renders of the three recipes, about 50 seconds, with music and sound effects (this demo has no voice-over). The products and numbers are fictional.</p>
+  </div>
+</dialog>
+
+<p class="sr-only" id="live" aria-live="polite"></p>
+
+</body>
+</html>

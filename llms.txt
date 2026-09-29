@@ -1,0 +1,33 @@
+# BrewReel / 精酿
+
+> BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.
+
+精酿 · BrewReel 是开源的 AI 辅助宣传片制作工具。你提供产品简报和素材，语言模型编写分镜，程序按配方在本机渲染视频；成片需要人工检查后再发布。
+
+## Official pages
+
+- [简体中文](https://brewreel.com/): Product overview, requirements and limitations.
+- [English](https://brewreel.com/en.html): Complete static English page.
+- [GitHub](https://github.com/Finderchangchang/brewreel): Source code, installation and platform documentation.
+- [Releases](https://github.com/Finderchangchang/brewreel/releases): Published releases.
+- [Project license](https://github.com/Finderchangchang/brewreel/blob/main/LICENSE): Apache-2.0.
+- [Third-party licenses](https://github.com/Finderchangchang/brewreel/blob/main/THIRD_PARTY_LICENSES.md): Includes Remotion licensing requirements.
+
+## Product facts
+
+- Who it is for: Developers and creators comfortable setting up a local runtime, making product introductions, feature explainers, quiz videos or character-journey promos.
+- 适合什么需求：面向愿意安装本地运行环境的开发者和内容创作者，用于制作产品介绍、卖点讲解、答题互动或角色漫游宣传片。
+- Inputs and outputs: Inputs are a product brief, optional real photos and voiceover settings. Outputs include a promo video and its storyboard record. The cards and quiz recipes default to 1080×1920; journey defaults to 1080×1350, all at 30 fps.
+- 输入与输出：输入产品简报、可选的实拍素材与配音配置；输出宣传片和对应分镜记录。cards、quiz 默认 1080×1920，journey 默认 1080×1350，均为 30 fps。
+- Costs and requirements: The project uses Apache-2.0. Model and voiceover APIs may charge separately. Remotion has a separate license; for-profit organizations with four or more employees need a Company License.
+- 费用与使用条件：项目采用 Apache-2.0 许可；模型与配音接口可能另收费。Remotion 有独立许可，4 人及以上的营利组织需购买 Company License。
+
+Project author: Finderchangchang . See the GitHub documentation for installation, test records and known limitations.
+
+## Read before use
+
+- A language model writes the storyboard; rendering is performed locally with code.
+- Generated videos are drafts that need human review before publication.
+- Model and voiceover API calls may incur separate provider fees.
+- The DeepSeek Harness plugin is published, but the project documentation still marks real DeepSeek-model testing as pending.
+- MiniMax voiceover has been tested; Alibaba Cloud and Volcengine voiceover still need live-key verification.

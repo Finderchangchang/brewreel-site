@@ -7,7 +7,18 @@
  */
 window.BREW_I18N = {
   "zh": {
-    "meta.title": "精酿 · BrewReel — 便宜模型，也能酿出好片",
+    "facts.title": "精酿 BrewReel 是什么？",
+    "facts.desc": "精酿 · BrewReel 是开源的 AI 辅助宣传片制作工具。你提供产品简报和素材，语言模型编写分镜，程序按配方在本机渲染视频；成片需要人工检查后再发布。",
+    "facts.use.label": "适合什么需求",
+    "facts.use": "面向愿意安装本地运行环境的开发者和内容创作者，用于制作产品介绍、卖点讲解、答题互动或角色漫游宣传片。",
+    "facts.scope.label": "输入与输出",
+    "facts.scope": "输入产品简报、可选的实拍素材与配音配置；输出宣传片和对应分镜记录。cards、quiz 默认 1080×1920，journey 默认 1080×1350，均为 30 fps。",
+    "facts.cost.label": "费用与使用条件",
+    "facts.cost": "项目采用 Apache-2.0 许可；模型与配音接口可能另收费。Remotion 有独立许可，4 人及以上的营利组织需购买 Company License。",
+    "facts.source": "项目作者：<a href='https://github.com/Finderchangchang' target='_blank' rel='noopener'>Finderchangchang</a>。安装步骤、实测记录和已知限制以 <a href='https://github.com/Finderchangchang/brewreel' target='_blank' rel='noopener' data-umami-event='click-github' data-umami-event-pos='facts'>GitHub 项目文档</a>为准。",
+    "facts.text": "项目资料（文本）",
+
+    "meta.title": "精酿 BrewReel — 开源 AI 辅助宣传片制作工具",
     "meta.desc": "精酿 · BrewReel 是一个开源的竖版宣传片工具：写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包、可选配音，内置《广告法》极限词和行业合规校验，Apache-2.0 开源。",
     "meta.ogDesc": "写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包，Apache-2.0 开源。",
     "meta.locale": "zh_CN",
@@ -304,7 +315,18 @@ window.BREW_I18N = {
   },
 
   "en": {
-    "meta.title": "BrewReel · 精酿 — Brew great promo reels with low-cost models",
+    "facts.title": "What is BrewReel?",
+    "facts.desc": "BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.",
+    "facts.use.label": "Who it is for",
+    "facts.use": "Developers and creators comfortable setting up a local runtime, making product introductions, feature explainers, quiz videos or character-journey promos.",
+    "facts.scope.label": "Inputs and outputs",
+    "facts.scope": "Inputs are a product brief, optional real photos and voiceover settings. Outputs include a promo video and its storyboard record. The cards and quiz recipes default to 1080×1920; journey defaults to 1080×1350, all at 30 fps.",
+    "facts.cost.label": "Costs and requirements",
+    "facts.cost": "The project uses Apache-2.0. Model and voiceover APIs may charge separately. Remotion has a separate license; for-profit organizations with four or more employees need a Company License.",
+    "facts.source": "Project author: <a href='https://github.com/Finderchangchang' target='_blank' rel='noopener'>Finderchangchang</a>. See the <a href='https://github.com/Finderchangchang/brewreel' target='_blank' rel='noopener' data-umami-event='click-github' data-umami-event-pos='facts'>GitHub documentation</a> for installation, test records and known limitations.",
+    "facts.text": "Project facts (text)",
+
+    "meta.title": "BrewReel — Open-source AI-assisted promo video tool",
     "meta.desc": "BrewReel is an open-source tool for vertical promo videos: write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, optional voice-over, built-in ad-law and industry compliance checks. Apache-2.0.",
     "meta.ogDesc": "Write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, Apache-2.0.",
     "meta.locale": "en_US",

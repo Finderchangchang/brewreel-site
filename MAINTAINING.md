@@ -1,6 +1,6 @@
 # 维护说明
 
-brewreel.com 是纯静态站：GitHub Pages 从 `main` 分支根目录直出，没有框架、没有构建步骤。合并到 `main` 就是上线。
+brewreel.com 是纯静态站：GitHub Pages 从 `main` 分支根目录直出，没有框架，发布时无需构建；维护时需生成英文页和发现文件（见下文）。合并到 `main` 就是上线。
 
 ## 文件一览
 
@@ -20,7 +20,8 @@ brewreel.com 是纯静态站：GitHub Pages 从 `main` 分支根目录直出，�
 1. 只改 `i18n.js`，中英两个字典一起改。
 2. 跑 `node tools/check-i18n.mjs --fix`：把中文写进 `index.html`（没有 JS 的访客、搜索引擎、社交平台抓取看到的就是这份中文）。
 3. 再跑一遍 `node tools/check-i18n.mjs`，看到「✓ 中英文案一致，没有缺键和孤儿键」再提交。
-4. 本地看一眼（见「本地预览」），中文、`?lang=en` 各看一遍。
+4. 跑 `node tools/build-discovery.mjs`，同步静态英文页、JSON-LD、sitemap、robots 和文本资料，再跑 `node tools/build-discovery.mjs --check` 检查没有过期产物。
+5. 本地看一眼（见「本地预览」），中文、`?lang=en` 各看一遍。
 
 检查脚本会拦下：HTML 里用了但字典里没有的键、中英字典键不一致、HTML 里的中文和字典不一致、字典里没人用的孤儿键、重复键、空值、`data-i18n` 嵌套。英文里混进汉字会给提醒（「精酿」「交付」「切换到中文」这三个是故意的）。
 
@@ -138,3 +139,30 @@ python -m http.server 8813 --bind 127.0.0.1
 `python -m http.server` 不支持 HTTP Range，视频不能跳转，所以「点预览从这一段开始」在本地会从头播；GitHub Pages 支持 Range，线上正常。要在本地验证跳转，换一个支持 Range 的静态服务器。
 
 上线前至少看：1440 宽和 375 宽、浅色和深色、中文和英文；375 宽下 `document.documentElement.scrollWidth` 应当等于 375；控制台没有报错。
+
+
+## 搜索与 AI 搜索维护（2026-09-30）
+
+- 中文页面 `/`，英文页面 `/en.html`：都包含完整静态正文、各自 canonical、互相对应的 hreflang、OG 和与可见正文一致的 JSON-LD。英文页由字典生成，不手改。
+- 保留旧 `?lang=zh/en` 分享链接。启用 JS 时导航到对应静态页面；无 JS 的英文入口使用 `/en.html`。页脚语言链接在无 JS 时也可用。
+- 常见问题有稳定的 `#faq-q1` 等锚点，可直接分享某一问题。
+- `facts.*` 是产品定位、使用范围、费用和来源的文案来源；`llms.txt` 从同一份文案生成。它是方便读取的文本索引，不是搜索收录或 AI 推荐的保证。
+- `robots.txt` 允许公开页面抓取，明确列出 OAI-SearchBot / PerplexityBot。两站此前没有 robots.txt，本次保留默认可抓取状态；搜索爬虫和模型训练爬虫用途不同。
+- `sitemap.xml` 只列本站规范页面，不填猜测的修改日期；保留自引用及双向 hreflang。镜像使用官方域名 canonical，不生成镜像域名版本。
+- 不写虚构评分、评价、用户数或背书；不添加仅供机器看到的功能承诺。Jev 三端版本各自维护，不能用 Android 版本号代表三端，也不能把 Android 的许可/权限说明概括成所有平台相同。
+
+维护命令：
+
+```bash
+node tools/check-i18n.mjs --fix
+node tools/build-discovery.mjs
+node tools/build-discovery.mjs --check
+node --check main.js
+git diff --check
+```
+
+上线前检查两种语言、375 / 1440 宽度、浅深色、禁用 JS、语言切换和隐私链接。确认 sitemap 内页面返回 200，robots 不屏蔽正文，线上文件与提交一致。
+
+效果验证：在已有的 Search Console / Bing Webmaster Tools 中提交 sitemap，查看实际抓取/索引与 AI 搜索表现；Umami 的 AI 来源访问与 GitHub 入口点击只说明访问和点击，不能当作被 AI 推荐的次数或下载数。不要为了提交 sitemap 采用已废弃的匿名 ping 接口。账号验证与后续表现以平台真实记录为准。
+
+依据：[Google AI 搜索指南](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)、[OpenAI 爬虫说明](https://developers.openai.com/api/docs/bots)、[Perplexity 爬虫说明](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)。

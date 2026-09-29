@@ -49,21 +49,18 @@
     hooks.forEach(function (fn) { fn(); });
   }
 
-  var initial = "zh";
-  var q = /[?&]lang=(en|zh)\b/.exec(location.search);
-  initial = q ? q[1] : (load(LANG_KEY) === "en" ? "en" : "zh");
-
+  var initial = root.getAttribute("lang") === "en" ? "en" : "zh";
   var langBtn = $("#langBtn");
   if (langBtn) {
     langBtn.addEventListener("click", function () {
       var next = lang === "en" ? "zh" : "en";
-      applyLang(next);
       save(LANG_KEY, next);
-      // 地址栏带 ?lang= 时一起改，刷新后不会跳回去
-      if (/[?&]lang=/.test(location.search) && window.history && history.replaceState) {
-        var url = location.pathname + location.search.replace(/([?&]lang=)(en|zh)/, "$1" + next) + location.hash;
-        history.replaceState(null, "", url);
-      }
+      track("toggle-lang", { to: next });
+      var url = new URL(next === "en" ? "en.html" : "./", location.href);
+      url.search = location.search;
+      url.searchParams.set("lang", next);
+      url.hash = location.hash;
+      location.assign(url.href);
     });
   }
 

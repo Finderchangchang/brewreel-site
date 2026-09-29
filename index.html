@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title data-i18n="meta.title">精酿 · BrewReel — 便宜模型，也能酿出好片</title>
+<title data-i18n="meta.title">精酿 BrewReel — 开源 AI 辅助宣传片制作工具</title>
 <meta name="description" content="精酿 · BrewReel 是一个开源的竖版宣传片工具：写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包、可选配音，内置《广告法》极限词和行业合规校验，Apache-2.0 开源。" data-i18n-attr="content:meta.desc">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://brewreel.com/">
 <link rel="alternate" hreflang="zh-CN" href="https://brewreel.com/">
-<link rel="alternate" hreflang="en" href="https://brewreel.com/?lang=en">
+<link rel="alternate" hreflang="en" href="https://brewreel.com/en.html">
 <link rel="alternate" hreflang="x-default" href="https://brewreel.com/">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -17,47 +18,111 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brewreel.com/">
 <meta property="og:site_name" content="精酿 · BrewReel">
-<meta property="og:title" content="精酿 · BrewReel — 便宜模型，也能酿出好片" data-i18n-attr="content:meta.title">
+<meta property="og:title" content="精酿 BrewReel — 开源 AI 辅助宣传片制作工具" data-i18n-attr="content:meta.title">
 <meta property="og:description" content="写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包，Apache-2.0 开源。" data-i18n-attr="content:meta.ogDesc">
 <meta property="og:image" content="https://brewreel.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="精酿 · BrewReel — 便宜模型，也能酿出好片" data-i18n-attr="content:meta.title">
+<meta property="og:image:alt" content="精酿 BrewReel — 开源 AI 辅助宣传片制作工具" data-i18n-attr="content:meta.title">
 <meta property="og:locale" content="zh_CN" data-i18n-attr="content:meta.locale">
 <meta property="og:locale:alternate" content="en_US" data-i18n-attr="content:meta.localeAlt">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="精酿 · BrewReel — 便宜模型，也能酿出好片" data-i18n-attr="content:meta.title">
+<meta name="twitter:title" content="精酿 BrewReel — 开源 AI 辅助宣传片制作工具" data-i18n-attr="content:meta.title">
 <meta name="twitter:description" content="写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包，Apache-2.0 开源。" data-i18n-attr="content:meta.ogDesc">
 <meta name="twitter:image" content="https://brewreel.com/assets/og.jpg">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"精酿 · BrewReel","alternateName":"BrewReel","url":"https://brewreel.com/","codeRepository":"https://github.com/Finderchangchang/brewreel","license":"https://www.apache.org/licenses/LICENSE-2.0","programmingLanguage":["JavaScript","TypeScript","Python"],"author":{"@type":"Person","name":"Finderchangchang","url":"https://github.com/Finderchangchang"}}
+<script type="application/ld+json" id="site-schema">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://brewreel.com/#author",
+      "name": "Finderchangchang",
+      "url": "https://github.com/Finderchangchang"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://brewreel.com/#website",
+      "url": "https://brewreel.com/",
+      "name": "精酿 · BrewReel",
+      "inLanguage": [
+        "zh-CN",
+        "en"
+      ],
+      "publisher": {
+        "@id": "https://brewreel.com/#author"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://brewreel.com/#software",
+      "name": "精酿 · BrewReel",
+      "alternateName": [
+        "BrewReel",
+        "精酿"
+      ],
+      "url": "https://brewreel.com/",
+      "description": "精酿 · BrewReel 是开源的 AI 辅助宣传片制作工具。你提供产品简报和素材，语言模型编写分镜，程序按配方在本机渲染视频；成片需要人工检查后再发布。",
+      "sameAs": [
+        "https://github.com/Finderchangchang/brewreel"
+      ],
+      "author": {
+        "@id": "https://brewreel.com/#author"
+      },
+      "codeRepository": "https://github.com/Finderchangchang/brewreel",
+      "license": "https://github.com/Finderchangchang/brewreel/blob/main/LICENSE",
+      "programmingLanguage": [
+        "JavaScript",
+        "TypeScript",
+        "Python"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://brewreel.com/#webpage",
+      "url": "https://brewreel.com/",
+      "name": "精酿 BrewReel — 开源 AI 辅助宣传片制作工具",
+      "description": "精酿 · BrewReel 是一个开源的竖版宣传片工具：写一份产品简报，AI 挑镜头、写文案，一条命令出一支竖版宣传片。三种配方、六个行业包、可选配音，内置《广告法》极限词和行业合规校验，Apache-2.0 开源。",
+      "inLanguage": "zh-CN",
+      "isPartOf": {
+        "@id": "https://brewreel.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://brewreel.com/#software"
+      }
+    }
+  ]
+}
 </script>
 <script>
-  /* 首屏前应用主题和语言标记，避免闪烁；英文时先藏起中文正文，main.js 换完再显示（1.5 秒兜底） */
+  // Theme first; each language also has a complete, crawlable static HTML page.
   (function () {
     var d = document.documentElement;
     try {
-      var t = localStorage.getItem("brewreel-theme");
-      if (t === "dark" || t === "light") d.setAttribute("data-theme", t);
+      var theme = localStorage.getItem("brewreel-theme");
+      if (theme === "dark" || theme === "light") d.setAttribute("data-theme", theme);
     } catch (e) {}
-    try {
-      var q = /[?&]lang=(en|zh)\b/.exec(location.search);
-      var l = q ? q[1] : localStorage.getItem("brewreel-lang");
-      if (l === "en") {
-        d.setAttribute("lang", "en");
-        d.classList.add("i18n-pending");
-        setTimeout(function () { d.classList.remove("i18n-pending"); }, 1500);
-      }
-    } catch (e) {}
+    var q = new URLSearchParams(location.search).get("lang");
+    var saved = null;
+    try { saved = localStorage.getItem("brewreel-lang"); } catch (e) {}
+    var isEnglishPage = /\/en\.html$/.test(location.pathname);
+    var next = q === "en" || q === "zh" ? q : (isEnglishPage ? "en" :
+      (saved === "en" || saved === "zh" ? saved : "zh"));
+    if ((next === "en") !== isEnglishPage) {
+      var url = new URL(next === "en" ? "en.html" : "./", location.href);
+      url.search = location.search;
+      url.hash = location.hash;
+      location.replace(url.href);
+    }
   })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"></noscript>
-<link rel="stylesheet" href="style.css?v=20260927c">
-<script defer src="i18n.js?v=20260927c"></script>
-<script defer src="main.js?v=20260927c"></script>
+<link rel="stylesheet" href="style.css?v=20260930a">
+<script defer src="i18n.js?v=20260930a"></script>
+<script defer src="main.js?v=20260930a"></script>
 <script defer src="https://umami.jisikeji.cn/script.js" data-website-id="c80c17ab-9413-4d0b-a359-171bc2a23bc9"></script>
 </head>
 <body>
@@ -165,6 +230,20 @@
     </div>
   </div>
 </section>
+
+<section class="product-facts" id="about" aria-labelledby="facts-title">
+  <div class="wrap">
+    <h2 id="facts-title" data-i18n="facts.title">精酿 BrewReel 是什么？</h2>
+    <p class="facts-intro" data-i18n="facts.desc">精酿 · BrewReel 是开源的 AI 辅助宣传片制作工具。你提供产品简报和素材，语言模型编写分镜，程序按配方在本机渲染视频；成片需要人工检查后再发布。</p>
+    <dl class="facts-grid">
+      <div><dt data-i18n="facts.use.label">适合什么需求</dt><dd data-i18n="facts.use">面向愿意安装本地运行环境的开发者和内容创作者，用于制作产品介绍、卖点讲解、答题互动或角色漫游宣传片。</dd></div>
+      <div><dt data-i18n="facts.scope.label">输入与输出</dt><dd data-i18n="facts.scope">输入产品简报、可选的实拍素材与配音配置；输出宣传片和对应分镜记录。cards、quiz 默认 1080×1920，journey 默认 1080×1350，均为 30 fps。</dd></div>
+      <div><dt data-i18n="facts.cost.label">费用与使用条件</dt><dd data-i18n="facts.cost">项目采用 Apache-2.0 许可；模型与配音接口可能另收费。Remotion 有独立许可，4 人及以上的营利组织需购买 Company License。</dd></div>
+    </dl>
+    <p class="facts-source" data-i18n="facts.source">项目作者：<a href='https://github.com/Finderchangchang' target='_blank' rel='noopener'>Finderchangchang</a>。安装步骤、实测记录和已知限制以 <a href='https://github.com/Finderchangchang/brewreel' target='_blank' rel='noopener' data-umami-event='click-github' data-umami-event-pos='facts'>GitHub 项目文档</a>为准。</p>
+  </div>
+</section>
+
 
 <!-- ============ 01 配方单：片子长什么样 ============ -->
 <section class="sec" id="recipes" aria-labelledby="recipes-title">
@@ -574,15 +653,15 @@ dsh web</code></pre>
       <p class="faq-more" data-i18n="faq.more">没找到答案？<a href='https://github.com/Finderchangchang/brewreel/issues' target='_blank' rel='noopener'>提一个 issue</a>，或公众号私信。</p>
     </header>
     <div class="faq-list rv">
-      <details><summary><span data-i18n="faq.q4">成片能直接发吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a4"><p>还不建议。把成片当初稿：看完整片，改掉别扭的文案和重复的卖点再发；行业片把画面上每个价格、条件、日期、营业时间、距离逐条和简报对一遍。实测情况见<a href='#limits'>「现在能用到什么程度」</a>。</p></div></details>
-      <details><summary><span data-i18n="faq.q5">要花钱吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a5"><p>本项目免费开源。模型调用用你自己的 API Key，按用量在服务商那边结算，项目不经手任何费用；渲染在你自己的电脑上跑。渲染引擎 Remotion 对 4 人及以上的营利组织收费，见下面 Remotion 那一条。</p></div></details>
-      <details><summary><span data-i18n="faq.qLic">可以商用吗？要注明出处吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a"><div data-i18n="faq.aLic"><p>可以商用。项目以 Apache-2.0 开源，个人和公司都可以使用、修改、再分发，或集成进自己的产品，不需要付费或事先授权。再分发或二次开发请保留 LICENSE、NOTICE，并注明出处，推荐写法：</p></div><div class="attr"><code id="attrText" data-i18n="lic.attr">基于 精酿 BrewReel（https://github.com/Finderchangchang/brewreel）二次开发</code><button class="copy copy-inline" type="button" data-copy-from="#attrText" aria-label="复制推荐写法" data-i18n-attr="aria-label:a.copyAttr"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">复制</span></button></div><div data-i18n="faq.aLic2"><p><strong>用它做出的视频不要求署名。</strong>别用「精酿」「BrewReel」名称或 brewreel.com 暗示由原作者出品或背书。渲染依赖的 Remotion 另有许可，见下一条。</p></div></div></details>
-      <details><summary><span data-i18n="faq.q6">Remotion 要授权吗？升级到 5.0 要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a6"><p>Remotion 是源码可见、非开源的软件：个人、3 人及以下的营利公司、非营利组织可免费使用（含商用）；<strong>4 人及以上的营利组织需要购买 Remotion 的 Company License</strong>，详见 <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>。本仓库的 Apache-2.0 不改变 Remotion 自己的许可条件。</p><p>本仓库把 <code>remotion</code> / <code>@remotion/cli</code> 钉在 <code>4.0.529</code>。升级到 5.0 后，Remotion 免费层需要在配置里传 <code>licenseKey</code>（个人 / 3 人以下公司 / 非营利填 <code>free-license</code>），升级前请先看 <code>THIRD_PARTY_LICENSES.md</code>。</p></div></details>
-      <details><summary><span data-i18n="faq.q1">背景音乐是怎么来的？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a1"><p><code>scripts/make_bgm.py</code> 用 numpy / scipy 现场合成：乐器、和声、旋律、混音、母带都在脚本里，不用外部素材库。每个镜头一个段落，音符落在整拍 / 半拍，镜头切换处有镲或加花，所以音乐是卡着镜头走的；响度校到 -16 LUFS。</p><p>因为是现场合成的，没有版权问题。正式发抖音这类平台时，也可以出片时加 <code class='nw'>--no-bgm</code> 出静音版，再在平台里配乐。</p></div></details>
-      <details><summary><span data-i18n="faq.q2">有没有配音？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a2"><p>有。v0.5.0 起接了 MiniMax 语音合成，v0.5.1 起也可以用阿里云（百炼 CosyVoice）和火山引擎（豆包语音）。分镜里写 <code>meta.voice</code> 和每镜的 <code>vo</code>，设好对应的环境变量（<code>MINIMAX_API_KEY</code> / <code>DASHSCOPE_API_KEY</code> / <code>VOLCENGINE_TTS_API_KEY</code>）后出片即可；镜头时长跟着旁白走，字幕逐字点亮，配乐在人声处自动压低。没有 key 时加 <code class='nw'>--voice-provider mock</code> 用占位音预览节奏。不写 <code>meta.voice</code> 就和以前一样没有配音。用 AI 配音发布时，记得按平台要求勾选 AI 生成内容声明。</p></div></details>
-      <details><summary><span data-i18n="faq.q3">为什么画面是插画，不是实拍？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a3"><p>项目不生成「看起来像真实拍摄」的拟真图片。没有商家素材时，画面用组件和简笔插画兜底，并明确标注，不冒充实拍。有商家实拍照片（门店、成品、价目表）时，用实拍镜头放进去，可信度会好很多；照片是否授权会列进「需人工复核」。</p></div></details>
-      <details><summary><span data-i18n="faq.q7">Chrome Headless Shell 下载失败？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a7"><p>国内网络环境下 <code>npx remotion browser ensure</code> 可能连不上 Google 的下载地址。可以手动下载后用 <code class='nw'>--browser-executable</code> 指定本地 Chrome / Chromium 路径（不同 Chrome 版本渲染结果可能有细微差异）。</p></div></details>
-      <details><summary><span data-i18n="faq.q8">Windows 上要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a8"><p>只支持 x64。环境变量用 PowerShell 写法 <code>$env:LLM_API_KEY="..."</code>，不是 <code>export</code>。分镜一律用文件路径传入，不要在命令行拼 JSON（Windows shell 会吃掉引号）。<code>make.mjs</code> 在 Windows 上调 <code>python</code>，装在别处的，设环境变量 <code>PYTHON</code> 指过去。</p></div></details>
+      <details id="faq-q4"><summary><span data-i18n="faq.q4">成片能直接发吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a4"><p>还不建议。把成片当初稿：看完整片，改掉别扭的文案和重复的卖点再发；行业片把画面上每个价格、条件、日期、营业时间、距离逐条和简报对一遍。实测情况见<a href='#limits'>「现在能用到什么程度」</a>。</p></div></details>
+      <details id="faq-q5"><summary><span data-i18n="faq.q5">要花钱吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a5"><p>本项目免费开源。模型调用用你自己的 API Key，按用量在服务商那边结算，项目不经手任何费用；渲染在你自己的电脑上跑。渲染引擎 Remotion 对 4 人及以上的营利组织收费，见下面 Remotion 那一条。</p></div></details>
+      <details id="faq-qLic"><summary><span data-i18n="faq.qLic">可以商用吗？要注明出处吗？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a"><div data-i18n="faq.aLic"><p>可以商用。项目以 Apache-2.0 开源，个人和公司都可以使用、修改、再分发，或集成进自己的产品，不需要付费或事先授权。再分发或二次开发请保留 LICENSE、NOTICE，并注明出处，推荐写法：</p></div><div class="attr"><code id="attrText" data-i18n="lic.attr">基于 精酿 BrewReel（https://github.com/Finderchangchang/brewreel）二次开发</code><button class="copy copy-inline" type="button" data-copy-from="#attrText" aria-label="复制推荐写法" data-i18n-attr="aria-label:a.copyAttr"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">复制</span></button></div><div data-i18n="faq.aLic2"><p><strong>用它做出的视频不要求署名。</strong>别用「精酿」「BrewReel」名称或 brewreel.com 暗示由原作者出品或背书。渲染依赖的 Remotion 另有许可，见下一条。</p></div></div></details>
+      <details id="faq-q6"><summary><span data-i18n="faq.q6">Remotion 要授权吗？升级到 5.0 要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a6"><p>Remotion 是源码可见、非开源的软件：个人、3 人及以下的营利公司、非营利组织可免费使用（含商用）；<strong>4 人及以上的营利组织需要购买 Remotion 的 Company License</strong>，详见 <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>。本仓库的 Apache-2.0 不改变 Remotion 自己的许可条件。</p><p>本仓库把 <code>remotion</code> / <code>@remotion/cli</code> 钉在 <code>4.0.529</code>。升级到 5.0 后，Remotion 免费层需要在配置里传 <code>licenseKey</code>（个人 / 3 人以下公司 / 非营利填 <code>free-license</code>），升级前请先看 <code>THIRD_PARTY_LICENSES.md</code>。</p></div></details>
+      <details id="faq-q1"><summary><span data-i18n="faq.q1">背景音乐是怎么来的？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a1"><p><code>scripts/make_bgm.py</code> 用 numpy / scipy 现场合成：乐器、和声、旋律、混音、母带都在脚本里，不用外部素材库。每个镜头一个段落，音符落在整拍 / 半拍，镜头切换处有镲或加花，所以音乐是卡着镜头走的；响度校到 -16 LUFS。</p><p>因为是现场合成的，没有版权问题。正式发抖音这类平台时，也可以出片时加 <code class='nw'>--no-bgm</code> 出静音版，再在平台里配乐。</p></div></details>
+      <details id="faq-q2"><summary><span data-i18n="faq.q2">有没有配音？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a2"><p>有。v0.5.0 起接了 MiniMax 语音合成，v0.5.1 起也可以用阿里云（百炼 CosyVoice）和火山引擎（豆包语音）。分镜里写 <code>meta.voice</code> 和每镜的 <code>vo</code>，设好对应的环境变量（<code>MINIMAX_API_KEY</code> / <code>DASHSCOPE_API_KEY</code> / <code>VOLCENGINE_TTS_API_KEY</code>）后出片即可；镜头时长跟着旁白走，字幕逐字点亮，配乐在人声处自动压低。没有 key 时加 <code class='nw'>--voice-provider mock</code> 用占位音预览节奏。不写 <code>meta.voice</code> 就和以前一样没有配音。用 AI 配音发布时，记得按平台要求勾选 AI 生成内容声明。</p></div></details>
+      <details id="faq-q3"><summary><span data-i18n="faq.q3">为什么画面是插画，不是实拍？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a3"><p>项目不生成「看起来像真实拍摄」的拟真图片。没有商家素材时，画面用组件和简笔插画兜底，并明确标注，不冒充实拍。有商家实拍照片（门店、成品、价目表）时，用实拍镜头放进去，可信度会好很多；照片是否授权会列进「需人工复核」。</p></div></details>
+      <details id="faq-q7"><summary><span data-i18n="faq.q7">Chrome Headless Shell 下载失败？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a7"><p>国内网络环境下 <code>npx remotion browser ensure</code> 可能连不上 Google 的下载地址。可以手动下载后用 <code class='nw'>--browser-executable</code> 指定本地 Chrome / Chromium 路径（不同 Chrome 版本渲染结果可能有细微差异）。</p></div></details>
+      <details id="faq-q8"><summary><span data-i18n="faq.q8">Windows 上要注意什么？</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a8"><p>只支持 x64。环境变量用 PowerShell 写法 <code>$env:LLM_API_KEY="..."</code>，不是 <code>export</code>。分镜一律用文件路径传入，不要在命令行拼 JSON（Windows shell 会吃掉引号）。<code>make.mjs</code> 在 Windows 上调 <code>python</code>，装在别处的，设环境变量 <code>PYTHON</code> 指过去。</p></div></details>
     </div>
   </div>
 </section>
@@ -662,6 +741,8 @@ dsh web</code></pre>
     </div>
 
     <div class="foot-bottom">
+    <p class="language-links"><a href="./?lang=zh" hreflang="zh-CN" lang="zh-CN">简体中文</a> · <a href="en.html" hreflang="en" lang="en">English</a> · <a href="llms.txt" data-i18n="facts.text">项目资料（文本）</a></p>
+
       <p data-i18n="ft.copy">© 2026 Finderchangchang · <a href='https://github.com/Finderchangchang/brewreel/blob/main/LICENSE' target='_blank' rel='noopener'>Apache-2.0</a> 开源 · 可商用，须注明出处（<a href='https://github.com/Finderchangchang/brewreel/blob/main/NOTICE' target='_blank' rel='noopener'>NOTICE</a>）· 视频不要求署名</p>
       <p data-i18n="ft.legal">校验规则只用于辅助自查，不构成法律意见。</p>
       <p data-i18n="ft.formerly">原名 promo-video-skill / 蒸馏视频，旧地址自动跳转。</p>
