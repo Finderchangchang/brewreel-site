@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Make your first BrewReel promo video: run a sample, then use your own product | BrewReel</title>
+<meta name="description" content="Set up the local renderer, validate and render an existing storyboard, then move to a product brief and a human review before publishing.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://brewreel.com/guides/first-promo-video.en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://brewreel.com/guides/first-promo-video.html">
+<link rel="alternate" hreflang="en" href="https://brewreel.com/guides/first-promo-video.en.html">
+<link rel="alternate" hreflang="x-default" href="https://brewreel.com/guides/first-promo-video.html">
+<meta property="og:type" content="article"><meta property="og:url" content="https://brewreel.com/guides/first-promo-video.en.html">
+<meta property="og:title" content="Make your first BrewReel promo video: run a sample, then use your own product"><meta property="og:description" content="Set up the local renderer, validate and render an existing storyboard, then move to a product brief and a human review before publishing.">
+<meta property="og:image" content="https://brewreel.com/assets/og.jpg"><meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../style.css?v=20260930b"><link rel="stylesheet" href="../guide.css?v=20260930b">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://brewreel.com/guides/first-promo-video.en.html#article","headline":"Make your first BrewReel promo video: run a sample, then use your own product","description":"Set up the local renderer, validate and render an existing storyboard, then move to a product brief and a human review before publishing.","inLanguage":"en","datePublished":"2026-09-30T01:56:57+08:00","dateModified":"2026-09-30T01:56:57+08:00","mainEntityOfPage":"https://brewreel.com/guides/first-promo-video.en.html","image":"https://brewreel.com/assets/og.jpg","author":{"@type":"Person","name":"Finderchangchang","url":"https://github.com/Finderchangchang"},"publisher":{"@type":"Person","name":"Finderchangchang","url":"https://github.com/Finderchangchang"},"isPartOf":{"@id":"https://brewreel.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BrewReel","item":"https://brewreel.com/en.html"},{"@type":"ListItem","position":2,"name":"Make your first BrewReel promo video: run a sample, then use your own product","item":"https://brewreel.com/guides/first-promo-video.en.html"}]}]}</script>
+<script>try { var theme=localStorage.getItem('brewreel-theme'); if(theme==='light'||theme==='dark') document.documentElement.setAttribute('data-theme',theme); } catch(e) {}</script>
+<script defer src="https://umami.jisikeji.cn/script.js" data-website-id="c80c17ab-9413-4d0b-a359-171bc2a23bc9"></script>
+</head>
+<body>
+<a class="guide-skip" href="#main">Skip to content</a>
+<header class="guide-nav"><a class="guide-brand" href="../en.html">BrewReel</a><nav aria-label="Guide navigation"><a href="../en.html#guides">All guides</a><a href="first-promo-video.html" hreflang="zh-CN" lang="zh-CN">简体中文</a></nav></header>
+<main id="main" class="guide-main">
+<article>
+<header><p class="guide-kicker">Practical guide</p><h1>Make your first BrewReel promo video: run a sample, then use your own product</h1><p class="guide-lead">Set up the local renderer, validate and render an existing storyboard, then move to a product brief and a human review before publishing.</p><p class="guide-meta"><a href="https://github.com/Finderchangchang">Finderchangchang</a> · <time datetime="2026-09-30T01:56:57+08:00">2026-09-30</time></p></header>
+<h2 id="workflow">Understand who does each part</h2>
+<p>You supply a brief and assets. A language model writes storyboard JSON using the project’s recipes. BrewReel renders the video locally with code. Running an existing sample first helps verify the renderer before introducing model-generated storyboards.</p>
+<p>The cards recipe presents features and processes, quiz handles question-and-reveal sequences, and journey follows a character through a scene. Cards and quiz default to 1080×1920; journey defaults to 1080×1350. Check the repository for available recipes and parameters.</p>
+<h2 id="requirements">Prepare the local environment</h2>
+<p>The current README lists Node.js 18+ and Python 3.10+, and records testing with Node 22. The DeepSeek Harness plugin has separate runtime requirements. You also need Git, npm and space for dependencies. Follow the project’s x64 requirements on Windows.</p>
+<h2 id="install">1. Install rendering dependencies</h2>
+<pre><code>git clone https://github.com/Finderchangchang/brewreel.git
+cd brewreel/template
+npm install
+npx remotion browser ensure
+cd ..
+python -m pip install numpy scipy</code></pre>
+<p>If your system only provides python3, use python3 -m pip install numpy scipy for the last line. These commands install rendering components, download a headless browser and install music-generation dependencies. If the browser download fails, inspect network access and the project’s local-browser instructions before changing the storyboard.</p>
+<h2 id="render">2. Validate and render a repository sample</h2>
+<pre><code>node scripts/validate.mjs examples/ledger.json
+node scripts/make.mjs examples/ledger.json --out ../brewreel-out/ledger</code></pre>
+<p>Run these from the repository root and keep the output directory outside it. Passing static validation establishes that the storyboard meets validation rules. Complete a render before checking the actual video and delivery files.</p>
+<p>The README describes video.mp4, sheet.png, check/, report.txt and manifest.json in the output. Watch the complete video, inspect the report and confirm the manifest corresponds to your storyboard.</p>
+<h2 id="brief">3. Replace the sample with your product brief</h2>
+<p>Specify the product name, audience, core action, features, evidence, assets and acquisition route. Ask the model to follow the project SKILL and the selected industry recipe. Start with the <a href="product-brief.en.html">product brief guide</a>. Mark missing facts as unknown instead of letting the model invent performance figures.</p>
+<p>Repeat validation, rendering and review. Use validator errors and human observations to revise the storyboard. Model calls and optional voiceover services may incur separate fees.</p>
+<h2 id="review">4. Review before publishing</h2>
+<ul><li>Check product names, features, prices and conditions against the brief.</li><li>Check readable subtitles, natural narration and the music-to-voice balance.</li><li>Confirm permissions and labels for real photos, screenshots and illustrations.</li><li>Verify that the closing call to action uses a real acquisition route.</li><li>Apply AI-content labels required by the publishing platform.</li></ul>
+<p>Automated checks catch some issues; they do not replace watching the video or reviewing its business claims. A rendered sample is not automatically ready for a customer to publish.</p>
+<h2 id="license">Check both project and dependency licenses</h2>
+<p>BrewReel uses Apache-2.0. Follow LICENSE and NOTICE requirements when redistributing or modifying the project. Rendered videos do not require project attribution. Remotion has its own license; for-profit organizations with four or more employees need a Company License. See the <a href="https://www.remotion.dev/license">official terms</a>.</p>
+<p class="guide-note">This guide follows the public README. The website update did not independently rerender or benchmark these samples. Check the <a href="https://github.com/Finderchangchang/brewreel">repository</a> for commands, limitations and version changes.</p>
+<aside class="guide-cta"><h2>Try the project</h2><p>Render an existing sample first, then use your brief to make a draft you can review.</p><a class="guide-button" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="guide-first-promo-video" >Open the GitHub project →</a></aside>
+<aside class="guide-related"><h2>Continue reading</h2><ul><li><a href="product-brief.en.html">Write a product brief for an AI promo video: template and fictional café example</a></li><li><a href="../en.html">Product overview, demonstrations and limitations</a></li></ul></aside>
+</article>
+</main>
+<footer class="guide-footer">© 2026 Finderchangchang · <a href="https://github.com/Finderchangchang/brewreel">GitHub</a> · <a href="../en.html">Official website</a></footer>
+</body></html>

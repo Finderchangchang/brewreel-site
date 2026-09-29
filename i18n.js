@@ -7,6 +7,15 @@
  */
 window.BREW_I18N = {
   "zh": {
+    "learn.title": "从这里开始用",
+    "learn.intro": "把安装步骤和使用方法写清楚，遇到问题可以直接回来查。",
+    "learn.1.title": "用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品",
+    "learn.1.desc": "从本地依赖到样例出片，再到产品简报与发布检查。把环境是否可用、模型是否写对和成片是否能发布分开验证。",
+    "learn.1.url": "guides/first-promo-video.html",
+    "learn.2.title": "AI 宣传片产品简报怎么写：可下载模板与餐饮示例",
+    "learn.2.desc": "把卖什么、给谁看、真实卖点、价格条件和素材来源写清楚。提供空白 Markdown 模板和明确标为虚构的餐饮示例。",
+    "learn.2.url": "guides/product-brief.html",
+
     "facts.title": "精酿 BrewReel 是什么？",
     "facts.desc": "精酿 · BrewReel 是开源的 AI 辅助宣传片制作工具。你提供产品简报和素材，语言模型编写分镜，程序按配方在本机渲染视频；成片需要人工检查后再发布。",
     "facts.use.label": "适合什么需求",
@@ -315,6 +324,15 @@ window.BREW_I18N = {
   },
 
   "en": {
+    "learn.title": "Practical guides",
+    "learn.intro": "Setup steps and examples you can refer to when using the project.",
+    "learn.1.title": "Make your first BrewReel promo video: run a sample, then use your own product",
+    "learn.1.desc": "Set up the local renderer, validate and render an existing storyboard, then move to a product brief and a human review before publishing.",
+    "learn.1.url": "guides/first-promo-video.en.html",
+    "learn.2.title": "Write a product brief for an AI promo video: template and fictional café example",
+    "learn.2.desc": "Specify the audience, product action, supported claims, price conditions and asset sources. Download a blank Markdown brief and a clearly fictional example.",
+    "learn.2.url": "guides/product-brief.en.html",
+
     "facts.title": "What is BrewReel?",
     "facts.desc": "BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.",
     "facts.use.label": "Who it is for",

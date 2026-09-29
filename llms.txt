@@ -31,3 +31,10 @@ Project author: Finderchangchang . See the GitHub documentation for installation
 - Model and voiceover API calls may incur separate provider fees.
 - The DeepSeek Harness plugin is published, but the project documentation still marks real DeepSeek-model testing as pending.
 - MiniMax voiceover has been tested; Alibaba Cloud and Volcengine voiceover still need live-key verification.
+
+## Practical guides
+
+- [用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品](https://brewreel.com/guides/first-promo-video.html): 从本地依赖到样例出片，再到产品简报与发布检查。把环境是否可用、模型是否写对和成片是否能发布分开验证。
+- [Make your first BrewReel promo video: run a sample, then use your own product](https://brewreel.com/guides/first-promo-video.en.html): Set up the local renderer, validate and render an existing storyboard, then move to a product brief and a human review before publishing.
+- [AI 宣传片产品简报怎么写：可下载模板与餐饮示例](https://brewreel.com/guides/product-brief.html): 把卖什么、给谁看、真实卖点、价格条件和素材来源写清楚。提供空白 Markdown 模板和明确标为虚构的餐饮示例。
+- [Write a product brief for an AI promo video: template and fictional café example](https://brewreel.com/guides/product-brief.en.html): Specify the audience, product action, supported claims, price conditions and asset sources. Download a blank Markdown brief and a clearly fictional example.
