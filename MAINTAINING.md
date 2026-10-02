@@ -58,7 +58,7 @@ git -C <brewreel 仓库> show HEAD:README.md
 git -C <brewreel 仓库> show HEAD:README.en.md
 ```
 
-当前状态（v0.5.1）和它们在页面上的位置：
+当前状态（v0.6.0）和它们在页面上的位置：
 
 | 功能 | README 里的状态 | 页面位置 / 键 |
 |---|---|---|
