@@ -106,7 +106,7 @@ ffmpeg -i reel-<id>.mp4 -frames:v 1 poster.png   # 取首帧当海报，再转 w
 
 ## 升版本号 / 发布新版本
 
-- 首屏标签里的版本号 `<span data-brew-version>` 会实时拉 GitHub 上 latest 标记的 Release（`/releases/latest`）；页面里的 `v0.5.1` 只是拉不到时的兜底。发了新版本，顺手把这个兜底值改掉。
+- 首屏标签里的版本号 `<span data-brew-version>` 会实时拉 GitHub 上 latest 标记的 Release（`/releases/latest`）；页面里的 `v0.7.0` 只是拉不到时的兜底。发了新版本，顺手把这个兜底值改掉。
 - Star 数同理：`<b data-brew-stars>`（导航、首屏、收尾三处）实时拉，兜底值是写页面时的真实数字，隔段时间更新一次。
 - 两个请求结果在访客浏览器里缓存 30 分钟（`localStorage` 的 `brewreel-gh`）。
 
