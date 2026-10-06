@@ -280,9 +280,30 @@
     });
   }
 
+  /* 口播演示：用户按下播放才记一次；两种玩法的入口不走 data-umami-event（页内跳转） */
+  var talkDemo = $("#talkDemo");
+  if (talkDemo) {
+    var talkTracked = false;
+    talkDemo.addEventListener("play", function () {
+      if (talkTracked) return;
+      talkTracked = true;
+      track("play-talk-demo");
+    });
+  }
+  document.addEventListener("click", function (e) {
+    var modeLink = e.target.closest && e.target.closest("[data-mode]");
+    if (!modeLink) return;
+    var mode = modeLink.getAttribute("data-mode");
+    if (mode) track("pick-mode", { mode: mode });
+  });
+
   /* ---------- 8. 进场动效：默认可见；只有 JS 在且没开减弱动效时，才把视口下方的内容做成淡入 ---------- */
+  var shot = /(?:^|[?&])shot=1(?:&|$)/.test(location.search);
   var rvs = $$(".rv");
-  if (!reduce && "IntersectionObserver" in window && rvs.length) {
+  if (shot) {
+    rvs.forEach(function (el) { el.classList.add("in"); });
+    root.classList.add("anim");
+  } else if (!reduce && "IntersectionObserver" in window && rvs.length) {
     var vh = window.innerHeight || document.documentElement.clientHeight;
     var rio = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
@@ -312,6 +333,7 @@
     }
   }
   (function () {
+    if (/(?:^|[?&])shot=1(?:&|$)/.test(location.search)) return;
     var cached = null;
     try { cached = JSON.parse(load(GH_KEY) || "null"); } catch (e) {}
     if (cached && Date.now() - cached.t < 30 * 60 * 1000) { paint(cached); return; }

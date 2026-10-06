@@ -15,7 +15,7 @@
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../style.css?v=20260930b"><link rel="stylesheet" href="../guide.css?v=20260930b">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://brewreel.com/guides/first-promo-video.html#article","headline":"用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品","description":"从本地依赖到样例出片，再到产品简报与发布检查。把环境是否可用、模型是否写对和成片是否能发布分开验证。","inLanguage":"zh-CN","datePublished":"2026-09-30T01:56:57+08:00","dateModified":"2026-09-30T01:56:57+08:00","mainEntityOfPage":"https://brewreel.com/guides/first-promo-video.html","image":"https://brewreel.com/assets/og.jpg","author":{"@type":"Person","name":"Finderchangchang","url":"https://github.com/Finderchangchang"},"publisher":{"@type":"Person","name":"Finderchangchang","url":"https://github.com/Finderchangchang"},"isPartOf":{"@id":"https://brewreel.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BrewReel","item":"https://brewreel.com/"},{"@type":"ListItem","position":2,"name":"用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品","item":"https://brewreel.com/guides/first-promo-video.html"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://brewreel.com/guides/first-promo-video.html#article","headline":"用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品","description":"从本地依赖到样例出片，再到产品简报与发布检查。把环境是否可用、模型是否写对和成片是否能发布分开验证。","inLanguage":"zh-CN","datePublished":"2026-09-30T01:56:57+08:00","dateModified":"2026-10-06T12:00:00+08:00","mainEntityOfPage":"https://brewreel.com/guides/first-promo-video.html","image":"https://brewreel.com/assets/og.jpg","author":{"@type":"Person","name":"Finderchangchang","url":"https://github.com/Finderchangchang"},"publisher":{"@type":"Person","name":"Finderchangchang","url":"https://github.com/Finderchangchang"},"isPartOf":{"@id":"https://brewreel.com/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"BrewReel","item":"https://brewreel.com/"},{"@type":"ListItem","position":2,"name":"用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品","item":"https://brewreel.com/guides/first-promo-video.html"}]}]}</script>
 <script>try { var theme=localStorage.getItem('brewreel-theme'); if(theme==='light'||theme==='dark') document.documentElement.setAttribute('data-theme',theme); } catch(e) {}</script>
 <script defer src="https://umami.jisikeji.cn/script.js" data-website-id="c80c17ab-9413-4d0b-a359-171bc2a23bc9"></script>
 </head>
@@ -24,7 +24,7 @@
 <header class="guide-nav"><a class="guide-brand" href="../?lang=zh">精酿 · BrewReel</a><nav aria-label="教程导航"><a href="../?lang=zh#guides">全部教程</a><a href="first-promo-video.en.html" hreflang="en" lang="en">English</a></nav></header>
 <main id="main" class="guide-main">
 <article>
-<header><p class="guide-kicker">使用指南</p><h1>用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品</h1><p class="guide-lead">从本地依赖到样例出片，再到产品简报与发布检查。把环境是否可用、模型是否写对和成片是否能发布分开验证。</p><p class="guide-meta"><a href="https://github.com/Finderchangchang">Finderchangchang</a> · <time datetime="2026-09-30T01:56:57+08:00">2026-09-30</time></p></header>
+<header><p class="guide-kicker">使用指南</p><h1>用 BrewReel 做第一支宣传片：先跑样例，再换成自己的产品</h1><p class="guide-lead">从本地依赖到样例出片，再到产品简报与发布检查。把环境是否可用、模型是否写对和成片是否能发布分开验证。</p><p class="guide-meta"><a href="https://github.com/Finderchangchang">Finderchangchang</a> · <time datetime="2026-10-06T12:00:00+08:00">2026-10-06</time></p></header>
 <h2 id="workflow">先理解三件事分别由谁完成</h2>
 <p>你提供简报和素材；语言模型按项目的配方写分镜 JSON；BrewReel 使用本地渲染程序生成视频。先跑仓库已有样例，可以在接入模型之前确认渲染环境是否可用。</p>
 <p>cards 配方适合卖点和流程讲解，quiz 适合答题揭晓，journey 适合角色漫游。cards、quiz 默认 1080×1920，journey 默认 1080×1350。配方的可用状态与参数以仓库说明为准。</p>
@@ -36,8 +36,9 @@ cd brewreel/template
 npm install
 npx remotion browser ensure
 cd ..
-python -m pip install numpy scipy</code></pre>
-<p>如果系统只提供 python3 命令，把最后一行改成 python3 -m pip install numpy scipy。以上命令依次安装渲染组件、下载无头浏览器、安装配乐依赖。浏览器下载失败时先检查网络和项目的本地浏览器配置说明，不要把它当作分镜问题。</p>
+python -m pip install numpy scipy imageio-ffmpeg</code></pre>
+<p>如果系统只提供 python3 命令，把最后一行改成 python3 -m pip install numpy scipy imageio-ffmpeg。以上命令依次安装渲染组件、下载无头浏览器、安装配乐依赖。浏览器下载失败时先检查网络和项目的本地浏览器配置说明，不要把它当作分镜问题。</p>
+<p>口播配画面需要完整版 ffmpeg。Remotion 自带的是精简版，装 imageio-ffmpeg，或把完整版放进 PATH，或用环境变量 FFMPEG 指过去。</p>
 <h2 id="render">2. 校验并渲染仓库样例</h2>
 <pre><code>node scripts/validate.mjs examples/ledger.json
 node scripts/make.mjs examples/ledger.json --out ../brewreel-out/ledger</code></pre>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title data-i18n="meta.title">BrewReel — Open-source AI-assisted promo video tool</title>
-<meta name="description" content="BrewReel is an open-source tool for vertical promo videos: write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, optional voice-over, built-in ad-law and industry compliance checks. Apache-2.0." data-i18n-attr="content:meta.desc">
+<title data-i18n="meta.title">BrewReel — Open-source promos and talking-head B-roll</title>
+<meta name="description" content="BrewReel: write a product brief and render a vertical promo with one command, or drop in a talking-head clip and add pictures with one command. Three recipes, six industry packs, optional voice-over, plus a style factory for talking-head pictures. Apache-2.0." data-i18n-attr="content:meta.desc">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://brewreel.com/en.html">
 <link rel="alternate" hreflang="zh-CN" href="https://brewreel.com/">
@@ -18,17 +18,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://brewreel.com/en.html">
 <meta property="og:site_name" content="精酿 · BrewReel">
-<meta property="og:title" content="BrewReel — Open-source AI-assisted promo video tool" data-i18n-attr="content:meta.title">
-<meta property="og:description" content="Write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, Apache-2.0." data-i18n-attr="content:meta.ogDesc">
+<meta property="og:title" content="BrewReel — Open-source promos and talking-head B-roll" data-i18n-attr="content:meta.title">
+<meta property="og:description" content="Write a brief for a vertical promo, or add pictures to a talking-head clip. Three recipes, six industry packs, Apache-2.0." data-i18n-attr="content:meta.ogDesc">
 <meta property="og:image" content="https://brewreel.com/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="BrewReel — Open-source AI-assisted promo video tool" data-i18n-attr="content:meta.title">
+<meta property="og:image:alt" content="BrewReel — Open-source promos and talking-head B-roll" data-i18n-attr="content:meta.title">
 <meta property="og:locale" content="en_US" data-i18n-attr="content:meta.locale">
 <meta property="og:locale:alternate" content="zh_CN" data-i18n-attr="content:meta.localeAlt">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BrewReel — Open-source AI-assisted promo video tool" data-i18n-attr="content:meta.title">
-<meta name="twitter:description" content="Write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, Apache-2.0." data-i18n-attr="content:meta.ogDesc">
+<meta name="twitter:title" content="BrewReel — Open-source promos and talking-head B-roll" data-i18n-attr="content:meta.title">
+<meta name="twitter:description" content="Write a brief for a vertical promo, or add pictures to a talking-head clip. Three recipes, six industry packs, Apache-2.0." data-i18n-attr="content:meta.ogDesc">
 <meta name="twitter:image" content="https://brewreel.com/assets/og.jpg">
 <script type="application/ld+json" id="site-schema">
 {
@@ -62,7 +62,7 @@
         "精酿"
       ],
       "url": "https://brewreel.com/",
-      "description": "BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.",
+      "description": "BrewReel is an open-source tool with two paths. Promo: you provide a product brief, a language model writes the storyboard, and code renders it locally from a recipe. Talking-head B-roll: you provide one talking-head video, and one command adds motion cards or AI pictures. Review either result before publishing.",
       "sameAs": [
         "https://github.com/Finderchangchang/brewreel"
       ],
@@ -81,8 +81,8 @@
       "@type": "WebPage",
       "@id": "https://brewreel.com/en.html#webpage",
       "url": "https://brewreel.com/en.html",
-      "name": "BrewReel — Open-source AI-assisted promo video tool",
-      "description": "BrewReel is an open-source tool for vertical promo videos: write a product brief, let the AI pick the shots and write the copy, and render a vertical promo video with one command. Three recipes, six industry packs, optional voice-over, built-in ad-law and industry compliance checks. Apache-2.0.",
+      "name": "BrewReel — Open-source promos and talking-head B-roll",
+      "description": "BrewReel: write a product brief and render a vertical promo with one command, or drop in a talking-head clip and add pictures with one command. Three recipes, six industry packs, optional voice-over, plus a style factory for talking-head pictures. Apache-2.0.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://brewreel.com/#website"
@@ -120,9 +120,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;display=swap"></noscript>
-<link rel="stylesheet" href="style.css?v=20260930b">
-<script defer src="i18n.js?v=20260930b"></script>
-<script defer src="main.js?v=20260930b"></script>
+<link rel="stylesheet" href="style.css?v=20261006b">
+<script defer src="i18n.js?v=20261006b"></script>
+<script defer src="main.js?v=20261006b"></script>
 <script defer src="https://umami.jisikeji.cn/script.js" data-website-id="c80c17ab-9413-4d0b-a359-171bc2a23bc9"></script>
 </head>
 <body>
@@ -159,6 +159,7 @@
 
     <nav class="nav-menu" id="navMenu" aria-label="Main navigation" data-i18n-attr="aria-label:a.nav">
       <a href="#recipes" data-i18n="nav.recipes">Recipes</a>
+      <a href="#talk" data-i18n="nav.talk">Talk</a>
       <a href="#start" data-i18n="nav.start">Get started</a>
       <a href="#industries" data-i18n="nav.industries">Industries</a>
       <a href="#limits" data-i18n="nav.limits">Limitations</a>
@@ -183,9 +184,9 @@
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow"><span data-i18n="hero.eyebrow">Apache-2.0 · Commercial use OK · Preview</span><span class="eyebrow-ver" data-brew-version>v0.9.0</span></p>
+      <p class="eyebrow"><span data-i18n="hero.eyebrow">Apache-2.0 · Commercial use OK · Preview</span><span class="eyebrow-ver" data-brew-version>v0.10.0</span></p>
       <h1 class="hero-title" data-i18n="hero.title">Brew great promo reels<br><span class='hl'>with low-cost models</span></h1>
-      <p class="hero-sub" data-i18n="hero.sub">Write a product brief; the AI picks the shots and writes the copy, and one command renders a vertical promo video (1080×1920, the format Douyin and WeChat Channels use).</p>
+      <p class="hero-sub" data-i18n="hero.sub">Two paths, each one command: write a product brief and render a vertical promo, or drop in one talking-head clip and get pictures that explain it.</p>
 
       <div class="cta-row">
         <a class="btn btn-primary" href="https://github.com/Finderchangchang/brewreel" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="hero">
@@ -195,7 +196,7 @@
       </div>
       <p class="hero-dsh"><a class="link-arrow" href="#use-dsh" data-umami-event="click-dsh" data-umami-event-pos="hero"><span data-i18n="hero.dsh">Use it in DeepSeek Harness</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
 
-      <p class="hero-works" data-i18n="hero.works">Install it as a skill for Claude Code, Codex or opencode, use the DeepSeek Harness plugin, or run the plain script with no agent.</p>
+      <p class="hero-works" data-i18n="hero.works">For a promo, install it as a skill for Claude Code, Codex or opencode, use the DeepSeek Harness plugin, or run the plain script with no agent. Talking-head B-roll is a separate command.</p>
       <p class="hero-note" data-i18n="hero.note"><strong>Still a preview:</strong> treat each video as a first draft; watch it all and edit before you publish. <a href='#limits'>How far along it is</a></p>
     </div>
 
@@ -234,16 +235,35 @@
 <section class="product-facts" id="about" aria-labelledby="facts-title">
   <div class="wrap">
     <h2 id="facts-title" data-i18n="facts.title">What is BrewReel?</h2>
-    <p class="facts-intro" data-i18n="facts.desc">BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.</p>
+    <p class="facts-intro" data-i18n="facts.desc">BrewReel is an open-source tool with two paths. Promo: you provide a product brief, a language model writes the storyboard, and code renders it locally from a recipe. Talking-head B-roll: you provide one talking-head video, and one command adds motion cards or AI pictures. Review either result before publishing.</p>
     <dl class="facts-grid">
-      <div><dt data-i18n="facts.use.label">Who it is for</dt><dd data-i18n="facts.use">Developers and creators comfortable setting up a local runtime, making product introductions, feature explainers, quiz videos or character-journey promos.</dd></div>
-      <div><dt data-i18n="facts.scope.label">Inputs and outputs</dt><dd data-i18n="facts.scope">Inputs are a product brief, optional real photos and voiceover settings. Outputs include a promo video and its storyboard record. The cards and quiz recipes default to 1080×1920; journey defaults to 1080×1350, all at 30 fps.</dd></div>
-      <div><dt data-i18n="facts.cost.label">Costs and requirements</dt><dd data-i18n="facts.cost">The project uses Apache-2.0. Model and voiceover APIs may charge separately. Remotion has a separate license; for-profit organizations with four or more employees need a Company License.</dd></div>
+      <div><dt data-i18n="facts.use.label">Who it is for</dt><dd data-i18n="facts.use">Developers and creators comfortable setting up a local runtime. Use it for product introductions, feature explainers, quiz videos or character-journey promos, or to add explanatory pictures to a talking-head video you already have.</dd></div>
+      <div><dt data-i18n="facts.scope.label">Inputs and outputs</dt><dd data-i18n="facts.scope">Promo: a product brief, optional real photos and voiceover settings in; a vertical promo and its storyboard out. cards and quiz default to 1080×1920, journey to 1080×1350, all at 30 fps. Talking-head B-roll: one talking-head video in, a video with pictures out. The output directory must sit outside the repo.</dd></div>
+      <div><dt data-i18n="facts.cost.label">Costs and requirements</dt><dd data-i18n="facts.cost">The project uses Apache-2.0. Promo model calls and voiceover APIs may charge separately. For talking-head B-roll, on-device transcription, motion cards and the final cut do not charge; AI pictures use MiniMax, print an estimate first, and need a person's approval before the official cut. Remotion has a separate license; for-profit organizations with four or more employees need a Company License.</dd></div>
     </dl>
     <p class="facts-source" data-i18n="facts.source">Project author: <a href='https://github.com/Finderchangchang' target='_blank' rel='noopener'>Finderchangchang</a>. See the <a href='https://github.com/Finderchangchang/brewreel' target='_blank' rel='noopener' data-umami-event='click-github' data-umami-event-pos='facts'>GitHub documentation</a> for installation, test records and known limitations.</p>
   </div>
 </section>
 
+
+
+<section class="modes" aria-labelledby="modes-title">
+  <div class="wrap">
+    <h2 id="modes-title" class="modes-title" data-i18n="modes.title">Two ways</h2>
+    <div class="modes-grid">
+      <a class="mode" href="#recipes" data-mode="promo">
+        <span class="mode-no">No.01</span>
+        <strong data-i18n="hero.mode1">Promo video</strong>
+        <p data-i18n="hero.mode1d">Write a product brief, let a cheap model write the storyboard, and render a vertical promo with one command. Three recipes, six industries.</p>
+      </a>
+      <a class="mode" href="#talk" data-mode="talk">
+        <span class="mode-no">No.02</span>
+        <strong data-i18n="hero.mode2">Talking-head B-roll</strong>
+        <p data-i18n="hero.mode2d">Drop in one talking-head video. One command adds motion cards or AI pictures.</p>
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- ============ 01 配方单：片子长什么样 ============ -->
 <section class="sec" id="recipes" aria-labelledby="recipes-title">
@@ -300,19 +320,86 @@
       </ol>
     </div>
 
-    <p class="sec-next"><a class="link-arrow" href="#start"><span data-i18n="rec.next">Get started</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+    <p class="sec-next"><a class="link-arrow" href="#talk"><span data-i18n="rec.next">Next: talking-head B-roll</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
   </div>
 </section>
 
-<!-- ============ 02 上手 ============ -->
+
+<!-- ============ 02 口播配画面 ============ -->
+<section class="sec sec-tint" id="talk" aria-labelledby="talk-title">
+  <div class="wrap">
+    <header class="sec-head rv">
+      <div>
+        <p class="kicker"><span class="kicker-no">No.02</span><span data-i18n="talk.kicker">Talking-head B-roll</span></p>
+        <h2 id="talk-title" data-i18n="talk.title">One talking-head clip,<br>pictures from one command</h2>
+      </div>
+      <p class="lead" data-i18n="talk.lead">If you already have a talking-head video, you do not write a brief. After on-device transcription, DeepSeek picks a picture for each line: a motion card, which does not charge, or an AI picture. Scripts handle timing, cost and the final cut.</p>
+    </header>
+
+    <div class="talk-grid rv">
+      <div class="talk-copy">
+        <p class="status"><i class="dot dot-ok"></i><span data-i18n="talk.status">Available since v0.9</span></p>
+        <div class="code">
+          <pre><code data-i18n="code.talk">node scripts/talk.mjs &lt;project-dir&gt; --out &lt;output-dir&gt;</code></pre>
+          <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="talk" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+        </div>
+        <p class="step-note" data-i18n="talk.cmdNote">Put <code>talk.mp4</code> in the project directory. The command transcribes on your machine (the first run downloads about a 240MB model), asks DeepSeek to pick a picture per line, then renders. The output directory must sit outside the repo. AI pictures default to 2 clips at most. The first pass is a stand-in and does not charge; real MiniMax generation prints an estimate first, and a person reviews the sheet and approves before the official cut. Talking-head B-roll needs a full ffmpeg.</p>
+      </div>
+      <figure class="talk-player">
+        <video id="talkDemo" controls playsinline preload="none" poster="assets/talk-poster.webp" width="720" height="1280" aria-label="Talking-head B-roll demo: a placeholder speaker, with motion cards and a wood-block AI picture" data-i18n-attr="aria-label:talk.videoLabel">
+          <source src="assets/talk-demo.mp4" type="video/mp4">
+        </video>
+        <figcaption data-i18n="talk.cap">An actual render of talking-head B-roll, about 26 seconds. The talking-head slot is a placeholder that reads “talking head goes here”.</figcaption>
+      </figure>
+    </div>
+
+    <figure class="talk-intro rv">
+      <img src="assets/talk-intro.webp" width="1080" height="1220" alt="Talking-head B-roll diagram: a placeholder speaker on the left, a wood-block AI picture on the right" data-i18n-attr="alt:talk.introAlt" loading="lazy" decoding="async">
+      <figcaption data-i18n="talk.introCap">Intro diagram. The talking-head slot is a placeholder, not a person. The version mark on the image is v0.9.</figcaption>
+    </figure>
+
+    <h3 class="talk-h rv" data-i18n="talk.two">Two kinds of picture</h3>
+    <div class="talk-kinds rv">
+      <article class="kind">
+        <h4 data-i18n="talk.motion">Motion cards</h4>
+        <p data-i18n="talk.motionD">These do not charge. Every word is copied from what was said, and it lights up as that word is spoken.</p>
+        <ul class="pills"><li data-i18n="talk.m1">Keyword</li><li data-i18n="talk.m2">Checklist</li><li data-i18n="talk.m3">Steps</li><li data-i18n="talk.m4">Number</li><li data-i18n="talk.m5">Compare</li></ul>
+      </article>
+      <article class="kind">
+        <h4 data-i18n="talk.ai">AI pictures</h4>
+        <p data-i18n="talk.aiD">Small scenes from MiniMax H3. The whole video shares one robot. Two AI clips at most, by default. Ink sketch is experimental and only a stand-in preview.</p>
+        <ul class="pills"><li data-i18n="talk.s1">Wood blocks · default</li><li data-i18n="talk.s2">Clay stop-motion</li><li data-i18n="talk.s3">Layered paper</li><li data-i18n="talk.s4" class="pill-exp">Ink sketch · experimental</li></ul>
+      </article>
+    </div>
+
+    <h3 class="talk-h rv" data-i18n="talk.costTitle">An estimate before anything is spent</h3>
+    <p class="talk-cost rv" data-i18n="talk.cost">Motion cards, on-device transcription and the final cut do not charge. AI pictures print an estimate first, and a person approves before the official cut. A MiniMax subscription key is shown in credits: about 280 credits for 4 seconds. MiniMax's own dashboard is what counts.</p>
+
+    <article class="factory rv" id="style-factory">
+      <p class="kicker factory-kicker"><span data-i18n="fac.kicker">Style factory</span><span class="factory-ver">v0.10</span></p>
+      <h3 data-i18n="fac.title">One sentence, one AI picture style</h3>
+      <p data-i18n="fac.lead">Describe the material and the color in one sentence. The script drafts an AI picture style. The vision check is only the first screen. A person decides whether it is kept.</p>
+      <p data-i18n="fac.body">DeepSeek writes the config and reference images are generated. MiniMax looks at the pictures and checks for text, studs, resemblance to a known work, a mouth, an antenna, and an empty frame. The script picks images, then makes one still. An optional 4-second video test spends credits. Then there is a review page.</p>
+      <div class="code">
+        <pre><code data-i18n="code.style">node scripts/broll/new-style.mjs --id &lt;id&gt; --name "&lt;name&gt;" --desc "&lt;one sentence&gt;"</code></pre>
+        <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="style" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+      </div>
+      <p class="step-note" data-i18n="fac.note">Without <code class='nw'>--yes</code> it only prints the requests it would send. Add <code class='nw'>--yes</code> after you confirm. A 4-second video test needs both <code class='nw'>--video</code> and <code class='nw'>--yes</code>, and it prints about 280 credits before submitting. <code>node scripts/broll/approve-style.mjs &lt;id&gt;</code> can only be run by a person in a terminal. An assistant must not run it. Styles you make are welcome back as contributions.</p>
+    </article>
+
+    <p class="sec-next"><a class="link-arrow" href="#use-talk"><span data-i18n="talk.next">The same command is in Get started</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ============ 03 上手 ============ -->
 <section class="sec" id="start" aria-labelledby="start-title">
   <div class="wrap">
     <header class="sec-head rv">
       <div>
-        <p class="kicker"><span class="kicker-no">No.02</span><span data-i18n="start.kicker">Get started</span></p>
+        <p class="kicker"><span class="kicker-no">No.03</span><span data-i18n="start.kicker">Get started</span></p>
         <h2 id="start-title" data-i18n="start.title">Install, run a sample,<br>then hand it to the AI</h2>
       </div>
-      <p class="lead" data-i18n="start.lead">Set up the render environment and run one of the bundled samples first, then pick how the model writes your storyboard.</p>
+      <p class="lead" data-i18n="start.lead">Set up the render environment and run one of the bundled samples first. For a promo, then pick how the model writes the storyboard. Talking-head B-roll uses the third command below.</p>
     </header>
 
     <div class="start-grid">
@@ -322,12 +409,12 @@
           <div class="code" id="quickstart">
             <pre><code data-i18n="code.quick">git clone https://github.com/Finderchangchang/brewreel.git
 cd brewreel/template &amp;&amp; npm install &amp;&amp; npx remotion browser ensure
-cd .. &amp;&amp; pip install numpy scipy
+cd .. &amp;&amp; pip install numpy scipy imageio-ffmpeg
 node scripts/validate.mjs examples/en-focus.json
 node scripts/make.mjs examples/en-focus.json --out ../brewreel-out/en-focus</code></pre>
             <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="quickstart" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
           </div>
-          <p class="step-note" data-i18n="start.qd"><code>npm install</code> installs the rendering engine and <code>npx remotion browser ensure</code> downloads Chrome Headless Shell once. If the validate command passes, your setup is good; the render takes a few minutes and is done when the last line reads <code>交付：&lt;mp4 path&gt;</code> ("delivered"). <code class='nw'>--out</code> must not point inside the repo.</p>
+          <p class="step-note" data-i18n="start.qd"><code>npm install</code> installs the rendering engine and <code>npx remotion browser ensure</code> downloads Chrome Headless Shell once. If the validate command passes, your setup is good; the render takes a few minutes and is done when the last line reads <code>交付：&lt;mp4 path&gt;</code> ("delivered"). <code class='nw'>--out</code> must not point inside the repo. Talking-head B-roll also needs a full ffmpeg: <code>imageio-ffmpeg</code> in that install is that build. The slim ffmpeg bundled with Remotion is missing filters and is not enough.</p>
         </div>
 
         <div class="step rv">
@@ -381,10 +468,19 @@ dsh plugin --profile web add dsh-brewreel
 dsh web</code></pre>
                 <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="dsh" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
               </div>
-              <p class="panel-note" data-i18n="u3.note"><code>web</code> can be any profile name; if the profile is already running, restart it for the change to apply. On first use, ask the model to "check the video plugin environment": it calls doctor, and after you agree, calls setup to install the render dependencies. To use unreleased code, clone the repo and run <code>dsh plugin --profile web add ./brewreel/integrations/deepseek-harness</code> from the folder that contains the clone.</p>
+              <p class="panel-note" data-i18n="u3.note"><code>web</code> can be any profile name; if the profile is already running, restart it for the change to apply. On first use, ask the model to "check the video plugin environment": it calls doctor, and after you agree, calls setup to install the render dependencies. To use unreleased code, clone the repo and run <code>dsh plugin --profile web add ./brewreel/integrations/deepseek-harness</code> from the folder that contains the clone. This version of the plugin does not include talking-head B-roll.</p>
               <p class="panel-link"><a class="link-arrow" href="https://github.com/Finderchangchang/brewreel/tree/main/integrations/deepseek-harness" target="_blank" rel="noopener" data-umami-event="click-dsh" data-umami-event-pos="start"><span data-i18n="u3.link">Plugin docs</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
             </div>
           </div>
+        </div>
+
+        <div class="step rv" id="use-talk">
+          <h3 class="step-title"><span class="step-no">3</span><span data-i18n="start.talk">Talking-head B-roll</span></h3>
+          <div class="code">
+            <pre><code data-i18n="code.talk">node scripts/talk.mjs &lt;project-dir&gt; --out &lt;output-dir&gt;</code></pre>
+            <button class="copy" type="button" data-copy data-umami-event="copy-install" data-umami-event-block="talk-start" aria-label="Copy command" data-i18n-attr="aria-label:a.copy"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button>
+          </div>
+          <p class="step-note" data-i18n="start.talkd">Put <code>talk.mp4</code> in the project directory. The output directory must sit outside the repo. The first transcription downloads about a 240MB model. Pictures, cost and limits are in <a href='#talk'>Talking-head B-roll</a>.</p>
         </div>
       </div>
 
@@ -394,8 +490,8 @@ dsh web</code></pre>
           <dl class="specs specs-env">
             <div><dt data-i18n="env.os">OS</dt><dd data-i18n="env.osv">Windows (x64 only) / macOS ≥ 15 / Linux (glibc ≥ 2.35, plus shared libs like <code>libnss3</code> / <code>libgbm</code> / <code>libasound2</code>; Alpine and NixOS are not supported)</dd></div>
             <div><dt>Node.js</dt><dd data-i18n="env.nodev">≥ 18 (20 LTS or newer recommended); the DeepSeek Harness plugin needs 22.x from 22.19, or 24+</dd></div>
-            <div><dt>Python</dt><dd data-i18n="env.pyv">3.10+; the music script needs <code>numpy</code> / <code>scipy</code>, <code>llm_make.py</code> uses only the standard library</dd></div>
-            <div><dt data-i18n="env.dl">First download</dt><dd data-i18n="env.dlv">A few hundred MB of render dependencies, plus about 110 MB for Chrome Headless Shell</dd></div>
+            <div><dt>Python</dt><dd data-i18n="env.pyv">3.10+; the music script needs <code>numpy</code> / <code>scipy</code>, talking-head B-roll needs <code>imageio-ffmpeg</code> (a full ffmpeg), and <code>llm_make.py</code> uses only the standard library</dd></div>
+            <div><dt data-i18n="env.dl">First download</dt><dd data-i18n="env.dlv">A few hundred MB of render dependencies, plus about 110 MB for Chrome Headless Shell. The first talking-head transcription also downloads about a 240MB recognition model</dd></div>
             <div><dt data-i18n="env.out">Output</dt><dd data-i18n="env.outv">1080×1920 (journey defaults to 1080×1350), 30 fps, with music and sound effects</dd></div>
           </dl>
         </div>
@@ -419,12 +515,12 @@ dsh web</code></pre>
   </div>
 </section>
 
-<!-- ============ 03 怎么酿 ============ -->
+<!-- ============ 04 怎么酿 ============ -->
 <section class="sec sec-band" id="how" aria-labelledby="how-title">
   <div class="wrap">
     <header class="sec-head rv">
       <div>
-        <p class="kicker"><span class="kicker-no">No.03</span><span data-i18n="how.kicker">How it brews</span></p>
+        <p class="kicker"><span class="kicker-no">No.04</span><span data-i18n="how.kicker">How it brews</span></p>
         <h2 id="how-title" data-i18n="how.title">The model fills in one storyboard.<br>Recipes and scripts do the rest.</h2>
       </div>
       <p class="lead" data-i18n="how.lead">Good beer comes from a good recipe. A strong model first turns a style into a recipe: ready-made components plus validation rules. A low-cost model like DeepSeek follows it to fill in the storyboard, and scripts handle validation, music, rendering and QA.</p>
@@ -479,18 +575,19 @@ dsh web</code></pre>
       <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-music"/></svg><div><h4 data-i18n="how.f3">Music made on the spot</h4><p data-i18n="how.f3d">Original music is synthesized by code, hits the shot cuts and is normalized to -16 LUFS. No copyright issues.</p></div></li>
       <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-lang"/></svg><div><h4 data-i18n="how.f4">Chinese and English</h4><p data-i18n="how.f4d">Bilingual docs; captions in Chinese or English. English videos are scanned every half beat, and any Chinese character blocks delivery.</p></div></li>
       <li class="feat-wide"><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-mic"/></svg><div><h4 data-i18n="how.fv">Voice-over, three providers</h4><p data-i18n="how.fvd">Write <code>meta.voice</code> and one <code>vo</code> line per shot to get a voice-over from MiniMax, Alibaba Cloud or Volcengine. Shot lengths follow the narration, subtitles light up word by word, and the music ducks about 10 dB under speech; each line is synthesized only once, so changing visuals or re-rendering costs nothing more.</p></div></li>
+      <li><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-flask"/></svg><div><h4 data-i18n="how.f5">Charts and colors</h4><p data-i18n="how.f5d">A data-chart shot can draw a bar, line, dot, stacked or donut chart. Every number on it has to appear in the cited facts. cards also has 12 optional color sets; if you do not pick one, an old storyboard renders as before.</p></div></li>
     </ul>
 
     <p class="sec-next"><a class="link-arrow" href="#industries"><span data-i18n="how.next">See the six industry packs</span><svg class="ico" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></p>
   </div>
 </section>
 
-<!-- ============ 04 行业包 ============ -->
+<!-- ============ 05 行业包 ============ -->
 <section class="sec sec-tint" id="industries" aria-labelledby="industries-title">
   <div class="wrap">
     <header class="sec-head rv">
       <div>
-        <p class="kicker"><span class="kicker-no">No.04</span><span data-i18n="ind.kicker">Industry packs</span></p>
+        <p class="kicker"><span class="kicker-no">No.05</span><span data-i18n="ind.kicker">Industry packs</span></p>
         <h2 id="industries-title" data-i18n="ind.title">Six industry packs, with compliance checked first</h2>
       </div>
       <p class="lead" data-i18n="ind.lead">Pick an industry with <code>meta.industry</code>. Each pack comes with compliance rules, a recommended shot structure, a brief template for merchants and a regression-test brief.</p>
@@ -532,12 +629,12 @@ dsh web</code></pre>
   </div>
 </section>
 
-<!-- ============ 05 已知限制（诚实区） ============ -->
+<!-- ============ 06 已知限制（诚实区） ============ -->
 <section class="sec sec-tint" id="limits" aria-labelledby="limits-title">
   <div class="wrap">
     <header class="sec-head rv">
       <div>
-        <p class="kicker"><span class="kicker-no">No.05</span><span data-i18n="lim.kicker">Known limitations</span></p>
+        <p class="kicker"><span class="kicker-no">No.06</span><span data-i18n="lim.kicker">Known limitations</span></p>
         <h2 id="limits-title" data-i18n="lim.title">How far along it is</h2>
       </div>
       <p class="lead" data-i18n="lim.lead">It's a preview. Here is where things honestly stand; read this before you use it.</p>
@@ -581,8 +678,13 @@ dsh web</code></pre>
       <li data-i18n="lim.v1"><strong>Alibaba Cloud and Volcengine voice-over not yet tested with a real key:</strong> both follow the official docs and are unit-tested against fake responses built from them; where the timestamps sit in the stream and whether the default voices work will be confirmed on the first real call. MiniMax has been rendered with a real key for all three recipes.</li>
       <li data-i18n="lim.v2"><strong>Real voices read slower than the estimate:</strong> validation assumes 5 Chinese characters per second, while MiniMax's real voices measured about 4 per second, so a long line that passes validation can still be blocked at render time (it tells you how many characters to cut in which shot). Plan narration at about 4 characters per second.</li>
       <li data-i18n="lim.2"><strong>Illustrations only without real photos:</strong> with no merchant photos, the visuals come from components and illustrations, which hurts industry videos most.</li>
-      <li data-i18n="lim.3"><strong>The DeepSeek Harness plugin has not been tested against a real DeepSeek model yet.</strong></li>
+      <li data-i18n="lim.3"><strong>The DeepSeek Harness plugin has not been tested against a real DeepSeek model yet.</strong> This version also does not include talking-head B-roll.</li>
       <li data-i18n="lim.4"><strong>Not supported:</strong> medical aesthetics, prescription drugs / medicine, K12 academic tutoring, supplement efficacy claims, tobacco.</li>
+      <li data-i18n="lim.t1"><strong>Ink sketch is still experimental:</strong> its reference images did not ship with this version. It can only be a stand-in preview. It cannot be really generated, and it cannot be the secondary style.</li>
+      <li data-i18n="lim.t2"><strong>The character may differ slightly from clip to clip:</strong> each AI picture is generated on its own. A shared robot spec brings clips closer, but shape and color are not guaranteed to match.</li>
+      <li data-i18n="lim.t3"><strong>A transcription error shows up on the motion card:</strong> words on the card can only be copied from what was said. Read <code>talk.srt</code> before you publish, and fix mistakes there.</li>
+      <li data-i18n="lim.t4"><strong>macOS, and real English speech, are untested:</strong> transcription has not been tested on macOS. English was tested only with synthetic speech, not with a real English speaker or an accent.</li>
+      <li data-i18n="lim.t5"><strong>Talking-head B-roll needs a full ffmpeg:</strong> the copy bundled with Remotion is a slim build and is missing filters. Install <code>imageio-ffmpeg</code> (<code>pip install imageio-ffmpeg</code>), put ffmpeg on PATH, or point the <code>FFMPEG</code> environment variable at it.</li>
     </ul>
 
     <details class="lim-more rv">
@@ -594,7 +696,7 @@ dsh web</code></pre>
         <li data-i18n="lim.p4"><strong>Template feel:</strong> different videos often share the same cover, default line chart and white end card, with only the text and colors changed.</li>
         <li data-i18n="lim.p5"><strong>Copy quality isn't checked automatically:</strong> words cut in half, awkward phrasing, a selling point repeated three times, or contradictions all get through.</li>
         <li data-i18n="lim.p6"><strong>The core action isn't required on screen:</strong> for a tool, an action like "tap Start" may end up shown as an unrelated screen.</li>
-        <li data-i18n="lim.p7"><strong>Layout:</strong> brand-color numbers on dark themes can have too little contrast, and some panels leave their lower half empty when there is little content.</li>
+        <li data-i18n="lim.p7"><strong>Layout:</strong> some panels leave their lower half empty when there is little content.</li>
         <li data-i18n="lim.p8"><strong>Coverage of English and asset checks:</strong> the compliance word lists are written for Chinese, so English copy is checked less thoroughly; assets are only checked at the file level.</li>
       </ol>
     </details>
@@ -606,13 +708,13 @@ dsh web</code></pre>
   </div>
 </section>
 
-<!-- ============ 06 为什么叫精酿 ============ -->
+<!-- ============ 07 为什么叫精酿 ============ -->
 <section class="sec" id="craft" aria-labelledby="craft-title">
   <div class="wrap">
     <div class="craft-grid">
       <div class="craft-story rv">
         <header class="sec-head sec-head-stack">
-          <p class="kicker"><span class="kicker-no">No.06</span><span data-i18n="craft.kicker">Why "BrewReel"</span></p>
+          <p class="kicker"><span class="kicker-no">No.07</span><span data-i18n="craft.kicker">Why "BrewReel"</span></p>
           <h2 id="craft-title" data-i18n="craft.title">Good beer comes from a good recipe,<br>even with ordinary ingredients</h2>
         </header>
         <p class="prose" data-i18n="craft.body">A strong model first gets a video style right; its layout, motion, pacing and rules are then written down as a "recipe": ready-made components plus a validator. A low-cost model like DeepSeek is the ordinary ingredient: it follows the recipe, fills in a storyboard, and brews a video at the same level.</p>
@@ -632,6 +734,7 @@ dsh web</code></pre>
           <li><b data-i18n="share.2">Remix · reskin</b><p data-i18n="share.2d"><code>node scripts/gen-styles.mjs --new &lt;id&gt;</code> scaffolds a new style; change the palette, fonts and characters. For a color-only variant, editing <code>tokens.json</code> is enough.</p></li>
           <li><b data-i18n="share.3">Create · craft a recipe</b><p data-i18n="share.3d">Follow the six-step process in <code>distill/</code> to break down a reference video: extract frames, break it down, replicate, redesign, componentize, then test with a cheap model and review.</p></li>
         </ol>
+        <p class="share-style" data-i18n="share.style">AI picture styles for talking-head B-roll use another path: the <a href='#style-factory'>style factory</a> drafts one from a sentence, and a person approves it in the terminal. Styles you make are welcome back as contributions.</p>
         <div class="orig">
           <h4 data-i18n="orig.title">Redesign + originality check is a required step</h4>
           <p data-i18n="orig.d">The skeleton may stay: narrative structure, rhythm, motion, camera language. The skin must be redone: palette, characters, signature details. <code>check-originality.mjs</code> measures the color difference from the reference (CIEDE2000), and every signature item must say what replaced it or that it was removed.</p>
@@ -644,7 +747,7 @@ dsh web</code></pre>
   </div>
 </section>
 
-<!-- ============ 07 常见问题 ============ -->
+<!-- ============ 08 常见问题 ============ -->
 <section class="learning-guides" id="guides" aria-labelledby="guides-title">
   <div class="wrap">
     <h2 id="guides-title" data-i18n="learn.title">Practical guides</h2>
@@ -659,13 +762,15 @@ dsh web</code></pre>
 <section class="sec sec-tint" id="faq" aria-labelledby="faq-title">
   <div class="wrap faq-grid">
     <header class="sec-head sec-head-stack faq-head rv">
-      <p class="kicker"><span class="kicker-no">No.07</span><span data-i18n="faq.kicker">FAQ</span></p>
+      <p class="kicker"><span class="kicker-no">No.08</span><span data-i18n="faq.kicker">FAQ</span></p>
       <h2 id="faq-title" data-i18n="faq.title">Asked before<br>the first brew</h2>
       <p class="faq-more" data-i18n="faq.more">Didn't find your answer? <a href='https://github.com/Finderchangchang/brewreel/issues' target='_blank' rel='noopener'>Open an issue</a>, or message the WeChat Official Account.</p>
     </header>
     <div class="faq-list rv">
       <details id="faq-q4"><summary><span data-i18n="faq.q4">Can I publish the video as rendered?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a4"><p>Not yet recommended. Treat the video as a first draft: watch the whole thing, fix awkward copy and repeated selling points, then publish. For industry videos, check every price, condition, date, opening hour and distance on screen against the brief. See <a href='#limits'>"How far along it is"</a> for test results.</p></div></details>
-      <details id="faq-q5"><summary><span data-i18n="faq.q5">Does it cost anything?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a5"><p>The project is free and open source. Model calls use your own API key and are billed by the provider for what you use; the project handles no money. Rendering runs on your own computer. The rendering engine Remotion charges for-profit organizations with 4 or more people; see the Remotion question below.</p></div></details>
+      <details id="faq-q5"><summary><span data-i18n="faq.q5">Does it cost anything?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a5"><p>The project is free and open source. Model calls, voiceover APIs, and AI pictures in talking-head B-roll use your own key and are billed by the provider; the project handles no money. Rendering runs on your own computer. Motion cards, on-device transcription and the final cut do not charge. The rendering engine Remotion charges for-profit organizations with 4 or more people; see the Remotion question below.</p></div></details>
+      <details id="faq-q9"><summary><span data-i18n="faq.q9">What does talking-head B-roll cost?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a9"><p>Motion cards, on-device transcription and the final cut do not charge. AI pictures use MiniMax H3. An estimate is printed first, and a person approves before the official cut. Two AI clips at most, by default. A subscription key is shown in credits, about 280 credits for 4 seconds. A pay-as-you-go key is billed per second; the price table says 0.5 yuan per second at 768P. Under the default cap, the AI pictures in one video are about 2–12 yuan on that table, or about 280–1680 credits on a subscription key. What MiniMax actually charges is whatever its dashboard shows. DeepSeek uses your own key to write the plan.</p></div></details>
+      <details id="faq-q10"><summary><span data-i18n="faq.q10">Can I make another style?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a10"><p>Yes. You can draft one. The style factory takes the material and the color in one sentence:</p><p><code>node scripts/broll/new-style.mjs --id &lt;id&gt; --name "&lt;name&gt;" --desc "&lt;one sentence&gt;"</code></p><p>DeepSeek writes the config and reference images are generated. MiniMax checks the pictures for text, studs, resemblance to a known work, a mouth, an antenna, and an empty frame. The script picks images and makes one still. An optional 4-second video test spends credits. A person looks at the review page. <code>approve-style.mjs</code> can only be run by a person in a terminal. An assistant must not approve it. Styles you make are welcome back as contributions.</p><p>The shipped regular styles are wood blocks (the default), clay stop-motion and layered paper. The whole video shares one robot. Ink sketch is still experimental and only a stand-in preview.</p></div></details>
       <details id="faq-qLic"><summary><span data-i18n="faq.qLic">Can I use it commercially? Do I need to credit it?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a"><div data-i18n="faq.aLic"><p>Yes. It's Apache-2.0: individuals and companies may use, modify and redistribute it, or build it into their own products, with no fee and no prior permission. If you redistribute it or build on it, keep LICENSE and NOTICE and credit the source. Suggested wording:</p></div><div class="attr"><code id="attrText" data-i18n="lic.attr">Based on BrewReel (精酿, https://github.com/Finderchangchang/brewreel)</code><button class="copy copy-inline" type="button" data-copy-from="#attrText" aria-label="Copy the suggested wording" data-i18n-attr="aria-label:a.copyAttr"><svg class="ico i-copy" aria-hidden="true" focusable="false"><use href="#i-copy"/></svg><svg class="ico i-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span data-i18n="ui.copy">Copy</span></button></div><div data-i18n="faq.aLic2"><p><strong>Videos you render with it don't require attribution.</strong> Don't use the names "BrewReel" or "精酿" or the brewreel.com domain to imply your work is made or endorsed by the original author. Remotion, which does the rendering, has its own license; see the next question.</p></div></div></details>
       <details id="faq-q6"><summary><span data-i18n="faq.q6">Does Remotion need a license? What about upgrading to 5.0?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a6"><p>Remotion is source-available, not open source: free for individuals, for-profit companies with 3 or fewer people, and non-profits (including commercial use); <strong>for-profit organizations with 4 or more people must purchase Remotion's Company License</strong>, see <a href='https://www.remotion.dev/license' target='_blank' rel='noopener'>remotion.dev/license</a>. This repo's Apache-2.0 license doesn't change Remotion's own terms.</p><p>This repo pins <code>remotion</code> / <code>@remotion/cli</code> to <code>4.0.529</code>. After upgrading to 5.0, Remotion's free tier requires a <code>licenseKey</code> in config (individuals / companies with 3 or fewer people / non-profits use <code>free-license</code>); read <code>THIRD_PARTY_LICENSES.md</code> before upgrading.</p></div></details>
       <details id="faq-q1"><summary><span data-i18n="faq.q1">Where does the background music come from?</span><i class="acc" aria-hidden="true"></i></summary><div class="faq-a" data-i18n="faq.a1"><p><code>scripts/make_bgm.py</code> synthesizes it on the spot with numpy / scipy: instruments, harmony, melody, mixing and mastering all live in the script, with no external sample library. Each shot is one section, notes land on whole or half beats, and every shot change gets a cymbal or a fill, so the music follows the cuts. Loudness is normalized to -16 LUFS.</p><p>Because it's synthesized on the spot, there are no copyright issues. When you publish on a platform such as Douyin, you can also render a silent version with <code class='nw'>--no-bgm</code> and add music on the platform.</p></div></details>
@@ -705,7 +810,7 @@ dsh web</code></pre>
           <img src="assets/favicon.png" alt="" width="30" height="30" class="brand-mark" loading="lazy" decoding="async">
           <span class="brand-name" data-i18n="brand.name">BrewReel<span class='brand-alt'> · 精酿</span></span>
         </a>
-        <p class="foot-tag" data-i18n="ft.tag">Write a product brief, render a vertical promo video with one command.</p>
+        <p class="foot-tag" data-i18n="ft.tag">A promo, or pictures on a talking-head clip: each is one command.</p>
       </div>
 
       <nav class="foot-col" aria-label="Project" data-i18n-attr="aria-label:ft.project">
@@ -719,6 +824,8 @@ dsh web</code></pre>
       <nav class="foot-col" aria-label="Docs" data-i18n-attr="aria-label:ft.docs">
         <h2 class="foot-h" data-i18n="ft.docs">Docs</h2>
         <a href="https://github.com/Finderchangchang/brewreel/tree/main/integrations/deepseek-harness" target="_blank" rel="noopener" data-umami-event="click-dsh" data-umami-event-pos="footer"><span data-i18n="ft.plugin">Plugin docs</span></a>
+        <a href="https://github.com/Finderchangchang/brewreel/blob/main/docs/broll.md" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="footer"><span data-i18n="ft.broll">Talking-head B-roll</span></a>
+        <a href="https://github.com/Finderchangchang/brewreel/blob/main/docs/style-factory.md" target="_blank" rel="noopener" data-umami-event="click-github" data-umami-event-pos="footer"><span data-i18n="ft.style">Style factory</span></a>
         <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">DeepSeek Harness</a>
         <a href="https://www.remotion.dev/license" target="_blank" rel="noopener"><span data-i18n="ft.remotion">Remotion license</span></a>
       </nav>

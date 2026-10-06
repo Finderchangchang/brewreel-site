@@ -329,6 +329,12 @@ html:not([lang="en"]) .lang-btn [data-l="zh"], html[lang="en"] .lang-btn [data-l
   .nav-menu { display: flex; gap: 2px; margin-left: 18px; }
   .burger { display: none; }
 }
+@media (min-width: 960px) and (max-width: 1180px) {
+  .nav-inner { gap: 8px; }
+  .nav-menu { gap: 0; margin-left: 8px; }
+  .nav-menu a { padding: 6px 7px; font-size: 13.5px; }
+  .brand { font-size: 16px; gap: 8px; }
+}
 
 /* ---------- 5. 段落骨架 ---------- */
 .sec { padding: var(--sec-y) 0; }
@@ -939,3 +945,120 @@ code.nw { white-space: nowrap; }
 .guide-cards a { text-decoration: underline; text-underline-offset: 4px; }
 .guide-cards p { color: var(--ink-2); line-height: 1.8; }
 @media(max-width:700px) { .guide-cards { grid-template-columns: 1fr; } }
+
+/* ---------- 18. 两种玩法 / 口播配画面 / 风格工厂 ---------- */
+.modes { padding: clamp(28px, 4vw, 48px) 0 clamp(8px, 2vw, 16px); }
+.modes-title {
+  margin: 0 0 16px;
+  color: var(--amber-ink);
+  font-size: 14px; font-weight: 700; letter-spacing: .14em;
+}
+html[lang="en"] .modes-title { text-transform: uppercase; font-size: 12.5px; letter-spacing: .16em; }
+.modes-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 720px) { .modes-grid { grid-template-columns: 1fr 1fr; gap: 18px; } }
+.mode {
+  display: block; min-width: 0;
+  padding: 22px 22px 18px;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px var(--line), var(--shadow-sm);
+  transition: border-color .2s;
+}
+.mode:hover { border-color: var(--amber); }
+.mode-no {
+  display: block;
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: 22px; line-height: 1; color: var(--amber-ink);
+}
+.mode strong { display: block; margin-top: 10px; font-size: clamp(20px, 2vw, 26px); font-weight: 800; line-height: 1.3; }
+html[lang="en"] .mode strong { font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.2vw, 32px); }
+.mode p { margin: 8px 0 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.7; }
+
+#style-factory, #use-talk { scroll-margin-top: calc(var(--nav-h) + 20px); }
+.talk-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; }
+@media (min-width: 900px) {
+  .talk-grid { grid-template-columns: minmax(0, 1.3fr) minmax(220px, 320px); gap: 40px; }
+}
+.talk-copy .status { margin-bottom: 12px; }
+.talk-player, .talk-intro { margin: 0; min-width: 0; }
+.talk-intro { margin-top: clamp(28px, 4vw, 44px); }
+.talk-player video {
+  display: block;
+  width: min(100%, 280px);
+  height: auto;
+  margin-inline: auto;
+  border-radius: 22px;
+  background: #1a120c;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow);
+}
+@media (min-width: 900px) { .talk-player video { width: min(100%, 300px); } }
+.talk-player figcaption, .talk-intro figcaption {
+  margin-top: 10px;
+  font-size: 14px; line-height: 1.65; color: var(--ink-2); text-align: center;
+}
+.talk-intro img {
+  display: block;
+  width: min(100%, 640px);
+  height: auto;
+  margin-inline: auto;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--card);
+}
+.talk-h { margin: clamp(32px, 4vw, 48px) 0 16px; font-size: clamp(20px, 2vw, 26px); font-weight: 800; line-height: 1.3; }
+.talk-kinds { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+@media (min-width: 800px) { .talk-kinds { grid-template-columns: 1fr 1fr; gap: 18px; } }
+.kind {
+  min-width: 0;
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px var(--line);
+}
+.kind h4 { margin: 0 0 8px; font-size: 18px; line-height: 1.4; }
+.kind p { margin: 0; color: var(--ink-2); font-size: 15px; line-height: 1.7; }
+.pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 0; padding: 0; list-style: none; }
+.pills li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: var(--amber-soft);
+  color: var(--ink);
+  font-size: 13.5px; font-weight: 650; line-height: 1.5;
+}
+.pills li.pill-exp { color: var(--stamp); border-color: var(--stamp); background: transparent; }
+.talk-cost { margin: 0; max-width: 46em; color: var(--ink-2); font-size: 16px; line-height: 1.75; }
+.factory {
+  position: relative;
+  margin-top: clamp(36px, 5vw, 56px);
+  padding: 28px 22px 22px;
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-lg);
+  box-shadow: inset 0 0 0 5px var(--card), inset 0 0 0 6px var(--line), var(--shadow-sm);
+}
+.factory::before {
+  content: "";
+  position: absolute; top: 14px; left: 28px; right: 28px;
+  height: 6px; border-radius: 99px; background: var(--amber);
+}
+.factory-kicker { margin: 8px 0 0; }
+.factory-ver {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  letter-spacing: 0; font-size: 18px;
+}
+html[lang="en"] .factory-kicker > span:first-child {
+  text-transform: uppercase; font-size: 12.5px; letter-spacing: .16em;
+}
+html[lang="en"] .factory-kicker > .factory-ver {
+  text-transform: none; letter-spacing: 0; font-size: 18px;
+}
+.factory h3 { margin: 12px 0 10px; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25; font-weight: 800; }
+html[lang="en"] .factory h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.15; }
+.factory > p { max-width: 48em; }
+.factory .code { margin-top: 16px; }
+.share-style { margin: 18px 0 0; color: var(--ink-2); font-size: 15.5px; line-height: 1.75; }
+.share-style a { color: var(--amber-ink); text-decoration: underline; text-underline-offset: 3px; }

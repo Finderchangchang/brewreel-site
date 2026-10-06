@@ -1,8 +1,8 @@
 # BrewReel / 精酿
 
-> BrewReel is an open-source tool for AI-assisted promo video production. You provide a product brief and assets, a language model writes the storyboard, and code renders the video locally using a style recipe. Review the result before publishing.
+> BrewReel is an open-source tool with two paths. Promo: you provide a product brief, a language model writes the storyboard, and code renders it locally from a recipe. Talking-head B-roll: you provide one talking-head video, and one command adds motion cards or AI pictures. Review either result before publishing.
 
-精酿 · BrewReel 是开源的 AI 辅助宣传片制作工具。你提供产品简报和素材，语言模型编写分镜，程序按配方在本机渲染视频；成片需要人工检查后再发布。
+精酿 · BrewReel 是开源工具，有两种玩法。宣传片：你提供产品简报，语言模型编写分镜，程序按配方在本机渲染。口播配画面：只放一段口播视频，一条命令配上动效画面或 AI 画面。成片都需要人工检查后再发布。
 
 ## Official pages
 
@@ -15,12 +15,12 @@
 
 ## Product facts
 
-- Who it is for: Developers and creators comfortable setting up a local runtime, making product introductions, feature explainers, quiz videos or character-journey promos.
-- 适合什么需求：面向愿意安装本地运行环境的开发者和内容创作者，用于制作产品介绍、卖点讲解、答题互动或角色漫游宣传片。
-- Inputs and outputs: Inputs are a product brief, optional real photos and voiceover settings. Outputs include a promo video and its storyboard record. The cards and quiz recipes default to 1080×1920; journey defaults to 1080×1350, all at 30 fps.
-- 输入与输出：输入产品简报、可选的实拍素材与配音配置；输出宣传片和对应分镜记录。cards、quiz 默认 1080×1920，journey 默认 1080×1350，均为 30 fps。
-- Costs and requirements: The project uses Apache-2.0. Model and voiceover APIs may charge separately. Remotion has a separate license; for-profit organizations with four or more employees need a Company License.
-- 费用与使用条件：项目采用 Apache-2.0 许可；模型与配音接口可能另收费。Remotion 有独立许可，4 人及以上的营利组织需购买 Company License。
+- Who it is for: Developers and creators comfortable setting up a local runtime. Use it for product introductions, feature explainers, quiz videos or character-journey promos, or to add explanatory pictures to a talking-head video you already have.
+- 适合什么需求：面向愿意安装本地运行环境的开发者和内容创作者。可以做产品介绍、卖点讲解、答题互动或角色漫游宣传片，也可以给已有的口播配上解释画面。
+- Inputs and outputs: Promo: a product brief, optional real photos and voiceover settings in; a vertical promo and its storyboard out. cards and quiz default to 1080×1920, journey to 1080×1350, all at 30 fps. Talking-head B-roll: one talking-head video in, a video with pictures out. The output directory must sit outside the repo.
+- 输入与输出：宣传片：输入产品简报、可选实拍与配音配置，输出竖版宣传片和分镜。cards、quiz 默认 1080×1920，journey 默认 1080×1350，均为 30 fps。口播配画面：输入一段口播视频，输出配了画面的成片。输出目录不能放在仓库里面。
+- Costs and requirements: The project uses Apache-2.0. Promo model calls and voiceover APIs may charge separately. For talking-head B-roll, on-device transcription, motion cards and the final cut do not charge; AI pictures use MiniMax, print an estimate first, and need a person's approval before the official cut. Remotion has a separate license; for-profit organizations with four or more employees need a Company License.
+- 费用与使用条件：项目采用 Apache-2.0 许可。宣传片的模型调用和配音接口可能另收费。口播配画面里，本机转写、动效画面和合成不花钱；AI 画面用 MiniMax，先估价、人审批准才出正式片。Remotion 有独立许可，4 人及以上的营利组织需购买 Company License。
 
 Project author: Finderchangchang . See the GitHub documentation for installation, test records and known limitations.
 
@@ -31,6 +31,8 @@ Project author: Finderchangchang . See the GitHub documentation for installation
 - Model and voiceover API calls may incur separate provider fees.
 - The DeepSeek Harness plugin is published, but the project documentation still marks real DeepSeek-model testing as pending.
 - MiniMax voiceover has been tested; Alibaba Cloud and Volcengine voiceover still need live-key verification.
+- Talking-head B-roll takes one clip and one command. On-device transcription, motion cards and the final cut do not charge. MiniMax AI pictures print an estimate first, and a person approves before the official cut. The DeepSeek Harness plugin does not include this.
+- The style factory drafts an AI picture style from one sentence. A person runs approve-style.mjs in a terminal. New styles are welcome back as contributions.
 
 ## Practical guides
 
