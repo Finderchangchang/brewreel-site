@@ -1,8 +1,8 @@
 # BrewReel / 精酿
 
-> BrewReel is an open-source tool with two paths. Promo: you provide a product brief, a language model writes the storyboard, and code renders it locally from a recipe. Talking-head B-roll: you provide one talking-head video, and one command adds motion cards or AI pictures. Review either result before publishing.
+> BrewReel is an open-source tool with three paths. Promo: you provide a product brief, a language model writes the storyboard, and code renders it locally from a recipe. Talking-head B-roll: you provide one talking-head video, and one command adds motion cards or AI pictures. Lesson videos: 16:9 animated slides with a presenter. Review either result before publishing.
 
-精酿 · BrewReel 是开源工具，有两种玩法。宣传片：你提供产品简报，语言模型编写分镜，程序按配方在本机渲染。口播配画面：只放一段口播视频，一条命令配上动效画面或 AI 画面。成片都需要人工检查后再发布。
+精酿 · BrewReel 是开源工具，有三种玩法。宣传片：你提供产品简报，语言模型编写分镜，程序按配方在本机渲染。口播配画面：只放一段口播视频，一条命令配上动效画面或 AI 画面。讲课视频：16:9 动态幻灯片加讲解员。成片都需要人工检查后再发布。
 
 ## Official pages
 
